@@ -3,10 +3,48 @@
 
     let scrollY = $state(0);
     let innerHeight = $state(0);
-    let mounted = $state(false);
+
+    const trainingSchedule = {
+        Monday: [
+            {time: "6:00 AM", class: "Fundamentals"},
+            {time: "12:00 PM", class: "Open Mat"},
+            {time: "6:00 PM", class: "Advanced"},
+            {time: "7:30 PM", class: "No-Gi"}
+        ],
+        Tuesday: [
+            {time: "6:00 AM", class: "No-Gi"},
+            {time: "12:00 PM", class: "Advanced"},
+            {time: "6:00 PM", class: "Fundamentals"},
+            {time: "7:30 PM", class: "Competition"}
+        ],
+        Wednesday: [
+            {time: "6:00 AM", class: "Fundamentals"},
+            {time: "12:00 PM", class: "Open Mat"},
+            {time: "6:00 PM", class: "Advanced"},
+            {time: "7:30 PM", class: "No-Gi"}
+        ],
+        Thursday: [
+            {time: "6:00 AM", class: "No-Gi"},
+            {time: "12:00 PM", class: "Advanced"},
+            {time: "6:00 PM", class: "Fundamentals"},
+            {time: "7:30 PM", class: "Competition"}
+        ],
+        Friday: [
+            {time: "6:00 AM", class: "Fundamentals"},
+            {time: "12:00 PM", class: "Open Mat"},
+            {time: "6:00 PM", class: "Advanced"},
+            {time: "7:30 PM", class: "No-Gi"}
+        ],
+        Saturday: [
+            {time: "9:00 AM", class: "All Levels"},
+            {time: "10:30 AM", class: "Open Mat"}
+        ],
+        Sunday: [
+            {time: "10:00 AM", class: "Open Mat"}
+        ]
+    };
 
     onMount(() => {
-        mounted = true;
 
         const updateScroll = () => {
             scrollY = window.scrollY;
@@ -135,11 +173,80 @@
                     </div>
                 </div>
 
-                <div class="mt-16 text-center">
-                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
-                        Start Your Journey Today
-                    </button>
+                <div class="mt-20 mb-20">
+                    <h3 class="text-3xl font-bold text-white mb-12 text-center">Weekly Training Schedule</h3>
+                    <!-- Mobile View -->
+                    <div class="grid grid-cols-1 gap-4 md:hidden">
+                        {#each Object.entries(trainingSchedule) as [day, schedule]}
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <h4 class="text-xl font-semibold text-white mb-4">{day}</h4>
+                                <div class="space-y-2 text-gray-300">
+                                    {#each schedule as day}
+                                        <p>{day.time} - {day.class}</p>
+                                    {/each}
+                                </div>
+                            </div>
+                        {/each}
+                    </div>
+                    <!-- Desktop View -->
+                    <div class="hidden md:block overflow-x-auto">
+                        <table class="w-full text-gray-300">
+                            <thead class="bg-gray-800">
+                            <tr>
+                                {#each Object.keys(trainingSchedule) as day}
+                                    <th class="px-4 py-3 text-left">{day}</th>
+                                {/each}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {#each Array(Math.max(...Object.values(trainingSchedule).map(s => s.length))) as _, i}
+                                <tr class="border-b border-gray-700">
+                                    {#each Object.values(trainingSchedule) as schedule}
+                                        <td class="px-4 py-3">
+                                            {#if schedule[i]}
+                                                <div>{schedule[i].time}</div>
+                                                <div class="text-gray-400">{schedule[i].class}</div>
+                                            {/if}
+                                        </td>
+                                    {/each}
+                                </tr>
+                            {/each}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
+                <div class="mt-20">
+                    <h3 class="text-3xl font-bold text-white mb-12 text-center">Meet Our Team</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <img src="https://placehold.co/200x200" alt="John Doe"
+                                 class="rounded-full mx-auto mb-4 w-48 h-48 object-cover"/>
+                            <h4 class="text-xl font-semibold text-white mb-2">John Doe</h4>
+                            <p class="text-gray-400">Head Coach and Brazilian Jiu-Jitsu Black Belt with over 15 years of
+                                experience in competition and teaching.</p>
+                        </div>
+
+                        <div class="text-center">
+                            <img src="https://placehold.co/200x200" alt="Jane Smith"
+                                 class="rounded-full mx-auto mb-4 w-48 h-48 object-cover"/>
+                            <h4 class="text-xl font-semibold text-white mb-2">Jane Smith</h4>
+                            <p class="text-gray-400">Competition Team Coach and Brown Belt specializing in modern
+                                competition techniques and strategy.</p>
+                        </div>
+
+                        <div class="text-center">
+                            <img src="https://placehold.co/200x200" alt="Mike Johnson"
+                                 class="rounded-full mx-auto mb-4 w-48 h-48 object-cover"/>
+                            <h4 class="text-xl font-semibold text-white mb-2">Mike Johnson</h4>
+                            <p class="text-gray-400">Fundamentals Instructor and Purple Belt focused on helping
+                                beginners build a strong technical foundation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
             </div>
         </div>
     </section>
