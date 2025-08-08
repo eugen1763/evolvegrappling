@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import {onMount} from 'svelte';
 
     let scrollY = $state(0);
     let innerHeight = $state(0);
@@ -68,7 +68,7 @@
     let titleOffset = $derived(scrollY * 0.3);
 </script>
 
-<svelte:window bind:scrollY bind:innerHeight />
+<svelte:window bind:scrollY bind:innerHeight/>
 
 <div class="relative overflow-x-hidden">
     <!-- Hero Section with Background Image -->
@@ -152,7 +152,8 @@
                                 <span class="text-2xl">🥋</span>
                             </div>
                             <h4 class="text-xl font-semibold text-white mb-2">Expert Instruction</h4>
-                            <p class="text-gray-400">Learn from certified black belt instructors with years of competition experience.</p>
+                            <p class="text-gray-400">Learn from certified black belt instructors with years of
+                                competition experience.</p>
                         </div>
 
                         <div class="text-center">
@@ -160,7 +161,8 @@
                                 <span class="text-2xl">👥</span>
                             </div>
                             <h4 class="text-xl font-semibold text-white mb-2">Supportive Community</h4>
-                            <p class="text-gray-400">Join a welcoming community of practitioners who support each other's growth.</p>
+                            <p class="text-gray-400">Join a welcoming community of practitioners who support each
+                                other's growth.</p>
                         </div>
 
                         <div class="text-center">
@@ -168,7 +170,8 @@
                                 <span class="text-2xl">🏆</span>
                             </div>
                             <h4 class="text-xl font-semibold text-white mb-2">Proven Results</h4>
-                            <p class="text-gray-400">Our students regularly compete and succeed at local and international levels.</p>
+                            <p class="text-gray-400">Our students regularly compete and succeed at local and
+                                international levels.</p>
                         </div>
                     </div>
                 </div>
@@ -274,6 +277,16 @@
                     </div>
                 </div>
 
+                <div class="mt-20">
+                    <div class="flex justify-center">
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=nqUoKY12orvuIuaI"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -283,7 +296,8 @@
     <footer class="bg-gray-950 text-white py-12">
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
-            <p class="text-gray-400 mb-6">Transform your body, mind, and spirit through the art of Brazilian Jiu-Jitsu.</p>
+            <p class="text-gray-400 mb-6">Transform your body, mind, and spirit through the art of Brazilian
+                Jiu-Jitsu.</p>
             <div class="flex justify-center space-x-6 text-gray-400">
                 <a href="#" class="hover:text-white transition-colors">About</a>
                 <a href="#" class="hover:text-white transition-colors">Classes</a>
