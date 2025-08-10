@@ -11,7 +11,11 @@
                 <h4 class="text-xl font-semibold text-white mb-4">{day}</h4>
                 <div class="space-y-2 text-gray-300">
                     {#each schedule as session}
-                        <p>{session.time} - {session.class}</p>
+                        <p class="flex items-center">
+                            <span class="w-20">{session.time}</span>
+                            <span class="mx-2">-</span>
+                            <span>{session.class}</span>
+                        </p>
                     {/each}
                 </div>
             </div>
