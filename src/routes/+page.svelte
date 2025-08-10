@@ -9,6 +9,8 @@
     import TeamSection from "$lib/components/TeamSection.svelte";
     // @ts-ignore
     import ContactSection from "$lib/components/ContactSection.svelte";
+    // @ts-ignore
+    import BurgerMenu from "$lib/components/BurgerMenu.svelte";
 
     let scrollY = $state(0);
     let innerHeight = $state(0);
@@ -33,7 +35,12 @@
 <svelte:window bind:scrollY bind:innerHeight/>
 
 <div class="relative overflow-x-hidden">
-    <HeroSection {scrollY} {innerHeight}/>
+    <!-- Burger Menu -->
+    <BurgerMenu />
+    
+    <div id="hero">
+        <HeroSection {scrollY} {innerHeight}/>
+    </div>
 
     <!-- Content Section -->
     <section class="relative z-20 bg-gray-900 min-h-screen">
@@ -137,13 +144,9 @@
     <footer class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
-            <p class="text-gray-400 mb-6">Transformieren Sie Ihren Körper, Geist und Seele durch die Kunst des Brazilian
-                Jiu-Jitsu.</p>
             <div class="flex justify-center space-x-6 text-gray-400">
-                <a href="#" class="hover:text-white transition-colors">Über uns</a>
-                <a href="#" class="hover:text-white transition-colors">Kurse</a>
-                <a href="#" class="hover:text-white transition-colors">Stundenplan</a>
-                <a href="#" class="hover:text-white transition-colors">Kontakt</a>
+                <a href="#" class="hover:text-white transition-colors">Impressum</a>
+                <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
             </div>
         </div>
     </footer>
