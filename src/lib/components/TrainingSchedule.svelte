@@ -3,7 +3,7 @@
 </script>
 
 <div class="mt-20 mb-20 scroll-animate fade-in-up">
-    <h3 class="text-3xl font-bold text-white mb-12 text-center">Weekly Training Schedule</h3>
+    <h3 class="text-3xl font-bold text-white mb-12 text-center">Wöchentlicher Trainingsplan</h3>
     <!-- Mobile View -->
     <div class="grid grid-cols-1 gap-4 md:hidden">
         {#each Object.entries(trainingSchedule) as [day, schedule], i}

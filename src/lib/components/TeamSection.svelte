@@ -3,7 +3,7 @@
 </script>
 
 <div class="mt-20 scroll-animate fade-in-up">
-    <h3 class="text-3xl font-bold text-white mb-12 text-center">Meet Our Team</h3>
+    <h3 class="text-3xl font-bold text-white mb-12 text-center">Lernen Sie unser Team kennen</h3>
     <div class="grid md:grid-cols-3 gap-8">
         {#each teamMembers as member, i}
             <div class="text-center scroll-animate scale-in delay-{(i + 1) * 200}">

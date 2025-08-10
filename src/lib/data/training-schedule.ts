@@ -9,41 +9,41 @@ export interface TrainingSchedule {
 }
 
 export const trainingSchedule: TrainingSchedule = {
-    Monday: [
+    Montag: [
         {time: "6:00 AM", class: "Fundamentals"},
         {time: "12:00 PM", class: "Open Mat"},
         {time: "6:00 PM", class: "Advanced"},
         {time: "7:30 PM", class: "No-Gi"}
     ],
-    Tuesday: [
+    Dienstag: [
         {time: "6:00 AM", class: "No-Gi"},
         {time: "12:00 PM", class: "Advanced"},
         {time: "6:00 PM", class: "Fundamentals"},
         {time: "7:30 PM", class: "Competition"}
     ],
-    Wednesday: [
+    Mittwoch: [
         {time: "6:00 AM", class: "Fundamentals"},
         {time: "12:00 PM", class: "Open Mat"},
         {time: "6:00 PM", class: "Advanced"},
         {time: "7:30 PM", class: "No-Gi"}
     ],
-    Thursday: [
+    Donnerstag: [
         {time: "6:00 AM", class: "No-Gi"},
         {time: "12:00 PM", class: "Advanced"},
         {time: "6:00 PM", class: "Fundamentals"},
         {time: "7:30 PM", class: "Competition"}
     ],
-    Friday: [
+    Freitag: [
         {time: "6:00 AM", class: "Fundamentals"},
         {time: "12:00 PM", class: "Open Mat"},
         {time: "6:00 PM", class: "Advanced"},
         {time: "7:30 PM", class: "No-Gi"}
     ],
-    Saturday: [
+    Samstag: [
         {time: "9:00 AM", class: "All Levels"},
         {time: "10:30 AM", class: "Open Mat"}
     ],
-    Sunday: [
+    Sonntag: [
         {time: "10:00 AM", class: "Open Mat"}
     ]
 };

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import {onMount} from 'svelte';
     import {initScrollAnimations} from "$lib/utils/scroll_animations";
     // @ts-ignore
     import HeroSection from "$lib/components/HeroSection.svelte";
@@ -33,81 +33,92 @@
 <svelte:window bind:scrollY bind:innerHeight/>
 
 <div class="relative overflow-x-hidden">
-    <HeroSection {scrollY} {innerHeight} />
+    <HeroSection {scrollY} {innerHeight}/>
 
     <!-- Content Section -->
     <section class="relative z-20 bg-gray-900 min-h-screen">
         <div class="container mx-auto px-6 py-16">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
-                    Master the Art of Brazilian Jiu-Jitsu
+                    Meistern Sie die Kunst des Brazilian Jiu-Jitsu
                 </h2>
 
                 <div class="grid md:grid-cols-2 gap-12 mb-16">
                     <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-left">
-                        <h3 class="text-2xl font-semibold text-white mb-4">For Beginners</h3>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Für Anfänger</h3>
                         <p class="text-gray-300 mb-6">
-                            Start your journey with our fundamentals program. Learn the basics of Brazilian Jiu-Jitsu
-                            in a safe, supportive environment designed for complete beginners.
+                            Beginnen Sie Ihre Reise mit unserem Grundlagenprogramm. Lernen Sie die Grundlagen des
+                            Brazilian Jiu-Jitsu
+                            in einer sicheren, unterstützenden Umgebung, die speziell für komplette Anfänger entwickelt
+                            wurde.
                         </p>
                         <ul class="text-gray-400 space-y-2">
-                            <li>• Basic positions and movements</li>
-                            <li>• Self-defense techniques</li>
-                            <li>• BJJ philosophy and etiquette</li>
-                            <li>• Gradual skill progression</li>
+                            <li>• Grundlegende Positionen und Bewegungen</li>
+                            <li>• Selbstverteidigungstechniken</li>
+                            <li>• BJJ-Philosophie und Etikette</li>
+                            <li>• Schrittweiser Fertigkeitsaufbau</li>
                         </ul>
                     </div>
 
                     <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-right">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Advanced Training</h3>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Fortgeschrittenes Training</h3>
                         <p class="text-gray-300 mb-6">
-                            Take your skills to the next level with advanced techniques, competition preparation,
-                            and specialized training programs for experienced practitioners.
+                            Bringen Sie Ihre Fähigkeiten auf die nächste Stufe mit fortgeschrittenen Techniken,
+                            Wettkampfvorbereitung
+                            und spezialisierten Trainingsprogrammen für erfahrene Praktizierende.
                         </p>
                         <ul class="text-gray-400 space-y-2">
-                            <li>• Competition preparation</li>
-                            <li>• Advanced guard systems</li>
-                            <li>• Submission chains</li>
-                            <li>• Wrestling integration</li>
+                            <li>• Wettkampfvorbereitung</li>
+                            <li>• Fortgeschrittene Guard-Systeme</li>
+                            <li>• Submission-Ketten</li>
+                            <li>• Wrestling-Integration</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="text-center scroll-animate fade-in-up">
-                    <h3 class="text-3xl font-bold text-white mb-6">Why Choose Evolve Grappling?</h3>
+                    <h3 class="text-3xl font-bold text-white mb-6">Warum Evolve Grappling wählen?</h3>
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="text-center scroll-animate fade-in-up delay-200">
                             <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-2xl">🥋</span>
                             </div>
-                            <h4 class="text-xl font-semibold text-white mb-2">Expert Instruction</h4>
-                            <p class="text-gray-400">Learn from certified black belt instructors with years of
-                                competition experience.</p>
+                            <h4 class="text-xl font-semibold text-white mb-2">Expertenlehre</h4>
+                            <p class="text-gray-400">Lernen Sie von zertifizierten Schwarzgurt-Lehrern mit jahrelanger
+                                Wettkampferfahrung.</p>
                         </div>
 
                         <div class="text-center scroll-animate fade-in-up delay-400">
                             <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-2xl">👥</span>
                             </div>
-                            <h4 class="text-xl font-semibold text-white mb-2">Supportive Community</h4>
-                            <p class="text-gray-400">Join a welcoming community of practitioners who support each
-                                other's growth.</p>
+                            <h4 class="text-xl font-semibold text-white mb-2">Unterstützende Gemeinschaft</h4>
+                            <p class="text-gray-400">Schließen Sie sich einer einladenden Gemeinschaft von
+                                Praktizierenden an, die sich
+                                gegenseitig beim Wachstum unterstützen.</p>
                         </div>
 
                         <div class="text-center scroll-animate fade-in-up delay-600">
                             <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span class="text-2xl">🏆</span>
                             </div>
-                            <h4 class="text-xl font-semibold text-white mb-2">Proven Results</h4>
-                            <p class="text-gray-400">Our students regularly compete and succeed at local and
-                                international levels.</p>
+                            <h4 class="text-xl font-semibold text-white mb-2">Bewährte Ergebnisse</h4>
+                            <p class="text-gray-400">Unsere Schüler nehmen regelmäßig an Wettkämpfen teil und sind
+                                erfolgreich auf lokaler und
+                                internationaler Ebene.</p>
                         </div>
                     </div>
                 </div>
 
-                <TrainingSchedule />
-                <TeamSection />
-                <ContactSection />
+                <div id="trainingsplan">
+                    <TrainingSchedule/>
+                </div>
+                <div id="team">
+                    <TeamSection/>
+                </div>
+                <div id="kontakt">
+                    <ContactSection/>
+                </div>
 
                 <div class="mt-20 scroll-animate scale-in">
                     <div class="flex justify-center">
@@ -126,13 +137,13 @@
     <footer class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
-            <p class="text-gray-400 mb-6">Transform your body, mind, and spirit through the art of Brazilian
+            <p class="text-gray-400 mb-6">Transformieren Sie Ihren Körper, Geist und Seele durch die Kunst des Brazilian
                 Jiu-Jitsu.</p>
             <div class="flex justify-center space-x-6 text-gray-400">
-                <a href="#" class="hover:text-white transition-colors">About</a>
-                <a href="#" class="hover:text-white transition-colors">Classes</a>
-                <a href="#" class="hover:text-white transition-colors">Schedule</a>
-                <a href="#" class="hover:text-white transition-colors">Contact</a>
+                <a href="#" class="hover:text-white transition-colors">Über uns</a>
+                <a href="#" class="hover:text-white transition-colors">Kurse</a>
+                <a href="#" class="hover:text-white transition-colors">Stundenplan</a>
+                <a href="#" class="hover:text-white transition-colors">Kontakt</a>
             </div>
         </div>
     </footer>
