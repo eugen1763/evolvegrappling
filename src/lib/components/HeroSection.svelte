@@ -33,7 +33,7 @@
     <!-- Hero Content -->
     <div class="relative z-10 flex items-center justify-center h-full">
         <img
-            src="logo_bad.jpg"
+            src="logo.png"
             alt="Evolve Grappling Logo"
             class="transition-all duration-300 ease-out max-w-xs md:max-w-md lg:max-w-lg animate-hero-logo"
             style="
