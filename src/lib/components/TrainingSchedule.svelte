@@ -11,11 +11,10 @@
                 <h4 class="text-xl font-semibold text-white mb-4">{day}</h4>
                 <div class="space-y-2 text-gray-300">
                     {#each schedule as session}
-                        <p class="flex items-center">
-                            <span class="w-32">{session.time} - {session.endTime}</span>
-                            <span class="mx-2">-</span>
-                            <span>{session.class}</span>
-                        </p>
+                        <div class="flex items-start text-nowrap flex-col">
+                            <div class="w-32">{session.time} - {session.endTime}</div>
+                            <div class="font-semibold">{session.class}</div>
+                        </div>
                     {/each}
                 </div>
             </div>
@@ -26,20 +25,28 @@
         <table class="w-full text-gray-300">
             <thead class="bg-gray-800">
                 <tr>
+                    <th class="px-4 py-3 text-left">Zeit</th>
                     {#each Object.keys(trainingSchedule) as day}
                         <th class="px-4 py-3 text-left">{day}</th>
                     {/each}
                 </tr>
             </thead>
             <tbody>
-                {#each Array(Math.max(...Object.values(trainingSchedule).map(s => s.length))) as _, i}
+                {#each Array.from(new Set(Object.values(trainingSchedule).flat().map(session => `${session.time} - ${session.endTime}`))).sort((a, b) => {
+                    // Extract start times from "HH:MM Uhr - HH:MM Uhr" format
+                    const timeA = a.split(' - ')[0].replace(' Uhr', '');
+                    const timeB = b.split(' - ')[0].replace(' Uhr', '');
+                    return timeA.localeCompare(timeB);
+                }) as timeSlot}
                     <tr class="border-b border-gray-700">
+                        <td class="px-4 py-3 font-medium">{timeSlot}</td>
                         {#each Object.values(trainingSchedule) as schedule}
                             <td class="px-4 py-3">
-                                {#if schedule[i]}
-                                    <div>{schedule[i].time} - {schedule[i].endTime} Uhr</div>
-                                    <div class="text-gray-400">{schedule[i].class}</div>
-                                {/if}
+                                {#each schedule as session}
+                                    {#if `${session.time} - ${session.endTime}` === timeSlot}
+                                        <div class="text-gray-400">{session.class}</div>
+                                    {/if}
+                                {/each}
                             </td>
                         {/each}
                     </tr>
