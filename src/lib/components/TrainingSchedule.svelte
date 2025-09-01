@@ -12,7 +12,7 @@
                 <div class="space-y-2 text-gray-300">
                     {#each schedule as session}
                         <p class="flex items-center">
-                            <span class="w-20">{session.time}</span>
+                            <span class="w-32">{session.time} - {session.endTime}</span>
                             <span class="mx-2">-</span>
                             <span>{session.class}</span>
                         </p>
@@ -37,7 +37,7 @@
                         {#each Object.values(trainingSchedule) as schedule}
                             <td class="px-4 py-3">
                                 {#if schedule[i]}
-                                    <div>{schedule[i].time}</div>
+                                    <div>{schedule[i].time} - {schedule[i].endTime} Uhr</div>
                                     <div class="text-gray-400">{schedule[i].class}</div>
                                 {/if}
                             </td>
