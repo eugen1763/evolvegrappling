@@ -8,16 +8,16 @@ export const teamMembers: TeamMember[] = [
     {
         name: "Max",
         image: "max.JPG",
-        description: "Inhaber und Head-coach"
+        description: "Inhaber und Head-coach (Black-belt)"
     },
     {
         name: "Marius",
         image: "marius.JPG",
-        description: "Inhaber"
+        description: "Inhaber (Blue-belt)"
     },
     {
         name: "Thiemo",
         image: "thiemo.JPG",
-        description: "Wrestling-coach"
+        description: "Wrestling-coach (Black-belt)"
     }
 ];
