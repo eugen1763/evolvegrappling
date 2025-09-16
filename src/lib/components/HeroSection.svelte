@@ -21,7 +21,7 @@
     <!-- Background Image with Parallax Effect -->
     <div
         class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('IMG_1268.JPEG'); transform: translateY({scrollY * 0.5}px);"
+        style="background-image: url('main_bg.jpg'); transform: translateY({scrollY * 0.5}px);"
     ></div>
 
     <!-- Overlay that appears on scroll -->

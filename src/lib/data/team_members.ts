@@ -6,18 +6,18 @@
 
 export const teamMembers: TeamMember[] = [
     {
-        name: "John Doe",
-        image: "https://placehold.co/200x200",
-        description: "Haupttrainer und Brazilian Jiu-Jitsu Schwarzgurt mit über 15 Jahren Erfahrung in Wettkampf und Lehre."
+        name: "Max",
+        image: "max.JPG",
+        description: "Inhaber und Head-coach"
     },
     {
-        name: "Jane Smith",
-        image: "https://placehold.co/200x200",
-        description: "Wettkampfteam-Trainerin und Braungurt, spezialisiert auf moderne Wettkampftechniken und -strategie."
+        name: "Marius",
+        image: "marius.JPG",
+        description: "Inhaber"
     },
     {
-        name: "Mike Johnson",
-        image: "https://placehold.co/200x200",
-        description: "Grundlagen-Lehrer und Lilágurt, fokussiert darauf, Anfängern beim Aufbau einer starken technischen Basis zu helfen."
+        name: "Thiemo",
+        image: "thiemo.JPG",
+        description: "Wrestling-coach"
     }
 ];

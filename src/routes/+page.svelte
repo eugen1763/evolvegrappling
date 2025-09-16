@@ -127,7 +127,7 @@
                     <ContactSection/>
                 </div>
 
-                <div class="mt-20 scroll-animate scale-in">
+                <div class="mt-20 scroll-animate scale-in hidden">
                     <div class="flex justify-center">
                         <iframe width="560" height="315"
                                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=nqUoKY12orvuIuaI"
