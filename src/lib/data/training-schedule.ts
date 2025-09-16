@@ -18,7 +18,7 @@ export const trainingSchedule: TrainingSchedule = {
         {time: "18:00 Uhr", endTime: "19:30 Uhr", class: "Wrestling for BJJ (No-Gi)"}
     ],
     Mittwoch: [
-        {time: "18:00 Uhr", endTime: "19:30 Uhr", class: "BJJ No-Gi"}
+        {time: "18:00 Uhr", endTime: "19:30 Uhr", class: "BJJ Gi"}
     ],
     Donnerstag: [
         {time: "17:00 Uhr", endTime: "18:30 Uhr", class: "BJJ No-Gi"}
