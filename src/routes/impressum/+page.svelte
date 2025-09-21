@@ -32,7 +32,7 @@
             <div>
               <h3 class="text-xl font-semibold text-white mb-2">Evolve Grappling</h3>
               <p>
-                Maximilian Galle<br>
+                Evolve Grappling Maximilian Galle und Marius Pichler GBR<br>
                 Talblick 5a<br>
                 42719 Solingen<br>
                 Deutschland
@@ -53,7 +53,7 @@
           <h2 class="text-2xl font-semibold text-white mb-6">Redaktionell verantwortlich</h2>
           <div class="text-gray-300">
             <p>
-              Maximilian Galle<br>
+              Evolve Grappling Maximilian Galle und Marius Pichler GBR<br>
               Talblick 5a<br>
               42719 Solingen<br>
               Deutschland
