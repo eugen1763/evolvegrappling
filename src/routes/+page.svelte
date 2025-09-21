@@ -44,25 +44,38 @@
     <HeroSection {scrollY} {innerHeight}/>
   </div>
 
-  <!-- Content Section -->
-  <section class="relative z-20 bg-gray-900 min-h-screen">
+  <!-- Main Content -->
+  <main class="relative z-20 bg-gray-900 min-h-screen">
     <div class="container mx-auto px-6 py-16">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
-          Evolve Grappling
-        </h2>
+      <article class="max-w-5xl mx-auto">
+        <h1 class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
+          Evolve Grappling - Brazilian Jiu-Jitsu & Grappling in Solingen
+        </h1>
         
         <div class="text-gray-300 text-center mb-12 scroll-animate fade-in-up delay-200">
-          Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im
+          Wir bei Evolve Grappling in Solingen haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im
           Gi und No-Gi sowie auf Ringen für Grappling spezialisiert.
-          Wir arbeiten an den Zielen und an dem Potenzial jedes einzelnen als
+          Als führende Kampfsportschule im Bergischen Land arbeiten wir an den Zielen und an dem Potenzial jedes einzelnen als
           starkes Team zusammen - egal ob Wettkämpfer oder Hobbyist,
-          Anfänger oder Fortgeschrittener Grappler.
+          Anfänger oder Fortgeschrittener Grappler. Unser modernes Training vereint traditionelle BJJ-Techniken mit modernen Grappling-Methoden.
         </div>
 
         <h2 class="text-2xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
-          Warum sollstest du Evolve Grappling wählen?
+          Warum solltest du Evolve Grappling in Solingen wählen?
         </h2>
+        
+        <!-- Navigation to sections -->
+        <nav class="hidden text-center mb-12 scroll-animate fade-in-up delay-100">
+          <div class="flex flex-wrap justify-center gap-4 text-blue-400">
+            <a href="#trainingsplan" class="hover:text-blue-300 underline">Trainingsplan</a>
+            <span class="text-gray-500">•</span>
+            <a href="#team" class="hover:text-blue-300 underline">Unser Team</a>
+            <span class="text-gray-500">•</span>
+            <a href="#preise" class="hover:text-blue-300 underline">Preise</a>
+            <span class="text-gray-500">•</span>
+            <a href="#kontakt" class="hover:text-blue-300 underline">Kontakt</a>
+          </div>
+        </nav>
         
         <div class="grid md:grid-cols-3 gap-12 mb-16">
           <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-left">
@@ -122,9 +135,9 @@
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
-      </div>
+      </article>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
