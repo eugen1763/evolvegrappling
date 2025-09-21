@@ -4,13 +4,13 @@
     // @ts-ignore
     import HeroSection from "$lib/components/HeroSection.svelte";
     // @ts-ignore
-    import TrainingSchedule from "$lib/components/TrainingSchedule.svelte";
-    // @ts-ignore
     import TeamSection from "$lib/components/TeamSection.svelte";
     // @ts-ignore
     import ContactSection from "$lib/components/ContactSection.svelte";
     // @ts-ignore
     import BurgerMenu from "$lib/components/BurgerMenu.svelte";
+    // @ts-ignore
+    import TrainingSchedule from "$lib/components/TrainingSchedule.svelte";
 
     let scrollY = $state(0);
     let innerHeight = $state(0);
@@ -35,121 +35,111 @@
 <svelte:window bind:scrollY bind:innerHeight/>
 
 <div class="relative overflow-x-hidden">
-    <!-- Burger Menu -->
-    <BurgerMenu />
-    
-    <div id="hero">
-        <HeroSection {scrollY} {innerHeight}/>
+  <!-- Burger Menu -->
+  <BurgerMenu/>
+
+  <div id="hero">
+    <HeroSection {scrollY} {innerHeight}/>
+  </div>
+
+  <!-- Content Section -->
+  <section class="relative z-20 bg-gray-900 min-h-screen">
+    <div class="container mx-auto px-6 py-16">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
+          Evolve Grappling
+        </h2>
+        
+        <div class="text-gray-300 text-center mb-12 scroll-animate fade-in-up delay-200">
+          Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im
+          Gi und No-Gi sowie auf Ringen für Grappling spezialisiert.
+          Wir arbeiten an den Zielen und an dem Potenzial jedes einzelnen als
+          starkes Team zusammen - egal ob Wettkämpfer oder Hobbyist,
+          Anfänger oder Fortgeschrittener Grappler.
+        </div>
+
+        <h2 class="text-2xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
+          Warum sollstest du Evolve Grappling wählen?
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-12 mb-16">
+          <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-left">
+            <h3 class="text-2xl font-semibold text-white mb-4">Trainerteam</h3>
+            <p class="text-gray-300">
+              Unsere Trainer sind langjährig im
+              BJJ, Grappling und Ringen erfahren
+              und weisen viele Jahre Erfahrung
+              als Trainer vor und bilden sich
+              stetig fort und weiter.
+            </p>
+          </div>
+
+          <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-right">
+            <h3 class="text-2xl font-semibold text-white mb-4">Team / Community</h3>
+            <p class="text-gray-300">
+              Wir sind ein buntgemischtes Team
+              aus verschiedenen Altersgruppen
+              (ab 16 Jahren) und Kulturen. Bei
+              uns ist jeder willkommen um
+              zusammen zu lernen und zu
+              wachsen.
+            </p>
+          </div>
+
+          <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-right">
+            <h3 class="text-2xl font-semibold text-white mb-4">Trainingsaufbau</h3>
+            <p class="text-gray-300">
+              Evolve Grappling bietet 7 Tage die Woche
+              die Möglichkeit zu trainieren. Neben
+              unseren Gruppentrainingseinheiten können
+              gemeinsam Insturctionals studiert werden
+              sowie freies Training und Open Mats.
+            </p>
+          </div>
+        </div>
+
+        <div id="trainingsplan">
+          <TrainingSchedule/>
+        </div>
+        <div id="team">
+          <TeamSection/>
+        </div>
+        <div id="kontakt">
+          <ContactSection/>
+        </div>
+
+        <div class="mt-20 scroll-animate scale-in hidden">
+          <div class="flex justify-center">
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=nqUoKY12orvuIuaI"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Content Section -->
-    <section class="relative z-20 bg-gray-900 min-h-screen">
-        <div class="container mx-auto px-6 py-16">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
-                    Meistern Sie die Kunst des Brazilian Jiu-Jitsu
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-12 mb-16">
-                    <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-left">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Für Anfänger</h3>
-                        <p class="text-gray-300 mb-6">
-                            Beginnen Sie Ihre Reise mit unserem Grundlagenprogramm. Lernen Sie die Grundlagen des
-                            Brazilian Jiu-Jitsu
-                            in einer sicheren, unterstützenden Umgebung, die speziell für komplette Anfänger entwickelt
-                            wurde.
-                        </p>
-                        <ul class="text-gray-400 space-y-2">
-                            <li>• Grundlegende Positionen und Bewegungen</li>
-                            <li>• Selbstverteidigungstechniken</li>
-                            <li>• BJJ-Philosophie und Etikette</li>
-                            <li>• Schrittweiser Fertigkeitsaufbau</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-right">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Fortgeschrittenes Training</h3>
-                        <p class="text-gray-300 mb-6">
-                            Bringen Sie Ihre Fähigkeiten auf die nächste Stufe mit fortgeschrittenen Techniken,
-                            Wettkampfvorbereitung
-                            und spezialisierten Trainingsprogrammen für erfahrene Praktizierende.
-                        </p>
-                        <ul class="text-gray-400 space-y-2">
-                            <li>• Wettkampfvorbereitung</li>
-                            <li>• Fortgeschrittene Guard-Systeme</li>
-                            <li>• Submission-Ketten</li>
-                            <li>• Wrestling-Integration</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="text-center scroll-animate fade-in-up">
-                    <h3 class="text-3xl font-bold text-white mb-6">Warum Evolve Grappling wählen?</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center scroll-animate fade-in-up delay-200">
-                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">🥋</span>
-                            </div>
-                            <h4 class="text-xl font-semibold text-white mb-2">Expertenlehre</h4>
-                            <p class="text-gray-400">Lernen Sie von zertifizierten Schwarzgurt-Lehrern mit jahrelanger
-                                Wettkampferfahrung.</p>
-                        </div>
-
-                        <div class="text-center scroll-animate fade-in-up delay-400">
-                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">👥</span>
-                            </div>
-                            <h4 class="text-xl font-semibold text-white mb-2">Unterstützende Gemeinschaft</h4>
-                            <p class="text-gray-400">Schließen Sie sich einer einladenden Gemeinschaft von
-                                Praktizierenden an, die sich
-                                gegenseitig beim Wachstum unterstützen.</p>
-                        </div>
-
-                        <div class="text-center scroll-animate fade-in-up delay-600">
-                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl">🏆</span>
-                            </div>
-                            <h4 class="text-xl font-semibold text-white mb-2">Bewährte Ergebnisse</h4>
-                            <p class="text-gray-400">Unsere Schüler nehmen regelmäßig an Wettkämpfen teil und sind
-                                erfolgreich auf lokaler und
-                                internationaler Ebene.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="trainingsplan">
-                    <TrainingSchedule/>
-                </div>
-                <div id="team">
-                    <TeamSection/>
-                </div>
-                <div id="kontakt">
-                    <ContactSection/>
-                </div>
-
-                <div class="mt-20 scroll-animate scale-in hidden">
-                    <div class="flex justify-center">
-                        <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=nqUoKY12orvuIuaI"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
+      <div class="flex justify-center items-center space-x-6 text-gray-400">
+        <div class="flex flex-col items-start space-x-6">
+          <a href="#" class="hover:text-white transition-colors underline">Impressum</a>
+          <a href="#" class="hover:text-white transition-colors underline">Datenschutz</a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
-            <div class="flex justify-center space-x-6 text-gray-400">
-                <a href="#" class="hover:text-white transition-colors">Impressum</a>
-                <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
-            </div>
+        <div class="h-8 w-px bg-gray-600"></div>
+        <div class="text-left">
+          <p class="text-sm">
+            Talblick 5a<br>
+            42719 Solingen
+          </p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 </div>
 
 <style>

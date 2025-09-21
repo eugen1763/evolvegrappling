@@ -1,4 +1,7 @@
-﻿<div class="mt-20 scroll-animate fade-in-up">
+﻿<script>
+</script>
+
+<div class="mt-20 scroll-animate fade-in-up">
     <h3 class="text-3xl font-bold text-white mb-12 text-center">Kontakt</h3>
     <div class="grid md:grid-cols-3 gap-8">
         <div class="text-center scroll-animate slide-in-left delay-200">
@@ -14,7 +17,9 @@
                 <span class="text-2xl">✉️</span>
             </div>
             <h4 class="text-xl font-semibold text-white mb-2">Email</h4>
-            <p class="text-gray-400">info@evolvegrappling.com</p>
+            <a href="mailto:info@evolvegrappling.com" 
+               class="text-gray-400 underline"
+            >info@evolvegrappling.com</a>
         </div>
 
         <div class="text-center scroll-animate slide-in-right delay-600">
@@ -22,7 +27,10 @@
                 <span class="text-2xl">📱</span>
             </div>
             <h4 class="text-xl font-semibold text-white mb-2">Instagram</h4>
-            <p class="text-gray-400">@evolve_grappling</p>
+            <a href="https://www.instagram.com/evolve_grappling/" 
+               class="text-gray-400 underline"
+               target="_blank"
+            >@evolve_grappling</a>
         </div>
     </div>
 </div>
