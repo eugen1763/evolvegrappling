@@ -1,5 +1,8 @@
 ﻿
 <script lang="ts">
+    import { page } from '$app/stores';
+    import { goto } from '$app/navigation';
+    
     let isOpen = $state(false);
 
     function toggleMenu() {
@@ -11,12 +14,21 @@
     }
 
     function scrollToSection(sectionId: string) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
+        // Check if we're on the homepage
+        const currentPath = window.location.pathname;
+        
+        if (currentPath === '/') {
+            // We're on homepage, scroll directly to section
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            // We're on another page, navigate to homepage with anchor
+            goto(`/#${sectionId}`);
         }
         closeMenu();
     }

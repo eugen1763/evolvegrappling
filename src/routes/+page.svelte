@@ -132,7 +132,7 @@
       <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
       <div class="flex justify-center items-center space-x-6 text-gray-400">
         <div class="flex flex-col items-start space-x-6">
-          <a href="#" class="hover:text-white transition-colors underline">Impressum</a>
+          <a href="impressum" class="hover:text-white transition-colors underline">Impressum</a>
           <a href="#" class="hover:text-white transition-colors underline">Datenschutz</a>
         </div>
         <div class="h-8 w-px bg-gray-600"></div>
