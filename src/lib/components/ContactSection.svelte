@@ -17,9 +17,9 @@
                 <span class="text-2xl">✉️</span>
             </div>
             <h4 class="text-xl font-semibold text-white mb-2">Email</h4>
-            <a href="mailto:info@evolvegrappling.com" 
+            <a href="mailto:info@evolvegrappling.de" 
                class="text-gray-400 underline"
-            >info@evolvegrappling.com</a>
+            >info@evolvegrappling.de</a>
         </div>
 
         <div class="text-center scroll-animate slide-in-right delay-600">
