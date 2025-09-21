@@ -8,6 +8,8 @@
     // @ts-ignore
     import ContactSection from "$lib/components/ContactSection.svelte";
     // @ts-ignore
+    import PriceSection from "$lib/components/PriceSection.svelte";
+    // @ts-ignore
     import BurgerMenu from "$lib/components/BurgerMenu.svelte";
     // @ts-ignore
     import TrainingSchedule from "$lib/components/TrainingSchedule.svelte";
@@ -103,6 +105,9 @@
         </div>
         <div id="team">
           <TeamSection/>
+        </div>
+        <div id="preise">
+          <PriceSection/>
         </div>
         <div id="kontakt">
           <ContactSection/>

@@ -90,6 +90,14 @@
             </li>
             <li>
                 <button 
+                    onclick={() => scrollToSection('preise')}
+                    class="block w-full text-left text-white hover:text-blue-400 text-lg font-medium py-3 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200"
+                >
+                    💰 Preise
+                </button>
+            </li>
+            <li>
+                <button 
                     onclick={() => scrollToSection('kontakt')}
                     class="block w-full text-left text-white hover:text-blue-400 text-lg font-medium py-3 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200"
                 >
