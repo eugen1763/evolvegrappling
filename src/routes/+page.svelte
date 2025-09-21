@@ -49,15 +49,15 @@
     <div class="container mx-auto px-6 py-16">
       <article class="max-w-5xl mx-auto">
         <h1 class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
-          Evolve Grappling - Brazilian Jiu-Jitsu & Grappling in Solingen
+          Evolve Grappling
         </h1>
         
         <div class="text-gray-300 text-center mb-12 scroll-animate fade-in-up delay-200">
-          Wir bei Evolve Grappling in Solingen haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im
+          Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im
           Gi und No-Gi sowie auf Ringen für Grappling spezialisiert.
-          Als führende Kampfsportschule im Bergischen Land arbeiten wir an den Zielen und an dem Potenzial jedes einzelnen als
+          Wir arbeiten an den Zielen und an dem Potenzial jedes einzelnen als
           starkes Team zusammen - egal ob Wettkämpfer oder Hobbyist,
-          Anfänger oder Fortgeschrittener Grappler. Unser modernes Training vereint traditionelle BJJ-Techniken mit modernen Grappling-Methoden.
+          Anfänger oder Fortgeschrittener Grappler.
         </div>
 
         <h2 class="text-2xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">

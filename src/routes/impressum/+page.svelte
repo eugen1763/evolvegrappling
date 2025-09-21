@@ -43,7 +43,7 @@
               <h3 class="text-xl font-semibold text-white mb-2">Kontakt</h3>
               <p>
                 Telefon: +49 (0) 1573 5412788<br>
-                E-Mail: info@evolve-grappling.de
+                E-Mail: info@evolvegrappling.de
               </p>
             </div>
           </div>

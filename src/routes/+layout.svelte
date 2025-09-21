@@ -58,7 +58,7 @@
     <meta name="keywords" content={pageKeywords} />
     <meta name="author" content="Evolve Grappling Solingen" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://evolve-grappling.de{page.url.pathname}" />
+    <link rel="canonical" href="https://evolvegrappling.de{page.url.pathname}" />
     
     <!-- Favicon -->
     <link rel="icon" href={favicon}/>
@@ -67,10 +67,10 @@
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://evolve-grappling.de{page.url.pathname}" />
+    <meta property="og:url" content="https://evolvegrappling.de{page.url.pathname}" />
     <meta property="og:site_name" content="Evolve Grappling Solingen" />
     <meta property="og:locale" content="de_DE" />
-    <meta property="og:image" content="https://evolve-grappling.de/og-image.jpg" />
+    <meta property="og:image" content="https://evolvegrappling.de/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Evolve Grappling Solingen - Brazilian Jiu-Jitsu Training" />
@@ -79,7 +79,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
-    <meta name="twitter:image" content="https://evolve-grappling.de/og-image.jpg" />
+    <meta name="twitter:image" content="https://evolvegrappling.de/og-image.jpg" />
     <meta name="twitter:image:alt" content="Evolve Grappling Solingen - Brazilian Jiu-Jitsu Training" />
     
     <!-- Local Business Structured Data -->
@@ -90,9 +90,9 @@
         "@type": "SportsClub",
         "name": "Evolve Grappling",
         "description": "Brazilian Jiu-Jitsu und Grappling Training in Solingen",
-        "url": "https://evolve-grappling.de",
-        "logo": "https://evolve-grappling.de/logo.png",
-        "image": "https://evolve-grappling.de/og-image.jpg",
+        "url": "https://evolvegrappling.de",
+        "logo": "https://evolvegrappling.de/logo.png",
+        "image": "https://evolvegrappling.de/og-image.jpg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Talblick 5a",
@@ -103,7 +103,7 @@
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+49-1573-5412788",
-            "email": "info@evolve-grappling.de",
+            "email": "info@evolvegrappling.de",
             "contactType": "customer service"
         },
         "geo": {
