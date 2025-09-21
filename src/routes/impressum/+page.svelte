@@ -32,7 +32,7 @@
             <div>
               <h3 class="text-xl font-semibold text-white mb-2">Evolve Grappling</h3>
               <p>
-                Max Mustermann<br>
+                Maximilian Galle<br>
                 Talblick 5a<br>
                 42719 Solingen<br>
                 Deutschland
@@ -42,20 +42,10 @@
             <div>
               <h3 class="text-xl font-semibold text-white mb-2">Kontakt</h3>
               <p>
-                Telefon: +49 (0) 123 456789<br>
+                Telefon: +49 (0) 1573 5412788<br>
                 E-Mail: info@evolve-grappling.de
               </p>
             </div>
-          </div>
-        </div>
-
-        <div class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-400">
-          <h2 class="text-2xl font-semibold text-white mb-6">Umsatzsteuer-ID</h2>
-          <div class="text-gray-300">
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
-              DE123456789
-            </p>
           </div>
         </div>
 
@@ -63,7 +53,7 @@
           <h2 class="text-2xl font-semibold text-white mb-6">Redaktionell verantwortlich</h2>
           <div class="text-gray-300">
             <p>
-              Max Mustermann<br>
+              Maximilian Galle<br>
               Talblick 5a<br>
               42719 Solingen<br>
               Deutschland
@@ -124,7 +114,7 @@
       <div class="flex justify-center items-center space-x-6 text-gray-400">
         <div class="flex flex-col items-start space-x-6">
           <a href="/" class="hover:text-white transition-colors underline">Startseite</a>
-          <a href="#" class="hover:text-white transition-colors underline">Datenschutz</a>
+          <a href="/datenschutz" class="hover:text-white transition-colors underline">Datenschutz</a>
         </div>
         <div class="h-8 w-px bg-gray-600"></div>
         <div class="text-left">
