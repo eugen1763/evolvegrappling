@@ -81,11 +81,9 @@
           <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-left">
             <h3 class="text-2xl font-semibold text-white mb-4">Trainerteam</h3>
             <p class="text-gray-300">
-              Unsere Trainer sind langjährig im
-              BJJ, Grappling und Ringen erfahren
-              und weisen viele Jahre Erfahrung
-              als Trainer vor und bilden sich
-              stetig fort und weiter.
+              Unsere Trainer verfügen über langjährige Erfahrung im BJJ, Grappling und Ringen. 
+              Sie blicken auf viele Jahre erfolgreicher Trainertätigkeit zurück und bilden 
+              sich kontinuierlich fort, um ihr Wissen und ihre Methoden stets auf dem neuesten Stand zu halten.
             </p>
           </div>
 
