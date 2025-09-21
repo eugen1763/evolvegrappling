@@ -2,22 +2,26 @@
     name: string;
     image: string;
     description: string;
+    rank: string;
 }
 
 export const teamMembers: TeamMember[] = [
     {
-        name: "Max",
+        name: "Maximilian Galle",
         image: "max.JPG",
-        description: "Inhaber und Head-coach (BJJ Black-belt)"
+        description: "Inhaber und Head-coach",
+        rank: "BJJ Black Belt",
     },
     {
-        name: "Marius",
+        name: "Marius Pichler",
         image: "marius.JPG",
-        description: "Inhaber (BJJ Blue-belt)"
+        description: "Inhaber",
+        rank: "BJJ Blue Belt"
     },
     {
-        name: "Thiemo",
+        name: "Thiemo Königs",
         image: "thiemo.JPG",
-        description: "Wrestling-coach (BJJ Black-belt)"
+        description: "Wrestling und BJJ Coach",
+        rank: "BJJ Black Belt"
     }
 ];
