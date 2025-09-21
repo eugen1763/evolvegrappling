@@ -53,11 +53,9 @@
         </h1>
         
         <div class="text-gray-300 text-center mb-12 scroll-animate fade-in-up delay-200">
-          Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im
-          Gi und No-Gi sowie auf Ringen für Grappling spezialisiert.
-          Wir arbeiten an den Zielen und an dem Potenzial jedes einzelnen als
-          starkes Team zusammen - egal ob Wettkämpfer oder Hobbyist,
-          Anfänger oder Fortgeschrittener Grappler.
+          Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im Gi und No-Gi sowie auf
+          Ringen für Grappling spezialisiert. Wir arbeiten an den Zielen und am Potenzial jedes Einzelnen als
+          starkes Team zusammen – egal ob Wettkämpfer oder Hobbyist, Anfänger oder fortgeschrittener Grappler.
         </div>
 
         <h2 class="text-2xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
@@ -93,7 +91,7 @@
               Wir sind ein buntgemischtes Team
               aus verschiedenen Altersgruppen
               (ab 16 Jahren) und Kulturen. Bei
-              uns ist jeder willkommen um
+              uns ist jeder willkommen, um
               zusammen zu lernen und zu
               wachsen.
             </p>
@@ -102,11 +100,9 @@
           <div class="bg-gray-800 rounded-lg p-8 scroll-animate slide-in-right">
             <h3 class="text-2xl font-semibold text-white mb-4">Trainingsaufbau</h3>
             <p class="text-gray-300">
-              Evolve Grappling bietet 7 Tage die Woche
-              die Möglichkeit zu trainieren. Neben
-              unseren Gruppentrainingseinheiten können
-              gemeinsam Insturctionals studiert werden
-              sowie freies Training und Open Mats.
+              Evolve Grappling bietet an sieben Tagen in der Woche die Möglichkeit zu trainieren. 
+              Neben unseren Gruppentrainingseinheiten können gemeinsam Instructionals 
+              studiert werden sowie freies Training und Open Mats stattfinden.
             </p>
           </div>
         </div>
