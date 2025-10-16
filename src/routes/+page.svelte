@@ -1,21 +1,16 @@
 <script lang="ts">
-    import {onMount} from 'svelte';
+    import {onDestroy, onMount} from 'svelte';
     import {initScrollAnimations} from "$lib/utils/scroll_animations";
-    // @ts-ignore
     import HeroSection from "$lib/components/HeroSection.svelte";
-    // @ts-ignore
     import TeamSection from "$lib/components/TeamSection.svelte";
-    // @ts-ignore
     import ContactSection from "$lib/components/ContactSection.svelte";
-    // @ts-ignore
     import PriceSection from "$lib/components/PriceSection.svelte";
-    // @ts-ignore
     import BurgerMenu from "$lib/components/BurgerMenu.svelte";
-    // @ts-ignore
     import TrainingSchedule from "$lib/components/TrainingSchedule.svelte";
 
     let scrollY = $state(0);
     let innerHeight = $state(0);
+    let cleanup: () => void;
 
     onMount(() => {
         const updateScroll = () => {
@@ -25,13 +20,18 @@
         window.addEventListener('scroll', updateScroll);
         updateScroll();
 
-        const cleanupAnimations = initScrollAnimations();
+        cleanup = initScrollAnimations();
 
         return () => {
             window.removeEventListener('scroll', updateScroll);
-            cleanupAnimations();
         };
     });
+    
+    onDestroy(() => {
+        if (cleanup) {
+            cleanup();
+        }
+    })
 </script>
 
 <svelte:window bind:scrollY bind:innerHeight/>
