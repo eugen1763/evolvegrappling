@@ -18,6 +18,8 @@
                 return 'Impressum - Evolve Grappling Solingen';
             case '/datenschutz':
                 return 'Datenschutz - Evolve Grappling Solingen';
+            case '/links':
+                return 'Links - Evolve Grappling Solingen';
             default:
                 return 'Evolve Grappling Solingen - Brazilian Jiu-Jitsu & Grappling';
         }
@@ -31,6 +33,8 @@
                 return 'Impressum und Kontaktdaten von Evolve Grappling Solingen. Maximilian Galle, Talblick 5a, 42719 Solingen.';
             case '/datenschutz':
                 return 'Datenschutzerklärung von Evolve Grappling Solingen gemäß DSGVO.';
+            case '/links':
+                return 'Alle wichtigen Links zu Evolve Grappling Solingen: Website, Instagram, WhatsApp Kontakt und E-Mail. Folge uns auf Social Media und tritt unserer Community bei.';
             default:
                 return 'Evolve Grappling Solingen: Brazilian Jiu-Jitsu, BJJ und Grappling Training für alle Levels.';
         }
@@ -45,6 +49,8 @@
                 return baseKeywords + ', Impressum, Kontakt, Maximilian Galle';
             case '/datenschutz':
                 return baseKeywords + ', Datenschutz, DSGVO, Privatsphäre';
+            case '/links':
+                return baseKeywords + ', Social Media, Instagram, WhatsApp, Kontakt, Links, Community, Linktree';
             default:
                 return baseKeywords;
         }
