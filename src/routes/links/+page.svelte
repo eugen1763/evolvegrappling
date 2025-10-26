@@ -75,22 +75,22 @@
                     href={link.url} 
                     target={link.target}
                     rel={link.target === '_blank' ? 'noopener noreferrer' : ''}
-                    class="block w-full p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 group"
+                    class="block w-full p-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 group"
                 >
                     <div class="flex items-center space-x-4">
                         <div class="flex-shrink-0">
                             <span class="text-2xl">{link.icon}</span>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <div class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                            <div class="text-lg font-semibold transition-colors">
                                 {link.title}
                             </div>
-                            <div class="text-sm text-gray-500 truncate">
+                            <div class="text-sm text-gray-300 truncate">
                                 {link.description}
                             </div>
                         </div>
                         <div class="flex-shrink-0">
-                            <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-gray-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                             </svg>
                         </div>
