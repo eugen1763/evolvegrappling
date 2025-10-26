@@ -109,6 +109,7 @@
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade" 
                     style="border: 0px; width: 100%; height: 450px;"
+                    title="Google Maps"
                 ></iframe>
             </div>
             <!-- Get Directions Button -->

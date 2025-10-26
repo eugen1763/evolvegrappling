@@ -141,6 +141,7 @@
         <div class="flex flex-col items-start space-x-6">
           <a href="/impressum" class="hover:text-white transition-colors underline">Impressum</a>
           <a href="/datenschutz" class="hover:text-white transition-colors underline">Datenschutz</a>
+          <a href="/links" class="hover:text-white transition-colors underline">Links</a>
         </div>
         <div class="h-8 w-px bg-gray-600"></div>
         <div class="text-left">
