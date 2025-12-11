@@ -24,12 +24,12 @@
 	</div>
 	<!-- Desktop View -->
 	<div class="scroll-animate slide-in-up hidden overflow-x-auto md:block">
-		<table class="w-full text-gray-300">
+		<table class="w-full table-fixed text-gray-300">
 			<thead class="bg-gray-800">
 				<tr>
-					<th class="px-4 py-3 text-left">Zeit</th>
+					<th class="w-1/8 px-4 py-3 text-left">Zeit</th>
 					{#each Object.keys(trainingSchedule) as day}
-						<th class="px-4 py-3 text-left">{day}</th>
+						<th class="w-1/8 px-4 py-3 text-left">{day}</th>
 					{/each}
 				</tr>
 			</thead>
