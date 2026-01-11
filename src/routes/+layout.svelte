@@ -95,7 +95,7 @@
         "@context": "https://schema.org",
         "@type": "SportsClub",
         "name": "Evolve Grappling",
-        "description": "Brazilian Jiu-Jitsu und Grappling Training in Solingen",
+        "description": "Kampfsport, Brazilian Jiu-Jitsu und Grappling Training in Solingen",
         "url": "https://evolvegrappling.de",
         "logo": "https://evolvegrappling.de/logo.png",
         "image": "https://evolvegrappling.de/og-image.jpg",
@@ -124,7 +124,7 @@
                 "description": "7 Tage die Woche Training möglich"
             }
         ],
-        "sport": ["Brazilian Jiu-Jitsu", "Grappling", "Wrestling"],
+        "sport": ["Kampfsport", "Brazilian Jiu-Jitsu", "Grappling", "Wrestling"],
         "areaServed": {
             "@type": "Place",
             "name": "Solingen, Deutschland"
