@@ -1,24 +1,33 @@
-﻿export function initScrollAnimations() {
-    // Intersection Observer for scroll animations
+﻿let observer: IntersectionObserver;
+
+function getObserver() {
+    if (observer) return observer;
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all elements with the scroll-animate class
-    const animateElements = document.querySelectorAll('.scroll-animate');
-    animateElements.forEach(el => observer.observe(el));
+    return observer;
+}
 
-    return () => {
-        observer.disconnect();
+export function scrollAnimate(node: HTMLElement) {
+    getObserver().observe(node);
+
+    return {
+        destroy() {
+            if (observer) {
+                observer.unobserve(node);
+            }
+        }
     };
 }

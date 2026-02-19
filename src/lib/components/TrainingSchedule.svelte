@@ -1,14 +1,15 @@
 ﻿<script lang="ts">
 	import { trainingSchedule } from '$lib/data/training-schedule';
+	import { scrollAnimate } from '$lib/utils/scroll_animations';
 </script>
 
-<div class="scroll-animate fade-in-up mt-20 mb-20">
+<div use:scrollAnimate class="scroll-animate fade-in-up mt-20 mb-20">
 	<h3 class="mb-12 text-center text-3xl font-bold text-white">Wöchentlicher Trainingsplan</h3>
 	<!-- Mobile View -->
 	<div class="grid grid-cols-1 gap-4 md:hidden">
 		{#each Object.entries(trainingSchedule) as [day, schedule], i}
 			{#if schedule.length > 0}
-				<div class="scroll-animate slide-in-left rounded-lg bg-gray-800 p-4 delay-{i * 100}">
+				<div use:scrollAnimate class="scroll-animate slide-in-left rounded-lg bg-gray-800 p-4 delay-{i * 100}">
 					<h4 class="mb-4 text-xl font-semibold text-white">{day}</h4>
 					<div class="space-y-2 text-gray-300">
 						{#each schedule as session}
@@ -23,7 +24,7 @@
 		{/each}
 	</div>
 	<!-- Desktop View -->
-	<div class="scroll-animate slide-in-up hidden overflow-x-auto md:block">
+	<div use:scrollAnimate class="scroll-animate slide-in-up hidden overflow-x-auto md:block">
 		<table class="w-full table-fixed text-gray-300">
 			<thead class="bg-gray-800">
 				<tr>

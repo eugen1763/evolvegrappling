@@ -1,5 +1,6 @@
 ﻿<script>
   import {onMount} from "svelte";
+  import { scrollAnimate } from '$lib/utils/scroll_animations';
 
   onMount(() => {
       const FRAME_ORIGIN = 'https://evolve-grappling.omoplata.de';
@@ -41,7 +42,7 @@
   })
 </script>
 
-<div class="mt-20 scroll-animate fade-in-up">
+<div use:scrollAnimate class="mt-20 scroll-animate fade-in-up">
   <h3 class="text-3xl font-bold text-white mb-12 text-center">Kontakt und Probetraining</h3>
   <div class="bg-gray-800 rounded-lg px-12 pb-8 mb-12">
     <iframe id="omoplata-trial"
@@ -52,7 +53,7 @@
     ></iframe>
   </div>
   <div class="grid md:grid-cols-3 gap-8">
-    <div class="text-center scroll-animate slide-in-left delay-200">
+    <div use:scrollAnimate class="text-center scroll-animate slide-in-left delay-200">
       <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
         <span class="text-2xl">📞</span>
       </div>
@@ -60,7 +61,7 @@
       <p class="text-gray-400">+49 1573 5412788</p>
     </div>
 
-    <div class="text-center scroll-animate fade-in-up delay-400">
+    <div use:scrollAnimate class="text-center scroll-animate fade-in-up delay-400">
       <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
         <span class="text-2xl">✉️</span>
       </div>
@@ -70,7 +71,7 @@
       >info@evolvegrappling.de</a>
     </div>
 
-    <div class="text-center scroll-animate slide-in-right delay-600">
+    <div use:scrollAnimate class="text-center scroll-animate slide-in-right delay-600">
       <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
         <span class="text-2xl">📱</span>
       </div>

@@ -1,16 +1,7 @@
 ﻿<script lang="ts">
-    import { onMount } from 'svelte';
-    import { initScrollAnimations } from "$lib/utils/scroll_animations";
+    import { scrollAnimate } from "$lib/utils/scroll_animations";
     // @ts-ignore
     import BurgerMenu from "$lib/components/BurgerMenu.svelte";
-
-    onMount(() => {
-        const cleanupAnimations = initScrollAnimations();
-
-        return () => {
-            cleanupAnimations();
-        };
-    });
 </script>
 
 <div class="relative overflow-x-hidden">
@@ -21,11 +12,11 @@
   <section class="relative z-20 bg-gray-900 min-h-screen pt-20">
     <div class="container mx-auto px-6 py-16">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
+        <h1 use:scrollAnimate class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
           Impressum
         </h1>
         
-        <div class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-200">
+        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-200">
           <h2 class="text-2xl font-semibold text-white mb-6">Angaben gemäß § 5 TMG</h2>
           
           <div class="text-gray-300 space-y-4">
@@ -49,7 +40,7 @@
           </div>
         </div>
 
-        <div class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-600">
+        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-600">
           <h2 class="text-2xl font-semibold text-white mb-6">Redaktionell verantwortlich</h2>
           <div class="text-gray-300">
             <p>
@@ -61,7 +52,7 @@
           </div>
         </div>
 
-        <div class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-800">
+        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-800">
           <h2 class="text-2xl font-semibold text-white mb-6">EU-Streitschlichtung</h2>
           <div class="text-gray-300">
             <p>
@@ -76,7 +67,7 @@
           </div>
         </div>
 
-        <div class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-1000">
+        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-1000">
           <h2 class="text-2xl font-semibold text-white mb-6">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
           <div class="text-gray-300">
             <p>
@@ -86,7 +77,7 @@
           </div>
         </div>
 
-        <div class="bg-gray-800 rounded-lg p-8 scroll-animate fade-in-up delay-1200">
+        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 scroll-animate fade-in-up delay-1200">
           <h2 class="text-2xl font-semibold text-white mb-6">Haftung für Inhalte</h2>
           <div class="text-gray-300 space-y-4">
             <p>
@@ -108,7 +99,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
+  <footer use:scrollAnimate class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
     <div class="container mx-auto px-6 text-center">
       <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
       <div class="flex justify-center items-center space-x-6 text-gray-400">
