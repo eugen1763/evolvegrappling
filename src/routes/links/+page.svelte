@@ -16,6 +16,13 @@
             target: "_blank"
         },
         {
+            title: "Google Rezension",
+            description: "Bewerte uns auf Google",
+            url: "https://share.google/vsIXZwHLH8eOWWSxh",
+            icon: "⭐",
+            target: "_blank"
+        },
+        {
             title: "Open Mat WhatsApp Gruppe",
             description: "Tritt unserer WhatsApp Gruppe bei",
             url: "https://chat.whatsapp.com/BXPwrIXlA9v1KmlKH4qXKP",
