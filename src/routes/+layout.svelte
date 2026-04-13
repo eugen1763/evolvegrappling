@@ -28,7 +28,7 @@
     function getPageDescription(routeId: string | null): string {
         switch (routeId) {
             case '/':
-                return 'Evolve Grappling in Solingen: Professionelles Brazilian Jiu-Jitsu (BJJ) Training im Gi und No-Gi sowie Ringen für Grappling. Für Anfänger und Fortgeschrittene, Wettkämpfer und Hobbysportler. 7 Tage die Woche Training möglich.';
+                return 'Evolve Grappling - BJJ / Kampfsport in Solingen Für Anfänger und Fortgeschrittene, Wettkämpfer und Hobbysportler. 7 Tage die Woche Training möglich.';
             case '/impressum':
                 return 'Impressum und Kontaktdaten von Evolve Grappling Solingen. Maximilian Galle, Talblick 5a, 42719 Solingen.';
             case '/datenschutz':
