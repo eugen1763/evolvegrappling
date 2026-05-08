@@ -17,11 +17,5 @@ export const teamMembers: TeamMember[] = [
         image: "marius.JPG",
         description: "Inhaber",
         rank: "BJJ Blue Belt"
-    },
-    {
-        name: "Thiemo Königs",
-        image: "thiemo.JPG",
-        description: "Wrestling und BJJ Coach",
-        rank: "BJJ Black Belt"
     }
 ];
