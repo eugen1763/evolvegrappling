@@ -7,7 +7,6 @@
 	import ContactSection from '$lib/components/ContactSection.svelte';
 	import PriceSection from '$lib/components/PriceSection.svelte';
 	import BurgerMenu from '$lib/components/BurgerMenu.svelte';
-	import FloatingCTAButton from '$lib/components/FloatingCTAButton.svelte';
 	import TrainingSchedule from '$lib/components/TrainingSchedule.svelte';
 
 	let scrollY = $state(0);
@@ -42,7 +41,6 @@
 
 <div class="relative overflow-x-hidden">
 	<BurgerMenu />
-	<FloatingCTAButton />
 
 	<div id="hero">
 		<HeroSection {scrollY} {innerHeight} />

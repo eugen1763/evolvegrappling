@@ -8,13 +8,13 @@
 export const teamMembers: TeamMember[] = [
     {
         name: "Maximilian Galle",
-        image: "max.JPG",
+        image: "optimized/max.webp",
         description: "Inhaber und Head-Coach",
         rank: "BJJ Black Belt",
     },
     {
         name: "Marius Pichler",
-        image: "marius.JPG",
+        image: "optimized/marius.webp",
         description: "Inhaber",
         rank: "BJJ Blue Belt"
     }

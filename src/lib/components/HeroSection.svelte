@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	const desktopImages: string[] = [
-		// We'll use a single striking hero image with duotone treatment
+	// Optimized hero images from static/optimized/
+	const heroImages = [
+		'/optimized/0E8A4818.webp',
+		'/optimized/0E8A6454.webp',
+		'/optimized/0E8A6503.webp',
+		'/optimized/0E8A7278.webp',
 	];
 
 	interface Props {
@@ -16,20 +20,7 @@
 	let textOffset = $derived(scrollY * 0.25);
 	let opacity = $derived(Math.max(1 - scrollY / (innerHeight * 0.7), 0));
 
-	let heroImage = $state('');
-
-	onMount(() => {
-		// Pick one desktop hero image for the editorial treatment
-		const modules = import.meta.glob('../assets/title_backgrounds/*.{jpg,jpeg,png,webp}', {
-			eager: true,
-			query: '?url',
-			import: 'default'
-		});
-		const images: string[] = Object.values(modules) as string[];
-		if (images.length > 0) {
-			heroImage = images[Math.floor(Math.random() * images.length)];
-		}
-	});
+	let heroImage = $state(heroImages[Math.floor(Math.random() * heroImages.length)]);
 </script>
 
 <section class="relative min-h-[100dvh] flex items-center overflow-hidden bg-charcoal">
