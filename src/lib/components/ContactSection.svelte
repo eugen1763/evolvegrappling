@@ -59,7 +59,7 @@
 		<!-- Right: content -->
 		<div class="space-y-12">
 			<!-- Trial form iframe -->
-			<div use:scrollReveal class="reveal reveal-up border border-brand-800 rounded-sm bg-brand-950/50">
+			<div use:scrollReveal class="reveal reveal-up border border-brand-800 bg-brand-950/50 p-4 md:p-6">
 				<iframe
 					id="omoplata-trial"
 					loading="lazy"

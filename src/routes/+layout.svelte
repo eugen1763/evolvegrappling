@@ -130,6 +130,12 @@
 
 <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
 
+<!-- Fixed brand mark — top left -->
+<a href="/" class="fixed top-6 left-6 z-50 flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-80" aria-label="Evolve Grappling Home">
+	<img src="/logo.svg" alt="" class="h-8 w-auto md:h-10" />
+	<span class="hidden text-sm font-bold tracking-tight text-white sm:inline">EVOLVE</span>
+</a>
+
 <div class="grain bg-charcoal">
 	{@render children?.()}
 </div>
