@@ -33,7 +33,7 @@
 			case '/datenschutz':
 				return 'Datenschutzerklarung von Evolve Grappling Solingen gemass DSGVO.';
 			case '/links':
-				return 'Alle wichtigen Links zu Evolve Grappling Solingen: Website, Instagram, WhatsApp Kontakt und E-Mail. Folge uns auf Social Media und tritt unserer Community bei.';
+				return 'Alle wichtigen Links zu Evolve Grappling Solingen: Website, Instagram, WhatsApp Kontakt und E-Mail.';
 			default:
 				return 'Evolve Grappling Solingen: Brazilian Jiu-Jitsu, BJJ und Grappling Training fur alle Levels.';
 		}
@@ -49,7 +49,7 @@
 			case '/datenschutz':
 				return baseKeywords + ', Datenschutz, DSGVO, Privatsphare';
 			case '/links':
-				return baseKeywords + ', Social Media, Instagram, WhatsApp, Kontakt, Links, Community, Linktree';
+				return baseKeywords + ', Social Media, Instagram, WhatsApp, Kontakt, Links, Community';
 			default:
 				return baseKeywords;
 		}
@@ -130,6 +130,12 @@
 
 <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
 
-<div class="grain bg-brand-950">
+<!-- Fixed brand mark — top left -->
+<a href="/" class="fixed top-6 left-6 z-50 flex items-center gap-2.5 transition-opacity duration-300 hover:opacity-80" aria-label="Evolve Grappling Home">
+	<img src="/logo.svg" alt="" class="h-8 w-auto md:h-10" />
+	<span class="hidden text-sm font-bold tracking-tight text-white sm:inline">EVOLVE</span>
+</a>
+
+<div class="grain bg-charcoal">
 	{@render children?.()}
 </div>

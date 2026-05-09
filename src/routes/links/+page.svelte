@@ -1,4 +1,4 @@
-﻿<script lang="ts">
+<script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
 
 	const links = [
@@ -59,14 +59,14 @@
 	<meta name="description" content="Alle wichtigen Links zu Evolve Grappling Solingen: Website, Instagram, WhatsApp und Kontakt" />
 </svelte:head>
 
-<div class="min-h-dvh bg-brand-950 px-4 py-12" id="main-content">
+<div class="min-h-dvh bg-charcoal px-4 py-12" id="main-content">
 	<div class="mx-auto max-w-md">
-		<div class="mb-8 text-center">
+		<div class="mb-10 text-center">
 			<div class="mx-auto mb-4 flex h-32 w-32 items-center justify-center">
 				<img
 					src="/logo.svg"
 					alt="Evolve Grappling Logo"
-					class="h-full w-full object-contain drop-shadow-lg"
+					class="h-full w-full object-contain"
 				/>
 			</div>
 			<h1 class="mb-2 text-2xl font-bold tracking-tight text-white">Evolve Grappling</h1>
@@ -75,22 +75,22 @@
 			</p>
 		</div>
 
-		<div class="space-y-3">
+		<div class="space-y-2.5">
 			{#each links as link}
 				<a
 					href={link.url}
 					target={link.target}
 					rel={link.target === '_blank' ? 'noopener noreferrer' : ''}
-					class="group flex w-full items-center gap-4 rounded-xl bg-brand-500 px-4 py-3.5 text-white shadow-lg shadow-brand-950/50 transition-all duration-200 hover:bg-brand-400 hover:shadow-brand-500/20 active:scale-[0.98]"
+					class="group flex w-full items-center gap-4 border border-brand-800 bg-brand-950/50 px-4 py-3.5 text-white transition-all duration-200 hover:border-accent-500/50 hover:bg-brand-900/50 active:scale-[0.98]"
 				>
 					<div class="flex-shrink-0">
-						<Icon name={link.icon} class="h-5 w-5" />
+						<Icon name={link.icon} class="h-5 w-5 text-brand-400 group-hover:text-accent-500 transition-colors" />
 					</div>
 					<div class="min-w-0 flex-1 text-left">
 						<div class="font-semibold">{link.title}</div>
-						<div class="truncate text-sm text-white/70">{link.description}</div>
+						<div class="truncate text-sm text-brand-400">{link.description}</div>
 					</div>
-					<div class="flex-shrink-0 text-white/50 transition-colors group-hover:text-white">
+					<div class="flex-shrink-0 text-brand-600 transition-colors group-hover:text-accent-500">
 						<Icon name="external-link" class="h-4 w-4" />
 					</div>
 				</a>
@@ -98,10 +98,10 @@
 		</div>
 
 		<div class="mb-8 mt-12">
-			<h2 class="mb-4 text-center text-xl font-bold tracking-tight text-white">Standort</h2>
-			<div class="overflow-hidden rounded-2xl shadow-lg">
+			<h2 class="mb-4 text-xl font-bold tracking-tight text-white">Standort</h2>
+			<div class="overflow-hidden border border-brand-800">
 				<iframe
-					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHEIamPaljiaFeIRJX0TknCEi84x47yfc&amp;center=51.1859878%2C7.0281498&amp;zoom=16&amp;q=place_id%3AChIJnWhxP0rTuEcRHi7GpIdZkLI"
+					src="https://www.google.com/maps/embed/v1/place?key=***&amp;center=51.1859878%2C7.0281498&amp;zoom=16&amp;q=place_id%3AChIJnWhxP0rTuEcRHi7GpIdZkLI"
 					allow="fullscreen"
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade"
@@ -109,11 +109,11 @@
 					title="Google Maps"
 				></iframe>
 			</div>
-			<div class="mt-3 text-center">
+			<div class="mt-3">
 				<a
 					target="_blank"
 					href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47b8d34a3f71689d:0xb2905987a4c62e1e?sa=X&amp;ved=1t:8290&amp;ictx=111"
-					class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-4 py-3.5 font-semibold text-white shadow-lg shadow-brand-950/50 transition-all duration-200 hover:bg-brand-400 active:scale-[0.98]"
+					class="inline-flex w-full items-center justify-center gap-2 bg-accent-500 px-4 py-3.5 font-semibold text-charcoal transition-all duration-200 hover:bg-accent-400 active:scale-[0.98]"
 				>
 					<Icon name="map-pin" class="h-5 w-5" />
 					Route anzeigen
@@ -122,14 +122,8 @@
 		</div>
 
 		<div class="mt-12 text-center text-sm text-brand-400">
-			<p>2024 Evolve Grappling Solingen</p>
-			<p class="mt-2">Brazilian Jiu-Jitsu · BJJ · Grappling</p>
+			<p>Evolve Grappling Solingen</p>
+			<p class="mt-1">Brazilian Jiu-Jitsu &middot; BJJ &middot; Grappling</p>
 		</div>
 	</div>
 </div>
-
-<style>
-	a:hover {
-		transform: translateY(-1px);
-	}
-</style>

@@ -1,19 +1,23 @@
 ﻿<script lang="ts">
-	import { scrollAnimate } from "$lib/utils/scroll_animations";
+	import { scrollReveal } from "$lib/utils/scroll_animations";
 	import BurgerMenu from "$lib/components/BurgerMenu.svelte";
 </script>
 
 <div class="relative overflow-x-hidden">
 	<BurgerMenu />
 
-	<main id="main-content" class="relative z-20 min-h-dvh bg-brand-950 pt-20">
-		<div class="container mx-auto px-6 py-16">
+	<main id="main-content" class="relative z-20 min-h-dvh bg-charcoal pt-20">
+		<div class="px-6 py-16 md:px-12 lg:px-20 xl:px-28">
 			<div class="mx-auto max-w-4xl">
-				<h1 use:scrollAnimate class="scroll-animate fade-in-up mb-8 text-center text-4xl font-bold tracking-tight text-white">
+				<div class="flex items-center gap-3 mb-8">
+					<div class="h-px w-8 bg-brand-500"></div>
+					<span class="text-xs font-semibold uppercase tracking-[0.25em] text-brand-400">Rechtliches</span>
+				</div>
+				<h1 use:scrollReveal class="scroll-animate fade-in-up mb-8 text-center text-4xl font-bold tracking-tight text-white">
 					Datenschutzerklarung
 				</h1>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-200">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-200">
 					<div class="space-y-4 text-brand-100">
 						<p>Wir freuen uns sehr uber Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert fur die Geschaftsleitung der Evolve Grappling Maximilian Galle und Marius Pichler GBR. Eine Nutzung der Internetseiten der Evolve Grappling Maximilian Galle und Marius Pichler GBR ist grundsatzlich ohne jede Angabe personenbezogener Daten moglich. Sofern eine betroffene Person besondere Services unseres Unternehmens uber unsere Internetseite in Anspruch nehmen mochte, konnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht fur eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.</p>
 
@@ -23,7 +27,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-400">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-400">
 					<h2 class="mb-6 text-2xl font-semibold text-white">1. Begriffsbestimmungen</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Die Datenschutzerklarung der Evolve Grappling Maximilian Galle und Marius Pichler GBR beruht auf den Begrifflichkeiten, die durch den Europaischen Richtlinien- und Verordnungsgeber beim Erlass der Datenschutz-Grundverordnung (DS-GVO) verwendet wurden. Unsere Datenschutzerklarung soll sowohl fur die Offentlichkeit als auch fur unsere Kunden und Geschaftspartner einfach lesbar und verstandlich sein. Um dies zu gewahrleisten, mochten wir vorab die verwendeten Begrifflichkeiten erlautern.</p>
@@ -79,7 +83,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-600">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-600">
 					<h2 class="mb-6 text-2xl font-semibold text-white">2. Name und Anschrift des fur die Verarbeitung Verantwortlichen</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung, sonstiger in den Mitgliedstaaten der Europaischen Union geltenden Datenschutzgesetze und anderer Bestimmungen mit datenschutzrechtlichem Charakter ist die:</p>
@@ -98,7 +102,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-800">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-800">
 					<h2 class="mb-6 text-2xl font-semibold text-white">3. Erfassung von allgemeinen Daten und Informationen</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Die Internetseite der Evolve Grappling Maximilian Galle und Marius Pichler GBR erfasst mit jedem Aufruf der Internetseite durch eine betroffene Person oder ein automatisiertes System eine Reihe von allgemeinen Daten und Informationen. Diese allgemeinen Daten und Informationen werden in den Logfiles des Servers gespeichert. Erfasst werden konnen die (1) verwendeten Browsertypen und Versionen, (2) das vom zugreifenden System verwendete Betriebssystem, (3) die Internetseite, von welcher ein zugreifendes System auf unsere Internetseite gelangt (sogenannte Referrer), (4) die Unterwebseiten, welche uber ein zugreifendes System auf unserer Internetseite angesteuert werden, (5) das Datum und die Uhrzeit eines Zugriffs auf die Internetseite, (6) eine Internet-Protokoll-Adresse (IP-Adresse), (7) der Internet-Service-Provider des zugreifenden Systems und (8) sonstige ahnliche Daten und Informationen, die der Gefahrenabwehr im Falle von Angriffen auf unsere informationstechnologischen Systeme dienen.</p>
@@ -107,7 +111,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-1000">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-1000">
 					<h2 class="mb-6 text-2xl font-semibold text-white">4. Routinemassige Loschung und Sperrung von personenbezogenen Daten</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Der fur die Verarbeitung Verantwortliche verarbeitet und speichert personenbezogene Daten der betroffenen Person nur fur den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist oder sofern dies durch den Europaischen Richtlinien- und Verordnungsgeber oder einen anderen Gesetzgeber in Gesetzen oder Vorschriften, welchen der fur die Verarbeitung Verantwortliche unterliegt, vorgesehen wurde.</p>
@@ -116,7 +120,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-1200">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-1200">
 					<h2 class="mb-6 text-2xl font-semibold text-white">5. Rechte der betroffenen Person</h2>
 					<div class="space-y-6 text-brand-100">
 						<div>
@@ -150,7 +154,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-1400">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-1400">
 					<h2 class="mb-6 text-2xl font-semibold text-white">6. Datenschutzbestimmungen zu Einsatz und Verwendung von Instagram</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Der fur die Verarbeitung Verantwortliche hat auf dieser Internetseite Komponenten des Dienstes Instagram integriert. Instagram ist ein Dienst, der als audiovisuelle Plattform zu qualifizieren ist und den Nutzern das Teilen von Fotos und Videos und zudem eine Weiterverbreitung solcher Daten in anderen sozialen Netzwerken ermoglicht.</p>
@@ -159,7 +163,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-1600">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-1600">
 					<h2 class="mb-6 text-2xl font-semibold text-white">7. Datenschutzbestimmungen zu Einsatz und Verwendung von YouTube</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Der fur die Verarbeitung Verantwortliche hat auf dieser Internetseite Komponenten von YouTube integriert. YouTube ist ein Internet-Videoportal, dass Video-Publishern das kostenlose Einstellen von Videoclips und anderen Nutzern die ebenfalls kostenfreie Betrachtung, Bewertung und Kommentierung dieser ermoglicht.</p>
@@ -168,7 +172,7 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-1800">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-1800">
 					<h2 class="mb-6 text-2xl font-semibold text-white">8. Rechtsgrundlage der Verarbeitung</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Art. 6 I lit. a DS-GVO dient unserem Unternehmen als Rechtsgrundlage fur Verarbeitungsvorgange, bei denen wir eine Einwilligung fur einen bestimmten Verarbeitungszweck einholen. Ist die Verarbeitung personenbezogener Daten zur Erfullung eines Vertrags, dessen Vertragspartei die betroffene Person ist, erforderlich, wie dies beispielsweise bei Verarbeitungsvorgangen der Fall ist, die fur eine Lieferung von Waren oder die Erbringung einer sonstigen Leistung oder Gegenleistung notwendig sind, so beruht die Verarbeitung auf Art. 6 I lit. b DS-GVO.</p>
@@ -176,28 +180,28 @@
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-2000">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-2000">
 					<h2 class="mb-6 text-2xl font-semibold text-white">9. Berechtigte Interessen an der Verarbeitung</h2>
 					<div class="text-brand-100">
 						<p>Basiert die Verarbeitung personenbezogener Daten auf Artikel 6 I lit. f DS-GVO ist unser berechtigtes Interesse die Durchfuhrung unserer Geschaftstatigkeit zugunsten des Wohlergehens all unserer Mitarbeiter und unserer Anteilseigner.</p>
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-2200">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-2200">
 					<h2 class="mb-6 text-2xl font-semibold text-white">10. Dauer, fur die die personenbezogenen Daten gespeichert werden</h2>
 					<div class="text-brand-100">
 						<p>Das Kriterium fur die Dauer der Speicherung von personenbezogenen Daten ist die jeweilige gesetzliche Aufbewahrungsfrist. Nach Ablauf der Frist werden die entsprechenden Daten routinemassig geloscht, sofern sie nicht mehr zur Vertragserfullung oder Vertragsanbahnung erforderlich sind.</p>
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-2400">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-2400">
 					<h2 class="mb-6 text-2xl font-semibold text-white">11. Gesetzliche oder vertragliche Vorschriften zur Bereitstellung der personenbezogenen Daten</h2>
 					<div class="text-brand-100">
 						<p>Wir klaren Sie daruber auf, dass die Bereitstellung personenbezogener Daten zum Teil gesetzlich vorgeschrieben ist (z.B. Steuervorschriften) oder sich auch aus vertraglichen Regelungen (z.B. Angaben zum Vertragspartner) ergeben kann. Mitunter kann es zu einem Vertragsschluss erforderlich sein, dass eine betroffene Person uns personenbezogene Daten zur Verfugung stellt, die in der Folge durch uns verarbeitet werden mussen.</p>
 					</div>
 				</div>
 
-				<div use:scrollAnimate class="scroll-animate fade-in-up mb-8 rounded-2xl border border-white/5 bg-brand-900/70 p-8 delay-2600">
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-2600">
 					<h2 class="mb-6 text-2xl font-semibold text-white">12. Bestehen einer automatisierten Entscheidungsfindung</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>Als verantwortungsbewusstes Unternehmen verzichten wir auf eine automatische Entscheidungsfindung oder ein Profiling.</p>
@@ -207,24 +211,39 @@
 						</p>
 					</div>
 				</div>
+
+					<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-2800">
+					<h2 class="mb-6 text-2xl font-semibold text-white">13. Eingesetzte Schriftarten (Webfonts)</h2>
+					<div class="space-y-4 text-brand-100">
+						<p>Diese Website verwendet die Schriftart &bdquo;Outfit&ldquo;, die lokal auf unserem Server gehostet wird. Es werden keine Schriftdateien von externen Servern (wie Google Fonts) nachgeladen. Es findet keine &Uuml;bermittlung von IP-Adressen oder anderen personenbezogenen Daten an Drittanbieter durch die Nutzung der Schriftarten statt.</p>
+					</div>
+				</div>
+
+				<div use:scrollReveal class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-3000">
+					<h2 class="mb-6 text-2xl font-semibold text-white">14. Omoplata &mdash; Terminbuchung f&uuml;r Probetraining</h2>
+					<div class="space-y-4 text-brand-100">
+						<p>Zur Vereinbarung eines kostenlosen Probetrainings setzen wir das Buchungstool Omoplata (omoplata.de) ein. Das Formular wird &uuml;ber einen eingebetteten Iframe von <code>evolve-grappling.omoplata.de</code> geladen. Bei Nutzung des Formulars werden die eingegebenen Daten (Vorname, Nachname, sowie die Auswahl ob das Training f&uuml;r einen selbst oder ein Kind gebucht wird) an Omoplata &uuml;bermittelt und dort verarbeitet. Die Daten werden ausschlie&szlig;lich zur Bearbeitung der Probetraining-Anfrage verwendet und nicht an weitere Dritte weitergegeben.</p>
+						<p>Betreiber von Omoplata: Omoplata GmbH. Weitere Informationen zur Datenverarbeitung durch Omoplata finden Sie in der Datenschutzerkl&auml;rung des Anbieters unter <a href="https://omoplata.de/datenschutz" target="_blank" class="text-accent-500 underline underline-offset-4 transition-colors hover:text-accent-400">omoplata.de/datenschutz</a>.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>
 
-	<footer use:scrollAnimate class="scroll-animate fade-in-up bg-brand-950 py-12 text-white">
-		<div class="container mx-auto px-6 text-center">
-			<h3 class="mb-4 text-2xl font-bold">Evolve Grappling</h3>
-			<div class="flex items-center justify-center space-x-6 text-brand-300">
-				<div class="flex flex-col items-start space-x-6">
-					<a href="/" class="underline underline-offset-4 transition-colors hover:text-white">Startseite</a>
-					<a href="/impressum" class="underline underline-offset-4 transition-colors hover:text-white">Impressum</a>
+	<footer use:scrollReveal class="scroll-animate fade-in-up bg-charcoal border-t border-brand-900 py-12">
+		<div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+			<div class="grid gap-8 md:grid-cols-[1fr_auto_auto]">
+				<div>
+					<h3 class="mb-2 text-xl font-bold tracking-tight text-white">Evolve Grappling</h3>
+					<p class="text-sm text-brand-400">Talblick 5a &middot; 42719 Solingen</p>
 				</div>
-				<div class="h-8 w-px bg-brand-800"></div>
-				<div class="text-left">
-					<p class="text-sm">
-						Talblick 5a<br>
-						42719 Solingen
-					</p>
+				<nav class="flex flex-col gap-2 text-sm">
+					<a href="/" class="text-brand-300 underline underline-offset-4 transition-colors hover:text-white">Startseite</a>
+					<a href="/impressum" class="text-brand-300 underline underline-offset-4 transition-colors hover:text-white">Impressum</a>
+				</nav>
+				<div class="text-sm text-brand-400">
+					<p class="tabular-nums">+49 1573 5412788</p>
+					<a href="mailto:info@evolvegrappling.de" class="underline underline-offset-4 transition-colors hover:text-white">info@evolvegrappling.de</a>
 				</div>
 			</div>
 		</div>

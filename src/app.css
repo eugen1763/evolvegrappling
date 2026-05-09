@@ -1,9 +1,17 @@
 @import 'tailwindcss';
+@import '@fontsource/outfit/300.css';
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
 @plugin '@tailwindcss/typography';
 @plugin 'tailwindcss-animate';
 
 @theme {
 	--font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+	/* Brand teal palette (atmospheric, backgrounds) */
 	--color-brand-50: #e8f1f3;
 	--color-brand-100: #c5dce2;
 	--color-brand-200: #9ec5cd;
@@ -15,6 +23,14 @@
 	--color-brand-800: #23454d;
 	--color-brand-900: #1a3339;
 	--color-brand-950: #0c1417;
+
+	/* Warm accent (CTAs, highlights) — gold/amber like a championship belt */
+	--color-accent-400: #e8b84b;
+	--color-accent-500: #d4a030;
+	--color-accent-600: #b8891e;
+
+	/* Charcoal — true dark for depth */
+	--color-charcoal: #080b0d;
 }
 
 @layer base {
@@ -25,15 +41,23 @@
 	body {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		background-color: var(--color-charcoal);
+		color: var(--color-brand-100);
 	}
 
 	*:focus-visible {
-		outline: 2px solid var(--color-brand-400);
+		outline: 2px solid var(--color-accent-500);
 		outline-offset: 2px;
-		border-radius: 4px;
+		border-radius: 2px;
+	}
+
+	::selection {
+		background-color: var(--color-accent-500);
+		color: var(--color-charcoal);
 	}
 }
 
+/* ── Grain texture (performance-safe: pseudo-element only) ── */
 @utility grain {
 	position: relative;
 
@@ -43,18 +67,53 @@
 		inset: 0;
 		pointer-events: none;
 		z-index: 9999;
-		opacity: 0.03;
+		opacity: 0.025;
 		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 		background-repeat: repeat;
 		background-size: 256px 256px;
 	}
 }
 
-/* Animation keyframes */
-@keyframes fadeInUp {
+/* ── Duotone image treatment ── */
+@utility duotone {
+	position: relative;
+	isolation: isolate;
+
+	img {
+		filter: grayscale(0.4) contrast(1.15) brightness(0.85);
+		mix-blend-mode: luminosity;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: color-mix(in srgb, var(--color-brand-700) 65%, transparent);
+		mix-blend-mode: multiply;
+		pointer-events: none;
+		z-index: 1;
+	}
+}
+
+/* ── Score-line divider ── */
+@utility score-line {
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		transparent 0%,
+		var(--color-brand-600) 20%,
+		var(--color-brand-500) 50%,
+		var(--color-brand-600) 80%,
+		transparent 100%
+	);
+	opacity: 0.6;
+}
+
+/* ── Animation keyframes ── */
+@keyframes reveal-up {
 	from {
 		opacity: 0;
-		transform: translateY(30px);
+		transform: translateY(40px);
 	}
 	to {
 		opacity: 1;
@@ -62,10 +121,10 @@
 	}
 }
 
-@keyframes slideInLeft {
+@keyframes reveal-left {
 	from {
 		opacity: 0;
-		transform: translateX(-50px);
+		transform: translateX(-60px);
 	}
 	to {
 		opacity: 1;
@@ -73,10 +132,10 @@
 	}
 }
 
-@keyframes slideInRight {
+@keyframes reveal-right {
 	from {
 		opacity: 0;
-		transform: translateX(50px);
+		transform: translateX(60px);
 	}
 	to {
 		opacity: 1;
@@ -84,21 +143,10 @@
 	}
 }
 
-@keyframes slideInUp {
+@keyframes reveal-scale {
 	from {
 		opacity: 0;
-		transform: translateY(50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-@keyframes scaleIn {
-	from {
-		opacity: 0;
-		transform: scale(0.8);
+		transform: scale(0.92);
 	}
 	to {
 		opacity: 1;
@@ -106,52 +154,45 @@
 	}
 }
 
-/* Initial state for scroll animations */
-.scroll-animate {
+/* ── Scroll animation system ── */
+.reveal {
 	opacity: 0;
 }
 
-/* Animation classes that get triggered */
-.scroll-animate.animate-in.fade-in-up {
-	animation: fadeInUp 0.8s ease-out forwards;
+.reveal.visible.reveal-up {
+	animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.scroll-animate.animate-in.slide-in-left {
-	animation: slideInLeft 0.8s ease-out forwards;
+.reveal.visible.reveal-left {
+	animation: reveal-left 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.scroll-animate.animate-in.slide-in-right {
-	animation: slideInRight 0.8s ease-out forwards;
+.reveal.visible.reveal-right {
+	animation: reveal-right 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.scroll-animate.animate-in.slide-in-up {
-	animation: slideInUp 0.8s ease-out forwards;
+.reveal.visible.reveal-scale {
+	animation: reveal-scale 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.scroll-animate.animate-in.scale-in {
-	animation: scaleIn 0.8s ease-out forwards;
-}
+/* Stagger delays */
+.reveal.delay-1.visible { animation-delay: 0.1s; }
+.reveal.delay-2.visible { animation-delay: 0.2s; }
+.reveal.delay-3.visible { animation-delay: 0.35s; }
+.reveal.delay-4.visible { animation-delay: 0.5s; }
+.reveal.delay-5.visible { animation-delay: 0.65s; }
 
-/* Delay classes */
-.delay-100.animate-in { animation-delay: 0.1s; }
-.delay-200.animate-in { animation-delay: 0.2s; }
-.delay-300.animate-in { animation-delay: 0.3s; }
-.delay-400.animate-in { animation-delay: 0.4s; }
-.delay-500.animate-in { animation-delay: 0.5s; }
-.delay-600.animate-in { animation-delay: 0.6s; }
-.delay-700.animate-in { animation-delay: 0.7s; }
-
-/* Skip to content — hidden until focused */
+/* ── Skip to content ── */
 .skip-to-content {
 	position: absolute;
 	top: -100%;
 	left: 16px;
 	z-index: 9999;
 	padding: 8px 16px;
-	background: var(--color-brand-500);
-	color: white;
-	border-radius: 6px;
-	font-weight: 500;
+	background: var(--color-accent-500);
+	color: var(--color-charcoal);
+	border-radius: 4px;
+	font-weight: 600;
 	transition: top 0.2s ease;
 }
 
@@ -159,10 +200,9 @@
 	top: 16px;
 }
 
-/* Media query to reduce motion for users who prefer it */
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-	.scroll-animate,
-	.animate-hero-logo {
+	.reveal {
 		animation: none !important;
 		opacity: 1 !important;
 		transform: none !important;
