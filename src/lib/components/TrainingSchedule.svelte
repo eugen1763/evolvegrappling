@@ -4,17 +4,17 @@
 </script>
 
 <div use:scrollAnimate class="scroll-animate fade-in-up mt-20 mb-20">
-	<h3 class="mb-12 text-center text-3xl font-bold text-white">Wöchentlicher Trainingsplan</h3>
+	<h3 class="mb-12 text-center text-3xl font-bold text-white text-wrap-balance">Wöchentlicher Trainingsplan</h3>
 	<!-- Mobile View -->
 	<div class="grid grid-cols-1 gap-4 md:hidden">
 		{#each Object.entries(trainingSchedule) as [day, schedule], i}
 			{#if schedule.length > 0}
-				<div use:scrollAnimate class="scroll-animate slide-in-left rounded-lg bg-gray-800 p-4 delay-{i * 100}">
+				<div use:scrollAnimate class="scroll-animate slide-in-left rounded-2xl bg-surface-800 p-5 delay-{i * 100}">
 					<h4 class="mb-4 text-xl font-semibold text-white">{day}</h4>
-					<div class="space-y-2 text-gray-300">
+					<div class="space-y-3 text-gray-300">
 						{#each schedule as session}
-							<div class="flex flex-col items-start text-nowrap">
-								<div class="w-32">{session.time} - {session.endTime}</div>
+							<div class="flex flex-col items-start">
+								<div class="text-sm text-accent-400">{session.time} - {session.endTime}</div>
 								<div class="font-semibold">{session.class}</div>
 							</div>
 						{/each}
@@ -24,13 +24,13 @@
 		{/each}
 	</div>
 	<!-- Desktop View -->
-	<div use:scrollAnimate class="scroll-animate slide-in-up hidden overflow-x-auto md:block">
+	<div use:scrollAnimate class="scroll-animate slide-in-up hidden overflow-x-auto md:block rounded-2xl border border-surface-700">
 		<table class="w-full table-fixed text-gray-300">
-			<thead class="bg-gray-800">
+			<thead class="bg-surface-800">
 				<tr>
-					<th class="w-1/8 px-4 py-3 text-left">Zeit</th>
+					<th class="w-1/8 px-4 py-3 text-left text-accent-400 font-medium">Zeit</th>
 					{#each Object.keys(trainingSchedule) as day}
-						<th class="w-1/8 px-4 py-3 text-left">{day}</th>
+						<th class="w-1/8 px-4 py-3 text-left text-white font-medium">{day}</th>
 					{/each}
 				</tr>
 			</thead>
@@ -38,13 +38,12 @@
 				{#each Array.from(new Set(Object.values(trainingSchedule)
 							.flat()
 							.map((session) => `${session.time} - ${session.endTime}`))).sort((a, b) => {
-					// Extract start times from "HH:MM Uhr - HH:MM Uhr" format
 					const timeA = a.split(' - ')[0].replace(' Uhr', '');
 					const timeB = b.split(' - ')[0].replace(' Uhr', '');
 					return timeA.localeCompare(timeB);
 				}) as timeSlot}
-					<tr class="border-b border-gray-700">
-						<td class="px-4 py-3 font-medium">{timeSlot}</td>
+					<tr class="border-b border-surface-700">
+						<td class="px-4 py-3 font-medium text-sm text-accent-400">{timeSlot}</td>
 						{#each Object.values(trainingSchedule) as schedule}
 							<td class="px-4 py-3">
 								{#each schedule as session}

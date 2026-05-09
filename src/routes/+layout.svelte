@@ -1,6 +1,7 @@
 <script lang="ts">
     import '../app.css';
     import favicon from '$lib/assets/favicon.svg';
+    import CookieBanner from '$lib/components/CookieBanner.svelte';
     import { page } from '$app/state';
 
     let {children} = $props();
@@ -134,6 +135,7 @@
     `}
 </svelte:head>
 
-<div class="bg-gray-900">
+<div class="bg-surface-900 text-gray-300">
     {@render children?.()}
+    <CookieBanner />
 </div>

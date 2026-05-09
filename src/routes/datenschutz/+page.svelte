@@ -4,35 +4,31 @@
     import BurgerMenu from "$lib/components/BurgerMenu.svelte";
 </script>
 
-<div class="relative overflow-x-hidden">
-  <!-- Burger Menu -->
+<div class="relative">
   <BurgerMenu/>
 
-  <!-- Main Content -->
-  <section class="relative z-20 bg-gray-900 min-h-screen pt-20">
+  <main id="main-content" class="relative z-20 bg-surface-900 min-h-dvh pt-20">
     <div class="container mx-auto px-6 py-16">
       <div class="max-w-4xl mx-auto">
-        <h1 use:scrollAnimate class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up">
+        <h1 use:scrollAnimate class="text-4xl font-bold text-white mb-8 text-center scroll-animate fade-in-up tracking-tight">
           Datenschutzerklärung
         </h1>
         
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-200">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-200">
           <div class="text-gray-300 space-y-4">
             <p>Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der Evolve Grappling Maximilian Galle und Marius Pichler GBR. Eine Nutzung der Internetseiten der Evolve Grappling Maximilian Galle und Marius Pichler GBR ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.</p>
 
             <p>Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung und in Übereinstimmung mit den für die Evolve Grappling Maximilian Galle und Marius Pichler GBR geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchte unser Unternehmen die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Ferner werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt.</p>
-
-            <p>Die Evolve Grappling Maximilian Galle und Marius Pichler GBR hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können Internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, sodass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln.</p>
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-400">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-400">
           <h2 class="text-2xl font-semibold text-white mb-6">1. Begriffsbestimmungen</h2>
           <div class="text-gray-300 space-y-4">
             <p>Die Datenschutzerklärung der Evolve Grappling Maximilian Galle und Marius Pichler GBR beruht auf den Begrifflichkeiten, die durch den Europäischen Richtlinien- und Verordnungsgeber beim Erlass der Datenschutz-Grundverordnung (DS-GVO) verwendet wurden. Unsere Datenschutzerklärung soll sowohl für die Öffentlichkeit als auch für unsere Kunden und Geschäftspartner einfach lesbar und verständlich sein. Um dies zu gewährleisten, möchten wir vorab die verwendeten Begrifflichkeiten erläutern.</p>
 
             <p>Wir verwenden in dieser Datenschutzerklärung unter anderem die folgenden Begriffe:</p>
-
+            
             <ul class="space-y-6 list-none">
               <li>
                 <h3 class="text-xl font-semibold text-white mb-2">a) personenbezogene Daten</h3>
@@ -82,12 +78,12 @@
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-600">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-600">
           <h2 class="text-2xl font-semibold text-white mb-6">2. Name und Anschrift des für die Verarbeitung Verantwortlichen</h2>
           <div class="text-gray-300 space-y-4">
             <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung, sonstiger in den Mitgliedstaaten der Europäischen Union geltenden Datenschutzgesetze und anderer Bestimmungen mit datenschutzrechtlichem Charakter ist die:</p>
             
-            <div class="bg-gray-700 rounded p-4">
+            <div class="bg-surface-700 rounded-xl p-4">
               <p>
                 <strong>Evolve Grappling Maximilian Galle und Marius Pichler GBR</strong><br>
                 Talblick 5a<br>
@@ -101,7 +97,7 @@
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-800">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-800">
           <h2 class="text-2xl font-semibold text-white mb-6">3. Erfassung von allgemeinen Daten und Informationen</h2>
           <div class="text-gray-300 space-y-4">
             <p>Die Internetseite der Evolve Grappling Maximilian Galle und Marius Pichler GBR erfasst mit jedem Aufruf der Internetseite durch eine betroffene Person oder ein automatisiertes System eine Reihe von allgemeinen Daten und Informationen. Diese allgemeinen Daten und Informationen werden in den Logfiles des Servers gespeichert. Erfasst werden können die (1) verwendeten Browsertypen und Versionen, (2) das vom zugreifenden System verwendete Betriebssystem, (3) die Internetseite, von welcher ein zugreifendes System auf unsere Internetseite gelangt (sogenannte Referrer), (4) die Unterwebseiten, welche über ein zugreifendes System auf unserer Internetseite angesteuert werden, (5) das Datum und die Uhrzeit eines Zugriffs auf die Internetseite, (6) eine Internet-Protokoll-Adresse (IP-Adresse), (7) der Internet-Service-Provider des zugreifenden Systems und (8) sonstige ähnliche Daten und Informationen, die der Gefahrenabwehr im Falle von Angriffen auf unsere informationstechnologischen Systeme dienen.</p>
@@ -110,7 +106,7 @@
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-1000">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-1000">
           <h2 class="text-2xl font-semibold text-white mb-6">4. Routinemäßige Löschung und Sperrung von personenbezogenen Daten</h2>
           <div class="text-gray-300 space-y-4">
             <p>Der für die Verarbeitung Verantwortliche verarbeitet und speichert personenbezogene Daten der betroffenen Person nur für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist oder sofern dies durch den Europäischen Richtlinien- und Verordnungsgeber oder einen anderen Gesetzgeber in Gesetzen oder Vorschriften, welchen der für die Verarbeitung Verantwortliche unterliegt, vorgesehen wurde.</p>
@@ -119,7 +115,7 @@
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-1200">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-1200">
           <h2 class="text-2xl font-semibold text-white mb-6">5. Rechte der betroffenen Person</h2>
           <div class="text-gray-300 space-y-6">
             <div>
@@ -159,29 +155,29 @@
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-1400">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-1400">
           <h2 class="text-2xl font-semibold text-white mb-6">6. Datenschutzbestimmungen zu Einsatz und Verwendung von Instagram</h2>
           <div class="text-gray-300 space-y-4">
             <p>Der für die Verarbeitung Verantwortliche hat auf dieser Internetseite Komponenten des Dienstes Instagram integriert. Instagram ist ein Dienst, der als audiovisuelle Plattform zu qualifizieren ist und den Nutzern das Teilen von Fotos und Videos und zudem eine Weiterverbreitung solcher Daten in anderen sozialen Netzwerken ermöglicht.</p>
 
             <p>Betreibergesellschaft der Dienste von Instagram ist die Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2 Ireland.</p>
 
-            <p>Weitere Informationen und die geltenden Datenschutzbestimmungen von Instagram können unter <a href="https://help.instagram.com/155833707900388" target="_blank" class="text-blue-400 hover:text-blue-300 underline">https://help.instagram.com/155833707900388</a> und <a href="https://www.instagram.com/about/legal/privacy/" target="_blank" class="text-blue-400 hover:text-blue-300 underline">https://www.instagram.com/about/legal/privacy/</a> abgerufen werden.</p>
+            <p>Weitere Informationen und die geltenden Datenschutzbestimmungen von Instagram können unter <a href="https://help.instagram.com/155833707900388" target="_blank" class="text-accent-400 hover:text-accent-400/80 underline underline-offset-4 transition-colors duration-200">https://help.instagram.com/155833707900388</a> und <a href="https://www.instagram.com/about/legal/privacy/" target="_blank" class="text-accent-400 hover:text-accent-400/80 underline underline-offset-4 transition-colors duration-200">https://www.instagram.com/about/legal/privacy/</a> abgerufen werden.</p>
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-1600">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-1600">
           <h2 class="text-2xl font-semibold text-white mb-6">7. Datenschutzbestimmungen zu Einsatz und Verwendung von YouTube</h2>
           <div class="text-gray-300 space-y-4">
             <p>Der für die Verarbeitung Verantwortliche hat auf dieser Internetseite Komponenten von YouTube integriert. YouTube ist ein Internet-Videoportal, dass Video-Publishern das kostenlose Einstellen von Videoclips und anderen Nutzern die ebenfalls kostenfreie Betrachtung, Bewertung und Kommentierung dieser ermöglicht.</p>
 
             <p>Betreibergesellschaft von YouTube ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin, D04 E5W5, Ireland.</p>
 
-            <p>Die von YouTube veröffentlichten Datenschutzbestimmungen, die unter <a href="https://www.google.de/intl/de/policies/privacy/" target="_blank" class="text-blue-400 hover:text-blue-300 underline">https://www.google.de/intl/de/policies/privacy/</a> abrufbar sind, geben Aufschluss über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten durch YouTube und Google.</p>
+            <p>Die von YouTube veröffentlichten Datenschutzbestimmungen, die unter <a href="https://www.google.de/intl/de/policies/privacy/" target="_blank" class="text-accent-400 hover:text-accent-400/80 underline underline-offset-4 transition-colors duration-200">https://www.google.de/intl/de/policies/privacy/</a> abrufbar sind, geben Aufschluss über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten durch YouTube und Google.</p>
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-1800">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-1800">
           <h2 class="text-2xl font-semibold text-white mb-6">8. Rechtsgrundlage der Verarbeitung</h2>
           <div class="text-gray-300 space-y-4">
             <p>Art. 6 I lit. a DS-GVO dient unserem Unternehmen als Rechtsgrundlage für Verarbeitungsvorgänge, bei denen wir eine Einwilligung für einen bestimmten Verarbeitungszweck einholen. Ist die Verarbeitung personenbezogener Daten zur Erfüllung eines Vertrags, dessen Vertragspartei die betroffene Person ist, erforderlich, wie dies beispielsweise bei Verarbeitungsvorgängen der Fall ist, die für eine Lieferung von Waren oder die Erbringung einer sonstigen Leistung oder Gegenleistung notwendig sind, so beruht die Verarbeitung auf Art. 6 I lit. b DS-GVO.</p>
@@ -190,51 +186,50 @@
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-2000">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-2000">
           <h2 class="text-2xl font-semibold text-white mb-6">9. Berechtigte Interessen an der Verarbeitung</h2>
           <div class="text-gray-300">
             <p>Basiert die Verarbeitung personenbezogener Daten auf Artikel 6 I lit. f DS-GVO ist unser berechtigtes Interesse die Durchführung unserer Geschäftstätigkeit zugunsten des Wohlergehens all unserer Mitarbeiter und unserer Anteilseigner.</p>
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-2200">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-2200">
           <h2 class="text-2xl font-semibold text-white mb-6">10. Dauer, für die die personenbezogenen Daten gespeichert werden</h2>
           <div class="text-gray-300">
             <p>Das Kriterium für die Dauer der Speicherung von personenbezogenen Daten ist die jeweilige gesetzliche Aufbewahrungsfrist. Nach Ablauf der Frist werden die entsprechenden Daten routinemäßig gelöscht, sofern sie nicht mehr zur Vertragserfüllung oder Vertragsanbahnung erforderlich sind.</p>
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 mb-8 scroll-animate fade-in-up delay-2400">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 mb-8 scroll-animate fade-in-up delay-2400">
           <h2 class="text-2xl font-semibold text-white mb-6">11. Gesetzliche oder vertragliche Vorschriften zur Bereitstellung der personenbezogenen Daten</h2>
           <div class="text-gray-300">
             <p>Wir klären Sie darüber auf, dass die Bereitstellung personenbezogener Daten zum Teil gesetzlich vorgeschrieben ist (z.B. Steuervorschriften) oder sich auch aus vertraglichen Regelungen (z.B. Angaben zum Vertragspartner) ergeben kann. Mitunter kann es zu einem Vertragsschluss erforderlich sein, dass eine betroffene Person uns personenbezogene Daten zur Verfügung stellt, die in der Folge durch uns verarbeitet werden müssen.</p>
           </div>
         </div>
 
-        <div use:scrollAnimate class="bg-gray-800 rounded-lg p-8 scroll-animate fade-in-up delay-2600">
+        <div use:scrollAnimate class="bg-surface-800 rounded-2xl p-8 scroll-animate fade-in-up delay-2600">
           <h2 class="text-2xl font-semibold text-white mb-6">12. Bestehen einer automatisierten Entscheidungsfindung</h2>
           <div class="text-gray-300 space-y-4">
             <p>Als verantwortungsbewusstes Unternehmen verzichten wir auf eine automatische Entscheidungsfindung oder ein Profiling.</p>
 
             <p class="text-sm text-gray-400 border-t border-gray-600 pt-4 mt-6">
-              Diese Datenschutzerklärung wurde durch den Datenschutzerklärungs-Generator der DGD Deutsche Gesellschaft für Datenschutz GmbH, die <a href="https://dg-datenschutz.de/datenschutz-dienstleistungen/datenschutz-audit/" target="_blank" class="text-blue-400 hover:text-blue-300 underline">Datenschutzaudits</a> durchführt, in Kooperation mit der <a href="https://www.wbs.legal/taetigkeitsgebiete/medienrecht/" target="_blank" class="text-blue-400 hover:text-blue-300 underline">Medienrechtskanzlei WILDE BEUGER SOLMECKE</a> erstellt.
+              Diese Datenschutzerklärung wurde durch den Datenschutzerklärungs-Generator der DGD Deutsche Gesellschaft für Datenschutz GmbH, die <a href="https://dg-datenschutz.de/datenschutz-dienstleistungen/datenschutz-audit/" target="_blank" class="text-accent-400 hover:text-accent-400/80 underline underline-offset-4 transition-colors duration-200">Datenschutzaudits</a> durchführt, in Kooperation mit der <a href="https://www.wbs.legal/taetigkeitsgebiete/medienrecht/" target="_blank" class="text-accent-400 hover:text-accent-400/80 underline underline-offset-4 transition-colors duration-200">Medienrechtskanzlei WILDE BEUGER SOLMECKE</a> erstellt.
             </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
-  <footer use:scrollAnimate class="bg-gray-950 text-white py-12 scroll-animate fade-in-up">
+  <footer use:scrollAnimate class="bg-surface-950 text-white pt-16 pb-20 scroll-animate fade-in-up">
     <div class="container mx-auto px-6 text-center">
-      <h3 class="text-2xl font-bold mb-4">Evolve Grappling</h3>
-      <div class="flex justify-center items-center space-x-6 text-gray-400">
-        <div class="flex flex-col items-start space-x-6">
-          <a href="/" class="hover:text-white transition-colors underline">Startseite</a>
-          <a href="/impressum" class="hover:text-white transition-colors underline">Impressum</a>
+      <h3 class="text-2xl font-bold mb-4 tracking-tight">Evolve Grappling</h3>
+      <div class="flex justify-center items-center gap-6 text-gray-400">
+        <div class="flex flex-col items-start gap-1">
+          <a href="/" class="hover:text-white transition-colors duration-200 underline underline-offset-4">Startseite</a>
+          <a href="/impressum" class="hover:text-white transition-colors duration-200 underline underline-offset-4">Impressum</a>
         </div>
-        <div class="h-8 w-px bg-gray-600"></div>
+        <div class="h-8 w-px bg-surface-600"></div>
         <div class="text-left">
           <p class="text-sm">
             Talblick 5a<br>
@@ -245,11 +240,3 @@
     </div>
   </footer>
 </div>
-
-<style>
-    /* Prevent any horizontal scroll caused by transforms, scrollbars, or blur effects */
-    :global(html), :global(body) {
-        overflow-x: hidden;
-        width: 100%;
-    }
-</style>
