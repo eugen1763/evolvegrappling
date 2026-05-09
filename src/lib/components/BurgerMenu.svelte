@@ -50,14 +50,14 @@
 <svelte:window on:click={handleClickOutside} on:keydown={handleKeydown} />
 
 <button
-	class="burger-button fixed top-6 right-6 z-50 rounded-sm p-2.5 text-white transition-all duration-300 hover:bg-brand-800 active:scale-95"
+	class="burger-button fixed top-6 right-6 z-50 flex h-8 w-8 items-center justify-center rounded-sm text-white transition-all duration-300 hover:bg-brand-800 active:scale-95 md:h-10 md:w-10"
 	onclick={toggleMenu}
 	aria-label="Toggle navigation menu"
 >
-	<div class="flex h-6 w-6 flex-col items-center justify-center gap-1.5">
-		<span class="block h-px w-6 bg-white transition-all duration-300 {isOpen ? 'rotate-45 translate-y-1' : ''}"></span>
-		<span class="block h-px w-6 bg-white transition-all duration-300 {isOpen ? 'opacity-0' : ''}"></span>
-		<span class="block h-px w-6 bg-white transition-all duration-300 {isOpen ? '-rotate-45 -translate-y-1' : ''}"></span>
+	<div class="flex h-5 w-5 flex-col items-center justify-center gap-1">
+		<span class="block h-px w-5 bg-white transition-all duration-300 {isOpen ? 'rotate-45 translate-y-[3px]' : ''}"></span>
+		<span class="block h-px w-5 bg-white transition-all duration-300 {isOpen ? 'opacity-0' : ''}"></span>
+		<span class="block h-px w-5 bg-white transition-all duration-300 {isOpen ? '-rotate-45 -translate-y-[3px]' : ''}"></span>
 	</div>
 </button>
 
