@@ -1,6 +1,6 @@
-﻿<script>
+<script>
 	import { onMount } from "svelte";
-	import { scrollAnimate } from '$lib/utils/scroll_animations';
+	import { scrollReveal } from '$lib/utils/scroll_animations';
 	import Icon from '$lib/components/Icon.svelte';
 
 	onMount(() => {
@@ -43,48 +43,72 @@
 	})
 </script>
 
-<div use:scrollAnimate class="mt-20 scroll-animate fade-in-up">
-	<h3 class="mb-12 text-center text-3xl font-bold tracking-tight text-white">Kontakt und Probetraining</h3>
-	<div class="mb-12 rounded-2xl border border-white/5 bg-brand-900/70 px-6 pb-6 pt-8 md:px-12 md:pb-8">
-		<iframe
-			id="omoplata-trial"
-			loading="lazy"
-			src="https://evolve-grappling.omoplata.de/widgets/trial"
-			style="width:100%; border:0; display:block; height:0;"
-			title="Omoplata"
-		></iframe>
-	</div>
-	<div class="grid gap-8 md:grid-cols-3">
-		<div use:scrollAnimate class="scroll-animate slide-in-left text-center delay-200">
-			<div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-500/20 text-brand-400">
-				<Icon name="phone" class="h-7 w-7" />
+<section class="px-6 py-24 md:px-12 lg:px-20 xl:px-28">
+	<div class="grid gap-16 md:grid-cols-[1fr_2fr]">
+		<!-- Left: section label -->
+		<div use:scrollReveal class="reveal reveal-left md:sticky md:top-24 md:self-start">
+			<div class="flex items-center gap-3 mb-4">
+				<div class="h-px w-8 bg-brand-500"></div>
+				<span class="text-xs font-semibold uppercase tracking-[0.25em] text-brand-400">Los geht's</span>
 			</div>
-			<h4 class="mb-2 text-xl font-semibold text-white">WhatsApp</h4>
-			<p class="text-brand-300 tabular-nums">+49 1573 5412788</p>
+			<h2 class="font-display text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+				Kontakt &amp;<br />Probetraining
+			</h2>
 		</div>
 
-		<div use:scrollAnimate class="scroll-animate fade-in-up text-center delay-400">
-			<div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-500/20 text-brand-400">
-				<Icon name="mail" class="h-7 w-7" />
+		<!-- Right: content -->
+		<div class="space-y-12">
+			<!-- Trial form iframe -->
+			<div use:scrollReveal class="reveal reveal-up border border-brand-800 rounded-sm bg-brand-950/50">
+				<iframe
+					id="omoplata-trial"
+					loading="lazy"
+					src="https://evolve-grappling.omoplata.de/widgets/trial"
+					style="width:100%; border:0; display:block; height:0;"
+					title="Omoplata"
+				></iframe>
 			</div>
-			<h4 class="mb-2 text-xl font-semibold text-white">E-Mail</h4>
-			<a href="mailto:info@evolvegrappling.de" class="text-brand-300 underline underline-offset-4 transition-colors hover:text-brand-400">
-				info@evolvegrappling.de
-			</a>
-		</div>
 
-		<div use:scrollAnimate class="scroll-animate slide-in-right text-center delay-600">
-			<div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-500/20 text-brand-400">
-				<Icon name="camera" class="h-7 w-7" />
+			<!-- Contact methods -->
+			<div use:scrollReveal class="reveal reveal-up delay-1 grid gap-8 sm:grid-cols-3">
+				<div class="group space-y-3">
+					<div class="flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 group-hover:text-accent-500 transition-colors">
+						<Icon name="phone" class="h-5 w-5" />
+					</div>
+					<div>
+						<h4 class="text-sm font-semibold uppercase tracking-wider text-brand-400">WhatsApp</h4>
+						<p class="mt-1 text-brand-200 tabular-nums">+49 1573 5412788</p>
+					</div>
+				</div>
+
+				<div class="group space-y-3">
+					<div class="flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 group-hover:text-accent-500 transition-colors">
+						<Icon name="mail" class="h-5 w-5" />
+					</div>
+					<div>
+						<h4 class="text-sm font-semibold uppercase tracking-wider text-brand-400">E-Mail</h4>
+						<a href="mailto:info@evolvegrappling.de" class="mt-1 inline-block text-brand-200 underline underline-offset-4 transition-colors hover:text-accent-500">
+							info@evolvegrappling.de
+						</a>
+					</div>
+				</div>
+
+				<div class="group space-y-3">
+					<div class="flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 group-hover:text-accent-500 transition-colors">
+						<Icon name="camera" class="h-5 w-5" />
+					</div>
+					<div>
+						<h4 class="text-sm font-semibold uppercase tracking-wider text-brand-400">Instagram</h4>
+						<a
+							href="https://www.instagram.com/evolve_grappling/"
+							class="mt-1 inline-block text-brand-200 underline underline-offset-4 transition-colors hover:text-accent-500"
+							target="_blank"
+						>
+							@evolve_grappling
+						</a>
+					</div>
+				</div>
 			</div>
-			<h4 class="mb-2 text-xl font-semibold text-white">Instagram</h4>
-			<a
-				href="https://www.instagram.com/evolve_grappling/"
-				class="text-brand-300 underline underline-offset-4 transition-colors hover:text-brand-400"
-				target="_blank"
-			>
-				@evolve_grappling
-			</a>
 		</div>
 	</div>
-</div>
+</section>
