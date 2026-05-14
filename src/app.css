@@ -74,27 +74,6 @@
 	}
 }
 
-/* ── Duotone image treatment ── */
-@utility duotone {
-	position: relative;
-	isolation: isolate;
-
-	img {
-		filter: grayscale(0.4) contrast(1.15) brightness(0.85);
-		mix-blend-mode: luminosity;
-	}
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: color-mix(in srgb, var(--color-brand-700) 65%, transparent);
-		mix-blend-mode: multiply;
-		pointer-events: none;
-		z-index: 1;
-	}
-}
-
 /* ── Score-line divider ── */
 @utility score-line {
 	height: 1px;

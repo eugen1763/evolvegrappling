@@ -72,7 +72,7 @@
 			<!-- Right: Duotone image (hidden on mobile, first on mobile via order) -->
 			<div class="relative order-first md:order-none">
 				{#if heroImage}
-					<div class="duotone overflow-hidden rounded-sm">
+					<div class="overflow-hidden rounded-sm">
 						<img
 							src={heroImage}
 							alt="Evolve Grappling Training"

@@ -21,7 +21,7 @@
 			{#each teamMembers as member, i}
 				<div use:scrollReveal class="reveal reveal-scale delay-{i + 1} group">
 					<div class="relative mb-6 overflow-hidden rounded-sm">
-						<div class="duotone">
+						<div>
 							<img
 								src={member.image}
 								alt={member.name}
