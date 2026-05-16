@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
-	// Optimized hero images from static/optimized/
 	const heroImages = [
 		'/optimized/0E8A4818.webp',
 		'/optimized/0E8A6454.webp',
@@ -20,7 +20,32 @@
 	let textOffset = $derived(scrollY * 0.25);
 	let opacity = $derived(Math.max(1 - scrollY / (innerHeight * 0.7), 0));
 
-	let heroImage = $state(heroImages[Math.floor(Math.random() * heroImages.length)]);
+	let currentIndex = $state(Math.floor(Math.random() * heroImages.length));
+	let heroImage = $derived(heroImages[currentIndex]);
+	let active = $state(true);
+
+	onMount(() => {
+		heroImages.forEach(src => {
+			const img = new Image();
+			img.src = src;
+		});
+
+		let interval = setInterval(() => {
+			if (active) {
+				currentIndex = (currentIndex + 1) % heroImages.length;
+			}
+		}, 8000);
+
+		function onVisibility() {
+			active = !document.hidden;
+		}
+		document.addEventListener('visibilitychange', onVisibility);
+
+		return () => {
+			clearInterval(interval);
+			document.removeEventListener('visibilitychange', onVisibility);
+		};
+	});
 </script>
 
 <section class="relative min-h-[100dvh] flex items-center overflow-hidden bg-charcoal">
@@ -71,16 +96,26 @@
 
 			<!-- Right: Duotone image (hidden on mobile, first on mobile via order) -->
 			<div class="relative order-first md:order-none">
-				{#if heroImage}
-					<div class="overflow-hidden rounded-sm">
-						<img
-							src={heroImage}
-							alt="Evolve Grappling Training"
-							class="w-full object-cover"
-							style="transform: translateY({imageOffset}px); min-height: 280px; max-height: 75dvh;"
-						/>
+				<div class="relative overflow-hidden rounded-sm" style="min-height: 280px; max-height: 75dvh;">
+					<!-- Invisible spacer preserves natural aspect ratio -->
+					<img
+						src={heroImages[0]}
+						alt=""
+						class="w-full object-cover invisible"
+						style="min-height: 280px; max-height: 75dvh;"
+					/>
+					<div class="absolute inset-0">
+						{#key heroImage}
+							<img
+								src={heroImage}
+								alt="Evolve Grappling Training"
+								class="absolute inset-0 w-full h-full object-cover"
+								style="transform: translateY({imageOffset}px);"
+								transition:fade={{ duration: 800 }}
+							/>
+						{/key}
 					</div>
-				{/if}
+				</div>
 				<!-- Decorative element -->
 				<div class="absolute -bottom-4 -left-4 h-16 w-16 border-l border-t border-accent-500/40 hidden md:block"></div>
 			</div>

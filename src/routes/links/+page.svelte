@@ -101,11 +101,11 @@
 			<h2 class="mb-4 text-xl font-bold tracking-tight text-white">Standort</h2>
 			<div class="overflow-hidden border border-brand-800">
 				<iframe
-					src="https://www.google.com/maps/embed/v1/place?key=***&amp;center=51.1859878%2C7.0281498&amp;zoom=16&amp;q=place_id%3AChIJnWhxP0rTuEcRHi7GpIdZkLI"
+					src="https://maps.google.com/maps?q=Talblick+5a%2C+42719+Solingen%2C+Germany&amp;t=&amp;z=15&amp;ie=UTF8&amp;output=embed"
 					allow="fullscreen"
 					loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade"
-					style="border: 0px; width: 100%; height: 450px;"
+					style="border: 0; width: 100%; height: 450px;"
 					title="Google Maps"
 				></iframe>
 			</div>
