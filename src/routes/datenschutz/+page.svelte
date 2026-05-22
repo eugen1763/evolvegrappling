@@ -1,6 +1,7 @@
 ﻿<script lang="ts">
 	import { scrollReveal } from "$lib/utils/scroll_animations";
 	import BurgerMenu from "$lib/components/BurgerMenu.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 </script>
 
 <div class="relative overflow-x-hidden">
@@ -230,24 +231,12 @@
 		</div>
 	</main>
 
-	<footer use:scrollReveal class="scroll-animate fade-in-up bg-charcoal border-t border-brand-900 py-12">
-		<div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
-			<div class="grid gap-8 md:grid-cols-[1fr_auto_auto]">
-				<div>
-					<h3 class="mb-2 text-xl font-bold tracking-tight text-white">Evolve Grappling</h3>
-					<p class="text-sm text-brand-400">Talblick 5a &middot; 42719 Solingen</p>
-				</div>
-				<nav class="flex flex-col gap-2 text-sm">
-					<a href="/" class="text-brand-300 underline underline-offset-4 transition-colors hover:text-white">Startseite</a>
-					<a href="/impressum" class="text-brand-300 underline underline-offset-4 transition-colors hover:text-white">Impressum</a>
-				</nav>
-				<div class="text-sm text-brand-400">
-					<p class="tabular-nums">+49 1573 5412788</p>
-					<a href="mailto:info@evolvegrappling.de" class="underline underline-offset-4 transition-colors hover:text-white">info@evolvegrappling.de</a>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<Footer
+		links={[
+			{ href: '/', label: 'Startseite' },
+			{ href: '/impressum', label: 'Impressum' }
+		]}
+	/>
 </div>
 
 <style>
