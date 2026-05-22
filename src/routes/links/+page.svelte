@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
+	import Affiliation from '$lib/components/Affiliation.svelte';
 
 	const links = [
 		{
@@ -121,7 +122,9 @@
 			</div>
 		</div>
 
-		<div class="mt-12 text-center text-sm text-brand-400">
+		<Affiliation centered />
+
+		<div class="mt-10 text-center text-sm text-brand-400">
 			<p>Evolve Grappling Solingen</p>
 			<p class="mt-1">Brazilian Jiu-Jitsu &middot; BJJ &middot; Grappling</p>
 		</div>
