@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
 	{
 		name: 'Jannis Ohlerich',
 		image: 'optimized/jannis.webp',
-		description: 'Trainer',
+		description: 'Basics Trainer',
 		rank: 'BJJ Purple Belt'
 	}
 ];
