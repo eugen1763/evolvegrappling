@@ -155,11 +155,21 @@
 }
 
 /* Stagger delays */
-.reveal.delay-1.visible { animation-delay: 0.1s; }
-.reveal.delay-2.visible { animation-delay: 0.2s; }
-.reveal.delay-3.visible { animation-delay: 0.35s; }
-.reveal.delay-4.visible { animation-delay: 0.5s; }
-.reveal.delay-5.visible { animation-delay: 0.65s; }
+.reveal.delay-1.visible {
+	animation-delay: 0.1s;
+}
+.reveal.delay-2.visible {
+	animation-delay: 0.2s;
+}
+.reveal.delay-3.visible {
+	animation-delay: 0.35s;
+}
+.reveal.delay-4.visible {
+	animation-delay: 0.5s;
+}
+.reveal.delay-5.visible {
+	animation-delay: 0.65s;
+}
 
 /* ── Skip to content ── */
 .skip-to-content {

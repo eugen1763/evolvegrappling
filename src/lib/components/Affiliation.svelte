@@ -9,7 +9,8 @@
 >
 	<div class="flex items-center gap-3">
 		<div class="h-px w-8 bg-brand-500"></div>
-		<span class="text-xs font-semibold uppercase tracking-[0.25em] text-brand-400">Affiliation</span>
+		<span class="text-xs font-semibold tracking-[0.25em] text-brand-400 uppercase">Affiliation</span
+		>
 	</div>
 	<a
 		href="https://www.bjjglobetrotters.com/"

@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
 	import Icon from '$lib/components/Icon.svelte';
+	import { resolve } from '$app/paths';
 
 	let isOpen = $state(false);
 
@@ -11,23 +10,6 @@
 
 	function closeMenu() {
 		isOpen = false;
-	}
-
-	function scrollToSection(sectionId: string) {
-		const currentPath = window.location.pathname;
-
-		if (currentPath === '/') {
-			const element = document.getElementById(sectionId);
-			if (element) {
-				element.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
-			}
-		} else {
-			goto(`/?g=${sectionId}`);
-		}
-		closeMenu();
 	}
 
 	function handleClickOutside(event: MouseEvent) {
@@ -55,63 +37,83 @@
 	aria-label="Toggle navigation menu"
 >
 	<div class="flex h-5 w-5 flex-col items-center justify-center gap-1">
-		<span class="block h-px w-5 bg-white transition-all duration-300 {isOpen ? 'rotate-45 translate-y-[3px]' : ''}"></span>
-		<span class="block h-px w-5 bg-white transition-all duration-300 {isOpen ? 'opacity-0' : ''}"></span>
-		<span class="block h-px w-5 bg-white transition-all duration-300 {isOpen ? '-rotate-45 -translate-y-[3px]' : ''}"></span>
+		<span
+			class="block h-px w-5 bg-white transition-all duration-300 {isOpen
+				? 'translate-y-[3px] rotate-45'
+				: ''}"
+		></span>
+		<span class="block h-px w-5 bg-white transition-all duration-300 {isOpen ? 'opacity-0' : ''}"
+		></span>
+		<span
+			class="block h-px w-5 bg-white transition-all duration-300 {isOpen
+				? '-translate-y-[3px] -rotate-45'
+				: ''}"
+		></span>
 	</div>
 </button>
 
 {#if isOpen}
-	<div class="fixed inset-0 z-40 bg-charcoal/80 backdrop-blur-sm transition-opacity duration-300"></div>
+	<div
+		class="fixed inset-0 z-40 bg-charcoal/80 backdrop-blur-sm transition-opacity duration-300"
+	></div>
 {/if}
 
-<nav class="burger-menu fixed top-0 right-0 z-40 h-full w-72 border-l border-brand-800 bg-brand-950 shadow-2xl transition-transform duration-300 {isOpen ? 'translate-x-0' : 'translate-x-full'}">
+<nav
+	class="burger-menu fixed top-0 right-0 z-40 h-full w-72 border-l border-brand-800 bg-brand-950 shadow-2xl transition-transform duration-300 {isOpen
+		? 'translate-x-0'
+		: 'translate-x-full'}"
+>
 	<div class="px-8 pt-24">
 		<ul class="space-y-1">
 			<li>
-				<button
-					onclick={() => scrollToSection('hero')}
+				<a
+					href={resolve('/#hero')}
+					onclick={closeMenu}
 					class="flex w-full items-center gap-3 rounded-sm px-3 py-3 text-left text-base font-medium text-white transition-colors duration-200 hover:bg-brand-900 active:scale-[0.98]"
 				>
 					<Icon name="home" class="h-4 w-4 text-brand-400" />
 					Home
-				</button>
+				</a>
 			</li>
 			<li>
-				<button
-					onclick={() => scrollToSection('trainingsplan')}
+				<a
+					href={resolve('/#trainingsplan')}
+					onclick={closeMenu}
 					class="flex w-full items-center gap-3 rounded-sm px-3 py-3 text-left text-base font-medium text-white transition-colors duration-200 hover:bg-brand-900 active:scale-[0.98]"
 				>
 					<Icon name="calendar" class="h-4 w-4 text-brand-400" />
 					Trainingsplan
-				</button>
+				</a>
 			</li>
 			<li>
-				<button
-					onclick={() => scrollToSection('team')}
+				<a
+					href={resolve('/#team')}
+					onclick={closeMenu}
 					class="flex w-full items-center gap-3 rounded-sm px-3 py-3 text-left text-base font-medium text-white transition-colors duration-200 hover:bg-brand-900 active:scale-[0.98]"
 				>
 					<Icon name="users" class="h-4 w-4 text-brand-400" />
 					Team
-				</button>
+				</a>
 			</li>
 			<li>
-				<button
-					onclick={() => scrollToSection('preise')}
+				<a
+					href={resolve('/#preise')}
+					onclick={closeMenu}
 					class="flex w-full items-center gap-3 rounded-sm px-3 py-3 text-left text-base font-medium text-white transition-colors duration-200 hover:bg-brand-900 active:scale-[0.98]"
 				>
 					<Icon name="euro" class="h-4 w-4 text-brand-400" />
 					Preise
-				</button>
+				</a>
 			</li>
 			<li>
-				<button
-					onclick={() => scrollToSection('kontakt')}
+				<a
+					href={resolve('/#kontakt')}
+					onclick={closeMenu}
 					class="flex w-full items-center gap-3 rounded-sm px-3 py-3 text-left text-base font-medium text-white transition-colors duration-200 hover:bg-brand-900 active:scale-[0.98]"
 				>
 					<Icon name="phone" class="h-4 w-4 text-brand-400" />
 					Kontakt
-				</button>
+				</a>
 			</li>
 		</ul>
 

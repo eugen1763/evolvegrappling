@@ -27,6 +27,12 @@ export default ts.config(
 		}
 	},
 	{
+		files: ['**/*.cjs'],
+		rules: {
+			'@typescript-eslint/no-require-imports': 'off'
+		}
+	},
+	{
 		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
 		languageOptions: {
 			parserOptions: {
@@ -35,6 +41,13 @@ export default ts.config(
 				parser: ts.parser,
 				svelteConfig
 			}
+		}
+	},
+	{
+		files: ['src/routes/links/+page.svelte'],
+		rules: {
+			// All link targets on this noindex utility page are absolute external URLs or mailto links.
+			'svelte/no-navigation-without-resolve': 'off'
 		}
 	}
 );

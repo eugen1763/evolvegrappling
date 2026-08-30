@@ -1,11 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /_app/
-Disallow: /api/
 
-# Sitemap location
-Sitemap: https://evolve-grappling.de/sitemap.xml
-
-# Crawl delay for polite crawling
-Crawl-delay: 1
+Sitemap: https://evolvegrappling.de/sitemap.xml

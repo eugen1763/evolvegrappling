@@ -1,83 +1,76 @@
+<!-- eslint-disable svelte/no-navigation-without-resolve -- This page renders only absolute external URLs and mailto links. -->
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
 	import Affiliation from '$lib/components/Affiliation.svelte';
 
 	const links = [
 		{
-			title: "Unsere Website",
-			description: "Besuche unsere Hauptwebsite",
-			url: "http://evolvegrappling.de",
-			icon: "home",
-			target: "_blank"
+			title: 'Unsere Website',
+			description: 'Besuche unsere Hauptwebsite',
+			url: 'https://evolvegrappling.de/',
+			icon: 'home',
+			target: '_blank'
 		},
 		{
-			title: "Instagram",
-			description: "@evolve_grappling",
-			url: "https://www.instagram.com/evolve_grappling",
-			icon: "camera",
-			target: "_blank"
+			title: 'Instagram',
+			description: '@evolve_grappling',
+			url: 'https://www.instagram.com/evolve_grappling',
+			icon: 'camera',
+			target: '_blank'
 		},
 		{
-			title: "Google Bewertung",
-			description: "Bewerte uns auf Google",
-			url: "https://share.google/vsIXZwHLH8eOWWSxh",
-			icon: "star",
-			target: "_blank"
+			title: 'Google Bewertung',
+			description: 'Bewerte uns auf Google',
+			url: 'https://share.google/vsIXZwHLH8eOWWSxh',
+			icon: 'star',
+			target: '_blank'
 		},
 		{
-			title: "Open Mat WhatsApp Gruppe",
-			description: "Tritt unserer WhatsApp Gruppe bei",
-			url: "https://chat.whatsapp.com/BXPwrIXlA9v1KmlKH4qXKP",
-			icon: "users",
-			target: "_blank"
+			title: 'Open Mat WhatsApp Gruppe',
+			description: 'Tritt unserer WhatsApp Gruppe bei',
+			url: 'https://chat.whatsapp.com/BXPwrIXlA9v1KmlKH4qXKP',
+			icon: 'users',
+			target: '_blank'
 		},
 		{
-			title: "Kontaktiere uns auf WhatsApp",
-			description: "Direkter Kontakt uber WhatsApp",
-			url: "https://api.whatsapp.com/send?phone=4915735412788",
-			icon: "message-circle",
-			target: "_blank"
+			title: 'Kontaktiere uns auf WhatsApp',
+			description: 'Direkter Kontakt über WhatsApp',
+			url: 'https://api.whatsapp.com/send?phone=4915735412788',
+			icon: 'message-circle',
+			target: '_blank'
 		},
 		{
-			title: "SmoothComp",
-			description: "Unser Club auf SmoothComp",
-			url: "https://smoothcomp.com/en/club/77897",
-			icon: "trophy",
-			target: "_blank"
+			title: 'SmoothComp',
+			description: 'Unser Club auf SmoothComp',
+			url: 'https://smoothcomp.com/en/club/77897',
+			icon: 'trophy',
+			target: '_blank'
 		},
 		{
-			title: "E-Mail Kontakt",
-			description: "info@evolvegrappling.de",
-			url: "mailto:info@evolvegrappling.de",
-			icon: "mail",
-			target: "_self"
+			title: 'E-Mail Kontakt',
+			description: 'info@evolvegrappling.de',
+			url: 'mailto:info@evolvegrappling.de',
+			icon: 'mail',
+			target: '_self'
 		}
 	];
 </script>
-
-<svelte:head>
-	<title>Links - Evolve Grappling Solingen</title>
-	<meta name="description" content="Alle wichtigen Links zu Evolve Grappling Solingen: Website, Instagram, WhatsApp und Kontakt" />
-</svelte:head>
 
 <div class="min-h-dvh bg-charcoal px-4 py-12" id="main-content">
 	<div class="mx-auto max-w-md">
 		<div class="mb-10 text-center">
 			<div class="mx-auto mb-4 flex h-32 w-32 items-center justify-center">
-				<img
-					src="/logo.svg"
-					alt="Evolve Grappling Logo"
-					class="h-full w-full object-contain"
-				/>
+				<img src="/logo.svg" alt="Evolve Grappling Logo" class="h-full w-full object-contain" />
 			</div>
 			<h1 class="mb-2 text-2xl font-bold tracking-tight text-white">Evolve Grappling</h1>
 			<p class="px-4 text-sm leading-relaxed text-brand-200">
-				Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im Gi und No-Gi sowie auf Ringen fur Grappling spezialisiert.
+				Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im Gi und No-Gi sowie
+				auf Ringen für Grappling spezialisiert.
 			</p>
 		</div>
 
 		<div class="space-y-2.5">
-			{#each links as link}
+			{#each links as link (link.title)}
 				<a
 					href={link.url}
 					target={link.target}
@@ -85,7 +78,10 @@
 					class="group flex w-full items-center gap-4 border border-brand-800 bg-brand-950/50 px-4 py-3.5 text-white transition-all duration-200 hover:border-accent-500/50 hover:bg-brand-900/50 active:scale-[0.98]"
 				>
 					<div class="flex-shrink-0">
-						<Icon name={link.icon} class="h-5 w-5 text-brand-400 group-hover:text-accent-500 transition-colors" />
+						<Icon
+							name={link.icon}
+							class="h-5 w-5 text-brand-400 transition-colors group-hover:text-accent-500"
+						/>
 					</div>
 					<div class="min-w-0 flex-1 text-left">
 						<div class="font-semibold">{link.title}</div>
@@ -98,7 +94,7 @@
 			{/each}
 		</div>
 
-		<div class="mb-8 mt-12">
+		<div class="mt-12 mb-8">
 			<h2 class="mb-4 text-xl font-bold tracking-tight text-white">Standort</h2>
 			<div class="overflow-hidden border border-brand-800">
 				<iframe

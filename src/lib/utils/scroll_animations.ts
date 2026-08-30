@@ -1,33 +1,33 @@
 let observer: IntersectionObserver;
 
 function getObserver() {
-    if (observer) return observer;
+	if (observer) return observer;
 
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
-    };
+	const observerOptions = {
+		threshold: 0.15,
+		rootMargin: '0px 0px -40px 0px'
+	};
 
-    observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+	observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+				observer.unobserve(entry.target);
+			}
+		});
+	}, observerOptions);
 
-    return observer;
+	return observer;
 }
 
 export function scrollReveal(node: HTMLElement) {
-    getObserver().observe(node);
+	getObserver().observe(node);
 
-    return {
-        destroy() {
-            if (observer) {
-                observer.unobserve(node);
-            }
-        }
-    };
+	return {
+		destroy() {
+			if (observer) {
+				observer.unobserve(node);
+			}
+		}
+	};
 }
