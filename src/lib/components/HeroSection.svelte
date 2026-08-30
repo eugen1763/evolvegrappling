@@ -60,23 +60,17 @@
 	});
 </script>
 
-<section class="relative flex min-h-[100dvh] items-center overflow-hidden bg-charcoal">
+<section
+	class="relative flex min-h-[100svh] items-center overflow-hidden bg-charcoal md:min-h-[100dvh]"
+>
 	<!-- Asymmetric layout: text left, image right -->
 	<div
-		class="relative z-10 w-full px-6 py-24 md:px-12 lg:px-20 xl:px-28"
+		class="hero-content relative z-10 w-full px-6 pt-12 md:px-12 md:py-24 lg:px-20 xl:px-28"
 		style="opacity: {opacity}; transform: translateY({-textOffset}px);"
 	>
-		<div class="grid items-center gap-8 md:grid-cols-[1.2fr_1fr] lg:grid-cols-[1.3fr_1fr]">
+		<div class="grid items-center gap-4 md:grid-cols-[1.2fr_1fr] md:gap-8 lg:grid-cols-[1.3fr_1fr]">
 			<!-- Left: Typography block -->
-			<div class="space-y-8 md:space-y-10">
-				<!-- Small brand mark above the headline -->
-				<div class="flex items-center gap-3">
-					<div class="h-px w-8 bg-accent-500"></div>
-					<span class="text-xs font-semibold tracking-[0.25em] text-accent-500 uppercase"
-						>Solingen</span
-					>
-				</div>
-
+			<div class="space-y-4 md:space-y-10">
 				<div class="space-y-3 md:space-y-4">
 					<h1
 						class="font-display text-5xl leading-[0.9] font-bold tracking-tighter text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
@@ -130,10 +124,7 @@
 
 			<!-- Right: Duotone image (hidden on mobile, first on mobile via order) -->
 			<div class="relative order-first md:order-none">
-				<div
-					class="relative overflow-hidden rounded-sm"
-					style="min-height: 280px; max-height: 75dvh;"
-				>
+				<div class="relative max-h-[75dvh] min-h-70 overflow-hidden rounded-sm">
 					<!-- Invisible spacer preserves natural aspect ratio -->
 					<img
 						src={heroImages[0]}
@@ -142,8 +133,7 @@
 						height="1280"
 						fetchpriority="high"
 						decoding="async"
-						class="invisible w-full object-cover"
-						style="min-height: 280px; max-height: 75dvh;"
+						class="invisible max-h-[75dvh] min-h-70 w-full object-cover"
 					/>
 					<div class="absolute inset-0">
 						{#key heroImage}
@@ -170,10 +160,21 @@
 	</div>
 
 	<!-- Scroll indicator -->
-	<div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2" style="opacity: {opacity};">
+	<div
+		class="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 md:block"
+		style="opacity: {opacity};"
+	>
 		<div class="flex flex-col items-center gap-2 text-brand-500">
 			<span class="text-[10px] font-semibold tracking-[0.3em] uppercase">Scroll</span>
 			<div class="h-8 w-px bg-brand-600"></div>
 		</div>
 	</div>
 </section>
+
+<style>
+	@media (max-width: 47.999rem) {
+		.hero-content {
+			padding-bottom: max(2rem, calc(1rem + env(safe-area-inset-bottom)));
+		}
+	}
+</style>

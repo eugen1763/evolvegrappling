@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { centerHighlight } from '$lib/utils/center_highlight';
 	import { scrollReveal } from '$lib/utils/scroll_animations';
 	import Icon from '$lib/components/Icon.svelte';
 	import HeroSection from '$lib/components/HeroSection.svelte';
@@ -103,17 +104,20 @@
 					</div>
 
 					<!-- Three feature blocks in asymmetric grid -->
-					<div class="grid gap-6 pt-8 md:grid-cols-3">
+					<div use:centerHighlight class="grid gap-6 pt-8 md:grid-cols-3">
 						<div
 							use:scrollReveal
-							class="reveal reveal-up group border-l-2 border-brand-700 pl-6 transition-colors delay-1 duration-300 hover:border-accent-500"
+							data-center-highlight-item
+							class="center-highlight-item reveal reveal-up group border-l-2 border-brand-700 pl-6 delay-1 md:hover:border-accent-500"
 						>
 							<div
-								class="mb-5 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 transition-colors group-hover:text-accent-500"
+								class="center-highlight-icon mb-5 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 md:group-hover:text-accent-500"
 							>
 								<Icon name="shield" class="h-5 w-5" />
 							</div>
-							<h3 class="mb-3 text-lg font-semibold text-white">Trainerteam</h3>
+							<h3 class="center-highlight-accent mb-3 text-lg font-semibold text-white">
+								Trainerteam
+							</h3>
 							<p class="text-sm leading-relaxed text-brand-200">
 								Unsere Trainer verf&uuml;gen &uuml;ber langj&auml;hrige Erfahrung im BJJ, Grappling
 								und Ringen. Sie blicken auf viele Jahre erfolgreicher Trainert&auml;tigkeit
@@ -123,14 +127,17 @@
 
 						<div
 							use:scrollReveal
-							class="reveal reveal-up group border-l-2 border-brand-700 pl-6 transition-colors delay-2 duration-300 hover:border-accent-500"
+							data-center-highlight-item
+							class="center-highlight-item reveal reveal-up group border-l-2 border-brand-700 pl-6 delay-2 md:hover:border-accent-500"
 						>
 							<div
-								class="mb-5 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 transition-colors group-hover:text-accent-500"
+								class="center-highlight-icon mb-5 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 md:group-hover:text-accent-500"
 							>
 								<Icon name="users" class="h-5 w-5" />
 							</div>
-							<h3 class="mb-3 text-lg font-semibold text-white">Community</h3>
+							<h3 class="center-highlight-accent mb-3 text-lg font-semibold text-white">
+								Community
+							</h3>
 							<p class="text-sm leading-relaxed text-brand-200">
 								Wir sind ein buntgemischtes Team aus verschiedenen Altersgruppen (ab 16 Jahren) und
 								Kulturen. Bei uns ist jeder willkommen, um zusammen zu lernen und zu wachsen.
@@ -139,14 +146,17 @@
 
 						<div
 							use:scrollReveal
-							class="reveal reveal-up group border-l-2 border-brand-700 pl-6 transition-colors delay-3 duration-300 hover:border-accent-500"
+							data-center-highlight-item
+							class="center-highlight-item reveal reveal-up group border-l-2 border-brand-700 pl-6 delay-3 md:hover:border-accent-500"
 						>
 							<div
-								class="mb-5 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 transition-colors group-hover:text-accent-500"
+								class="center-highlight-icon mb-5 flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 md:group-hover:text-accent-500"
 							>
 								<Icon name="clock" class="h-5 w-5" />
 							</div>
-							<h3 class="mb-3 text-lg font-semibold text-white">Training</h3>
+							<h3 class="center-highlight-accent mb-3 text-lg font-semibold text-white">
+								Training
+							</h3>
 							<p class="text-sm leading-relaxed text-brand-200">
 								Regelmäßige Einheiten nach Trainingsplan werden durch spontane Trainings ergänzt.
 								Neben Gruppentraining können gemeinsam Instructionals studiert werden sowie freies

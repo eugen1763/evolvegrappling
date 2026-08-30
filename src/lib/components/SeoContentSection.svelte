@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { trialFaq } from '$lib/data/seo';
+	import { centerHighlight } from '$lib/utils/center_highlight';
 	import { scrollReveal } from '$lib/utils/scroll_animations';
 </script>
 
@@ -35,13 +36,16 @@
 				</p>
 			</div>
 
-			<div class="grid gap-8 md:grid-cols-2">
+			<div use:centerHighlight class="grid gap-8 md:grid-cols-2">
 				<article
 					id="bjj-solingen"
 					use:scrollReveal
-					class="reveal reveal-left border-l-2 border-accent-500 pl-6"
+					data-center-highlight-item
+					class="center-highlight-item reveal reveal-left border-l-2 border-brand-700 pl-6"
 				>
-					<h3 class="mb-3 text-2xl font-bold text-white">Brazilian Jiu-Jitsu in Solingen</h3>
+					<h3 class="center-highlight-accent mb-3 text-2xl font-bold text-white">
+						Brazilian Jiu-Jitsu in Solingen
+					</h3>
 					<p class="leading-relaxed text-brand-200">
 						Im BJJ stehen technische Kontrolle, Positionswechsel, Hebel und Würgegriffe im
 						Mittelpunkt. Wir bieten Einheiten im Gi und No-Gi. In den Basic-Kursen lernst du die
@@ -53,9 +57,12 @@
 				<article
 					id="grappling-solingen"
 					use:scrollReveal
-					class="reveal reveal-right border-l-2 border-brand-700 pl-6"
+					data-center-highlight-item
+					class="center-highlight-item reveal reveal-right border-l-2 border-brand-700 pl-6"
 				>
-					<h3 class="mb-3 text-2xl font-bold text-white">Grappling und Ringen in Solingen</h3>
+					<h3 class="center-highlight-accent mb-3 text-2xl font-bold text-white">
+						Grappling und Ringen in Solingen
+					</h3>
 					<p class="leading-relaxed text-brand-200">
 						Beim No-Gi Grappling trainierst du ohne klassischen BJJ-Anzug. Ringerische Elemente
 						helfen dir, den Kampf im Stand zu kontrollieren, Takedowns vorzubereiten und starke

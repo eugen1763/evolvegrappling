@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { trainingSchedule } from '$lib/data/training-schedule';
+	import { centerHighlight } from '$lib/utils/center_highlight';
 	import { scrollReveal } from '$lib/utils/scroll_animations';
 
 	// Get today's German day name
@@ -26,19 +27,16 @@
 		<!-- Right: schedule -->
 		<div class="space-y-6">
 			<!-- Mobile: card list -->
-			<div class="space-y-3 md:hidden">
+			<div use:centerHighlight class="space-y-3 md:hidden">
 				{#each Object.entries(trainingSchedule) as [day, schedule], i (day)}
 					{#if schedule.length > 0}
 						<div
 							use:scrollReveal
-							class="reveal reveal-left delay-{i} border-l-2 py-2 pl-4 {day === todayName
-								? 'border-accent-500'
-								: 'border-brand-800'}"
+							data-center-highlight-item
+							class="center-highlight-item reveal reveal-left border-l-2 border-brand-800 py-2 pl-4 delay-{i}"
 						>
 							<h3
-								class="mb-2 text-sm font-semibold tracking-wider uppercase {day === todayName
-									? 'text-accent-500'
-									: 'text-brand-400'}"
+								class="center-highlight-accent mb-2 text-sm font-semibold tracking-wider text-brand-400 uppercase"
 							>
 								{day}
 								{#if day === todayName}
