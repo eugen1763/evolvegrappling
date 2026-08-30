@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { teamMembers } from '$lib/data/team_members';
+	import { centerHighlight } from '$lib/utils/center_highlight';
 	import { scrollReveal } from '$lib/utils/scroll_animations';
 </script>
 
@@ -19,9 +20,13 @@
 		</div>
 
 		<!-- Right: team members -->
-		<div class="grid gap-12 sm:grid-cols-2">
+		<div use:centerHighlight class="grid gap-12 sm:grid-cols-2">
 			{#each teamMembers as member, i (member.name)}
-				<div use:scrollReveal class="reveal reveal-scale delay-{i + 1} group">
+				<div
+					use:scrollReveal
+					data-center-highlight-item
+					class="center-highlight-item reveal reveal-scale group delay-{i + 1}"
+				>
 					<div class="relative mb-6 overflow-hidden rounded-sm">
 						<div>
 							<img
@@ -29,13 +34,13 @@
 								alt={member.name}
 								loading="lazy"
 								decoding="async"
-								class="w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+								class="center-highlight-image w-full object-cover object-top md:group-hover:scale-105"
 								style="aspect-ratio: 3/4;"
 							/>
 						</div>
 						<!-- Corner accent -->
 						<div
-							class="absolute top-0 right-0 h-12 w-12 border-t-2 border-r-2 border-accent-500/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+							class="center-highlight-corner absolute top-0 right-0 h-12 w-12 border-t-2 border-r-2 border-accent-500/50 opacity-0 md:group-hover:opacity-100"
 						></div>
 					</div>
 					<div class="space-y-1">
@@ -45,7 +50,9 @@
 								>{member.rank}</span
 							>
 						</div>
-						<h3 class="text-2xl font-bold tracking-tight text-white">{member.name}</h3>
+						<h3 class="center-highlight-accent text-2xl font-bold tracking-tight text-white">
+							{member.name}
+						</h3>
 						<p class="text-brand-300">{member.description}</p>
 					</div>
 				</div>

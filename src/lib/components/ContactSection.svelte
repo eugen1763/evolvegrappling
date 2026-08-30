@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { centerHighlight } from '$lib/utils/center_highlight';
 	import { scrollReveal } from '$lib/utils/scroll_animations';
 	import Icon from '$lib/components/Icon.svelte';
 
@@ -88,54 +89,79 @@
 			</div>
 
 			<!-- Contact methods -->
-			<div use:scrollReveal class="reveal reveal-up grid gap-8 delay-1 sm:grid-cols-3">
-				<div class="group space-y-3">
+			<div
+				use:centerHighlight
+				use:scrollReveal
+				class="reveal reveal-up grid gap-8 delay-1 sm:grid-cols-3"
+			>
+				<div
+					data-center-highlight-item
+					class="center-highlight-item group space-y-3 border-l-2 border-brand-800 pl-4 sm:border-l-0 sm:pl-0"
+				>
 					<div
-						class="flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 transition-colors group-hover:text-accent-500"
+						class="center-highlight-icon flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 md:group-hover:text-accent-500"
 					>
 						<Icon name="phone" class="h-5 w-5" />
 					</div>
 					<div>
-						<h3 class="text-sm font-semibold tracking-wider text-brand-400 uppercase">WhatsApp</h3>
+						<h3
+							class="center-highlight-accent text-sm font-semibold tracking-wider text-brand-400 uppercase"
+						>
+							WhatsApp
+						</h3>
 						<a
 							href="https://wa.me/4915735412788"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="mt-1 inline-block text-brand-200 tabular-nums underline underline-offset-4 transition-colors hover:text-accent-500"
+							class="mt-1 inline-block text-brand-200 tabular-nums underline underline-offset-4 transition-colors md:hover:text-accent-500"
 						>
 							+49 1573 5412788
 						</a>
 					</div>
 				</div>
 
-				<div class="group space-y-3">
+				<div
+					data-center-highlight-item
+					class="center-highlight-item group space-y-3 border-l-2 border-brand-800 pl-4 sm:border-l-0 sm:pl-0"
+				>
 					<div
-						class="flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 transition-colors group-hover:text-accent-500"
+						class="center-highlight-icon flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 md:group-hover:text-accent-500"
 					>
 						<Icon name="mail" class="h-5 w-5" />
 					</div>
 					<div>
-						<h3 class="text-sm font-semibold tracking-wider text-brand-400 uppercase">E-Mail</h3>
+						<h3
+							class="center-highlight-accent text-sm font-semibold tracking-wider text-brand-400 uppercase"
+						>
+							E-Mail
+						</h3>
 						<a
 							href="mailto:info@evolvegrappling.de"
-							class="mt-1 inline-block text-brand-200 underline underline-offset-4 transition-colors hover:text-accent-500"
+							class="mt-1 inline-block text-brand-200 underline underline-offset-4 transition-colors md:hover:text-accent-500"
 						>
 							info@evolvegrappling.de
 						</a>
 					</div>
 				</div>
 
-				<div class="group space-y-3">
+				<div
+					data-center-highlight-item
+					class="center-highlight-item group space-y-3 border-l-2 border-brand-800 pl-4 sm:border-l-0 sm:pl-0"
+				>
 					<div
-						class="flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 transition-colors group-hover:text-accent-500"
+						class="center-highlight-icon flex h-10 w-10 items-center justify-center rounded-sm bg-brand-800 text-brand-400 md:group-hover:text-accent-500"
 					>
 						<Icon name="camera" class="h-5 w-5" />
 					</div>
 					<div>
-						<h3 class="text-sm font-semibold tracking-wider text-brand-400 uppercase">Instagram</h3>
+						<h3
+							class="center-highlight-accent text-sm font-semibold tracking-wider text-brand-400 uppercase"
+						>
+							Instagram
+						</h3>
 						<a
 							href="https://www.instagram.com/evolve_grappling/"
-							class="mt-1 inline-block text-brand-200 underline underline-offset-4 transition-colors hover:text-accent-500"
+							class="mt-1 inline-block text-brand-200 underline underline-offset-4 transition-colors md:hover:text-accent-500"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
