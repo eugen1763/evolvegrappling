@@ -338,8 +338,7 @@
 			atEnd = ends.size > 0;
 			syncSticky();
 		});
-		// The posters have their own buttons. The sticky button would cover them.
-		endObserver.observe($('#angebot'));
+		// The contact section holds the booking form, so the button would only point to itself there.
 		endObserver.observe($('#kontakt'));
 		endObserver.observe($('.foot'));
 	}
