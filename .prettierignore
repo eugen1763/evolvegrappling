@@ -7,3 +7,6 @@ bun.lockb
 
 # Miscellaneous
 /static/
+
+# Static redesign drafts, kept byte-identical to staging
+/redesign/
