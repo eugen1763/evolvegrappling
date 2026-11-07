@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<title>Evolve Grappling Solingen – BJJ, Kickboxen &amp; Kinder-BJJ</title>
+		<meta
+			name="description"
+			content="BJJ, No-Gi Grappling, Kickboxen und Kinder-BJJ in Solingen. Für Anfänger und Fortgeschrittene. Das erste Training ist kostenlos."
+		/>
+		<meta name="robots" content="noindex" />
+		<meta name="theme-color" content="#0f1a1d" />
+		<link rel="icon" href="../assets/logo.svg" />
+		<link
+			rel="preload"
+			href="fonts/sofia-sans-extra-condensed-latin-900-normal.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 899px)" />
+		<link rel="preload" as="image" href="img/hero-d.webp" media="(min-width: 900px)" />
+		<script>
+			document.documentElement.classList.add('js');
+			if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+				document.documentElement.classList.add('motion');
+		</script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body id="top">
+		<a class="skip" href="#main">Zum Inhalt springen</a>
+
+		<header class="bar">
+			<a class="bar-logo" href="#top" aria-label="Evolve Grappling, zum Seitenanfang">
+				<img src="../assets/logo.svg" alt="" width="44" height="44" />
+			</a>
+			<nav class="bar-nav" aria-label="Hauptnavigation">
+				<a href="#angebot">Kurse</a>
+				<a href="#trainingsplan">Plan</a>
+				<a href="#preise">Preise</a>
+				<a class="bar-cta" href="#kontakt">Probetraining</a>
+			</nav>
+		</header>
+
+		<main id="main">
+			<section class="hero-wrap" aria-labelledby="hero-title">
+				<div class="hero">
+					<div class="poster" id="poster">
+						<div class="poster-tilt" id="poster-tilt">
+						<div class="layer sheet" style="--z: -240"></div>
+						<div class="layer row row-1" style="--z: -200" aria-hidden="true">
+							<span>EVOLVE<i> GRAPPLING</i></span>
+						</div>
+						<div class="layer row row-2" style="--z: -160" aria-hidden="true">
+							<span>EVOLVE<i> GRAPPLING</i></span>
+						</div>
+						<div class="layer row row-3" style="--z: -120" aria-hidden="true">
+							<span>EVOLVE<i> GRAPPLING</i></span>
+						</div>
+						<div class="layer row row-4" style="--z: -80" aria-hidden="true">
+							<span>EVOLVE<i> GRAPPLING</i></span>
+						</div>
+						<div class="layer shot" style="--z: 0">
+							<picture>
+								<source media="(min-width: 900px)" srcset="img/hero-d.webp" width="1600" height="1067" />
+								<img
+									src="img/hero-m.webp"
+									alt="Zwei Sportler im Gi beim Training: Einer steht, die Partnerin hängt mit den Beinen an seiner Schulter"
+									width="768"
+									height="1152"
+									fetchpriority="high"
+								/>
+							</picture>
+						</div>
+						<div class="layer marks" style="--z: 40" aria-hidden="true">
+							<span class="mark mark-tl"></span><span class="mark mark-tr"></span>
+							<span class="credit">Talblick 5a, Solingen</span>
+						</div>
+						<div class="layer snipe-layer" style="--z: 120">
+							<p class="snipe">Neu: Kickboxen und Kinder-BJJ</p>
+						</div>
+						<div class="layer seal-layer" style="--z: 170" aria-hidden="true">
+							<svg class="seal" viewBox="0 0 200 200" width="120" height="120">
+								<defs>
+									<path id="seal-path" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0" />
+								</defs>
+								<circle cx="100" cy="100" r="98" class="seal-disc" />
+								<text class="seal-text">
+									<textPath href="#seal-path" textLength="455">
+										EVOLVE GRAPPLING SOLINGEN EVOLVE GRAPPLING SOLINGEN
+									</textPath>
+								</text>
+								<path class="seal-hex" d="M100 52 141.6 76v48L100 148 58.4 124V76Z" />
+							</svg>
+						</div>
+						</div>
+					</div>
+
+					<div class="band">
+						<h1 id="hero-title">BJJ, Kickboxen &amp; Kinder-BJJ in Solingen</h1>
+						<div class="band-actions">
+							<a class="btn" href="#kontakt">Kostenloses Probetraining</a>
+							<a class="plain-link" href="#trainingsplan">Trainingsplan</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div class="ticker" aria-hidden="true">
+				<div class="ticker-line" data-dir="-1">
+					<span>BJJ</span><span class="o">Kickboxen</span><span>Kinder-BJJ</span><span class="o">No-Gi</span
+					><span>Open Mat</span><span class="o">Ringen</span><span>BJJ</span><span class="o">Kickboxen</span
+					><span>Kinder-BJJ</span><span class="o">No-Gi</span><span>Open Mat</span><span class="o">Ringen</span>
+				</div>
+			</div>
+
+			<section class="offer" id="angebot" aria-labelledby="offer-title">
+				<h2 class="display" id="offer-title">Drei Wege auf die Matte</h2>
+
+				<div class="cards">
+					<i class="card-ghost" style="--i: 1" aria-hidden="true"></i>
+					<i class="card-ghost card-ghost-2" style="--i: 2" aria-hidden="true"></i>
+					<article class="card card-bjj" id="bjj" style="--i: 0">
+						<div class="card-tilt">
+							<div class="card-inner">
+								<div class="face front">
+									<div class="art art-bjj">
+										<img
+											src="img/bjj.webp"
+											alt="Zwei Sportler im blauen Gi: Einer rollt kopfüber über seinen Partner am Boden"
+											width="768"
+											height="1153"
+											loading="lazy"
+										/>
+									</div>
+									<h3>BJJ &amp; Grappling</h3>
+									<p class="short">Bodenkampf mit Technik statt Kraft. Im Gi und No-Gi.</p>
+									<ul class="facts">
+										<li>ab 16 Jahren</li>
+										<li>6 Einheiten pro Woche</li>
+										<li>Open Mat am Sonntag</li>
+									</ul>
+									<button class="flip" type="button" aria-expanded="false" aria-controls="bjj-back">
+										Mehr über BJJ
+									</button>
+								</div>
+								<div class="face back" id="bjj-back">
+									<h4>So läuft BJJ bei uns</h4>
+									<p>
+										Im BJJ stehen Kontrolle, Positionswechsel, Hebel und Würgegriffe im Mittelpunkt.
+										Ringerische Elemente helfen dir, den Kampf im Stand zu kontrollieren und Takedowns
+										vorzubereiten. In den Basic-Kursen lernst du die Grundlagen Schritt für Schritt. Die
+										All-Levels-Kurse verbinden Technik mit situativen Übungen und Sparring.
+									</p>
+									<p class="need">
+										<strong>Du brauchst:</strong> bequeme Sportkleidung. Trainiert wird barfuß.
+									</p>
+									<div class="back-actions">
+										<a class="btn btn-small" href="#kontakt">Probetraining vereinbaren</a>
+										<button class="flip flip-back" type="button">Zurück zum Plakat</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="card card-kick" id="kickboxen" style="--i: 1">
+						<div class="card-tilt">
+							<div class="card-inner">
+								<div class="face front">
+									<div class="art art-kick" aria-hidden="true">
+										<span class="art-word">KICK</span>
+										<svg class="kick-svg" viewBox="0 0 400 400">
+											<polygon
+												class="burst"
+												points="200.0,4.0 226.0,52.3 267.0,15.8 275.0,70.1 326.0,49.9 314.9,103.6 369.7,102.0 341.0,148.7 393.0,166.0 350.0,200.0 393.0,234.0 341.0,251.3 369.7,298.0 314.9,296.4 326.0,350.1 275.0,329.9 267.0,384.2 226.0,347.7 200.0,396.0 174.0,347.7 133.0,384.2 125.0,329.9 74.0,350.1 85.1,296.4 30.3,298.0 59.0,251.3 7.0,234.0 50.0,200.0 7.0,166.0 59.0,148.7 30.3,102.0 85.1,103.6 74.0,49.9 125.0,70.1 133.0,15.8 174.0,52.3"
+											/>
+											<g class="punch">
+											<g class="glove" transform="rotate(-24 200 205)">
+												<path class="g-cuff" d="M150 262h112l14 92H136z" />
+												<path class="g-band" d="M143 300h126l3 20H140z" />
+												<path
+													class="g-fist"
+													d="M118 158c0-62 44-100 104-100 62 0 104 42 104 104 0 52-26 88-64 104H152c-22-18-34-58-34-108z"
+												/>
+												<path
+													class="g-thumb"
+													d="M112 168c-24 4-36 36-24 68 11 30 44 40 64 22 16-15 12-46-6-68-10-13-22-24-34-22z"
+												/>
+												<path class="g-line" d="M176 100c26-18 70-18 96 2" />
+												<path class="g-line" d="M300 150c8 26 4 56-12 78" />
+											</g>
+											</g>
+											<g class="speed">
+												<path d="M22 318h96" />
+												<path d="M6 348h130" />
+												<path d="M40 378h84" />
+											</g>
+										</svg>
+										<span class="art-new">Neu</span>
+									</div>
+									<h3>Kickboxen</h3>
+									<p class="short">Schlagen, treten, ausweichen. Kondition inklusive.</p>
+									<ul class="facts">
+										<li>ab 16 Jahren</li>
+										<li>4 Einheiten pro Woche</li>
+										<li>Sparring freiwillig</li>
+									</ul>
+									<button class="flip" type="button" aria-expanded="false" aria-controls="kick-back">
+										Mehr über Kickboxen
+									</button>
+								</div>
+								<div class="face back" id="kick-back">
+									<h4>So läuft Kickboxen bei uns</h4>
+									<p>
+										Im Kickboxen lernst du saubere Schlag- und Tritttechniken, Beinarbeit und Deckung.
+										Jede Einheit verbindet Technik an Pratzen und Sandsack mit Partnerübungen und
+										Kondition. Sparring ist freiwillig und findet kontrolliert mit Schutzausrüstung
+										statt. Die Basic-Einheit richtet sich an Anfänger ohne Vorerfahrung.
+									</p>
+									<p class="need">
+										<strong>Du brauchst:</strong> Sportkleidung für den Start. Fürs Probetraining leihen
+										wir dir Handschuhe. Später kommen Boxhandschuhe, Schienbeinschoner und Mundschutz
+										dazu.
+									</p>
+									<div class="back-actions">
+										<a class="btn btn-small" href="#kontakt">Probetraining vereinbaren</a>
+										<button class="flip flip-back" type="button">Zurück zum Plakat</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+
+					<article class="card card-kids" id="kinder-bjj" style="--i: 2">
+						<div class="card-tilt">
+							<div class="card-inner">
+								<div class="face front">
+									<div class="art art-kids">
+										<span class="art-word" aria-hidden="true">5–13</span>
+										<ul class="belts" aria-label="Gürtelfarben im Kinder-BJJ">
+											<li class="belt belt-w" style="--n: 0"><span>Weiß</span></li>
+											<li class="belt belt-g" style="--n: 1"><span>Grau</span></li>
+											<li class="belt belt-y" style="--n: 2"><span>Gelb</span></li>
+											<li class="belt belt-o" style="--n: 3"><span>Orange</span></li>
+											<li class="belt belt-gr" style="--n: 4"><span>Grün</span></li>
+										</ul>
+										<span class="art-new" aria-hidden="true">Neu</span>
+									</div>
+									<h3>Kinder-BJJ</h3>
+									<p class="short">Spielerisch stark werden. Für Kinder von 5 bis 13 Jahren.</p>
+									<ul class="facts">
+										<li>Minis 5–8 Jahre</li>
+										<li>Juniors 9–13 Jahre</li>
+										<li>Eltern dürfen zuschauen</li>
+									</ul>
+									<button class="flip" type="button" aria-expanded="false" aria-controls="kids-back">
+										Mehr über Kinder-BJJ
+									</button>
+								</div>
+								<div class="face back" id="kids-back">
+									<h4>So läuft Kinder-BJJ bei uns</h4>
+									<p>
+										Im Kinder-BJJ lernen Kinder, sich zu behaupten, ohne zu schlagen oder zu treten. Sie
+										üben Fallen, Halten und Befreien in Spielen und kleinen Aufgaben. Dabei wachsen
+										Koordination, Selbstvertrauen und Respekt vor dem Partner. Zwei Altersgruppen sorgen
+										dafür, dass jedes Kind passende Trainingspartner hat.
+									</p>
+									<p class="need">
+										<strong>Dein Kind braucht:</strong> Sportkleidung und eine Trinkflasche. Einen Gi
+										kann es für die ersten Einheiten leihen. Kleine Gruppen, Gürtelprüfungen mit
+										Streifen.
+									</p>
+									<div class="back-actions">
+										<a class="btn btn-small" href="#kontakt">Probetraining vereinbaren</a>
+										<button class="flip flip-back" type="button">Zurück zum Plakat</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="why" id="warum" aria-labelledby="why-title">
+				<figure class="why-photo">
+					<img
+						src="img/close-900.webp"
+						srcset="img/close-900.webp 900w, img/close-1800.webp 1800w"
+						sizes="100vw"
+						alt="Nahaufnahme aus dem No-Gi-Training: Zwei Sportler ringen eng am Boden um die Position"
+						width="1800"
+						height="1200"
+						loading="lazy"
+					/>
+					<figcaption>
+						<h2 class="display" id="why-title">Ein Team. Jedes Level.</h2>
+					</figcaption>
+				</figure>
+				<ul class="why-points">
+					<li>
+						<h3>Trainerteam</h3>
+						<p>Black-Belt-Kompetenz und viele Jahre Erfahrung im BJJ, Grappling und Ringen.</p>
+					</li>
+					<li>
+						<h3>Community</h3>
+						<p>Ein gemischtes Team aus allen Altersgruppen und Kulturen. Jeder ist willkommen.</p>
+					</li>
+					<li>
+						<h3>Training</h3>
+						<p>Fester Trainingsplan, dazu Open Mat und freies Training.</p>
+					</li>
+				</ul>
+				<details class="why-more">
+					<summary>Was Evolve ausmacht</summary>
+					<p>
+						Bei Evolve Grappling trainierst du Brazilian Jiu-Jitsu, Kickboxen und Grappling in einem
+						Team, das an den Zielen jedes Einzelnen arbeitet. Ob Wettkämpfer oder Hobbyist, Anfänger
+						oder Fortgeschrittener, Kind oder Erwachsener.
+					</p>
+				</details>
+			</section>
+
+			<section class="plan" id="trainingsplan" aria-labelledby="plan-title">
+				<div class="plan-head">
+					<h2 class="display" id="plan-title">Trainingsplan</h2>
+					<div class="filters" role="group" aria-label="Trainingsplan nach Kurs filtern">
+						<button type="button" class="filter is-on" data-filter="all" aria-pressed="true">Alle</button>
+						<button type="button" class="filter" data-filter="bjj" aria-pressed="false">
+							<i class="dot dot-bjj"></i>BJJ
+						</button>
+						<button type="button" class="filter" data-filter="kick" aria-pressed="false">
+							<i class="dot dot-kick"></i>Kickboxen
+						</button>
+						<button type="button" class="filter" data-filter="kids" aria-pressed="false">
+							<i class="dot dot-kids"></i>Kinder
+						</button>
+						<button type="button" class="filter" data-filter="open" aria-pressed="false">
+							<i class="dot dot-open"></i>Open Mat
+						</button>
+					</div>
+				</div>
+
+				<ol class="week">
+					<li class="day" data-day="Montag">
+						<h3>Montag</h3>
+						<ul class="bouts">
+							<li class="bout" data-cat="kids"><time>16:30–17:15</time><span>Kinder-BJJ Minis <small>5–8 Jahre</small></span></li>
+							<li class="bout" data-cat="kids"><time>17:15–18:00</time><span>Kinder-BJJ Juniors <small>9–13 Jahre</small></span></li>
+							<li class="bout" data-cat="bjj"><time>18:00–19:00</time><span>BJJ No-Gi Basic</span></li>
+							<li class="bout" data-cat="bjj"><time>19:00–20:00</time><span>BJJ No-Gi All Levels</span></li>
+						</ul>
+					</li>
+					<li class="day" data-day="Dienstag">
+						<h3>Dienstag</h3>
+						<ul class="bouts">
+							<li class="bout" data-cat="kick"><time>18:00–19:00</time><span>Kickboxen Basic</span></li>
+							<li class="bout" data-cat="kick"><time>19:00–20:00</time><span>Kickboxen All Levels</span></li>
+						</ul>
+					</li>
+					<li class="day" data-day="Mittwoch">
+						<h3>Mittwoch</h3>
+						<ul class="bouts">
+							<li class="bout" data-cat="kids"><time>16:30–17:15</time><span>Kinder-BJJ Minis <small>5–8 Jahre</small></span></li>
+							<li class="bout" data-cat="kids"><time>17:15–18:00</time><span>Kinder-BJJ Juniors <small>9–13 Jahre</small></span></li>
+							<li class="bout" data-cat="bjj"><time>18:00–19:00</time><span>BJJ Gi Basic</span></li>
+							<li class="bout" data-cat="bjj"><time>19:00–20:00</time><span>BJJ Gi All Levels</span></li>
+						</ul>
+					</li>
+					<li class="day" data-day="Donnerstag">
+						<h3>Donnerstag</h3>
+						<ul class="bouts">
+							<li class="bout" data-cat="kick"><time>18:00–19:00</time><span>Kickboxen Basic</span></li>
+							<li class="bout" data-cat="kick"><time>19:00–20:00</time><span>Kickboxen All Levels</span></li>
+						</ul>
+					</li>
+					<li class="day" data-day="Freitag">
+						<h3>Freitag</h3>
+						<ul class="bouts">
+							<li class="bout" data-cat="bjj"><time>18:00–19:30</time><span>BJJ No-Gi Basic</span></li>
+						</ul>
+					</li>
+					<li class="day" data-day="Samstag">
+						<h3>Samstag</h3>
+						<ul class="bouts">
+							<li class="bout" data-cat="bjj"><time>10:00–11:30</time><span>BJJ Gi/No-Gi All Levels</span></li>
+						</ul>
+					</li>
+					<li class="day" data-day="Sonntag">
+						<h3>Sonntag</h3>
+						<ul class="bouts">
+							<li class="bout" data-cat="open"><time>11:00–13:00</time><span>Open Mat</span></li>
+						</ul>
+					</li>
+				</ol>
+				<p class="plan-note">
+					Zusätzliche Einheiten finden spontan statt. Wir kündigen sie in der WhatsApp-Gruppe an.
+				</p>
+			</section>
+
+			<section class="team" id="team" aria-labelledby="team-title">
+				<h2 class="display" id="team-title">Dein Trainerteam</h2>
+				<ul class="corner">
+					<li class="coach">
+						<div class="coach-card">
+							<img src="img/max.webp" alt="Maximilian Galle im blauen Gi mit schwarzem Gürtel" width="600" height="800" loading="lazy" />
+							<span class="rank rank-black">BJJ Black Belt</span>
+						</div>
+						<h3>Maximilian Galle</h3>
+						<p>Inhaber und Head-Coach</p>
+					</li>
+					<li class="coach">
+						<div class="coach-card">
+							<img src="img/marius.webp" alt="Marius Pichler im Evolve-Rashguard" width="600" height="800" loading="lazy" />
+							<span class="rank rank-blue">BJJ Blue Belt</span>
+						</div>
+						<h3>Marius Pichler</h3>
+						<p>Inhaber</p>
+					</li>
+					<li class="coach">
+						<div class="coach-card">
+							<img src="img/jannis.webp" alt="Jannis Ohlerich im Evolve-Rashguard" width="600" height="800" loading="lazy" />
+							<span class="rank rank-purple">BJJ Purple Belt</span>
+						</div>
+						<h3>Jannis Ohlerich</h3>
+						<p>Basics Trainer</p>
+					</li>
+				</ul>
+				<p class="team-note">
+					Die Trainer für Kickboxen und Kinder-BJJ stellen wir hier in Kürze vor.
+				</p>
+			</section>
+
+			<section class="prices" id="preise" aria-labelledby="price-title">
+				<h2 class="display" id="price-title">Preise</h2>
+				<ul class="tickets">
+					<li class="ticket ticket-adult">
+						<div class="ticket-main">
+							<h3>Erwachsene</h3>
+							<p class="price"><span class="num">79,90</span><span class="cur">€</span></p>
+							<p class="per">pro Monat</p>
+							<p class="incl">BJJ, Grappling und Kickboxen inklusive.</p>
+						</div>
+						<div class="ticket-stub">
+							<p><b>Alle Kurse</b>ab 16 Jahren</p>
+						</div>
+					</li>
+					<li class="ticket ticket-kids">
+						<div class="ticket-main">
+							<h3>Kinder</h3>
+							<p class="price"><span class="num">49,90</span><span class="cur">€</span></p>
+							<p class="per">pro Monat</p>
+							<p class="incl">Kinder-BJJ für 5 bis 13 Jahre.</p>
+						</div>
+						<div class="ticket-stub">
+							<p><b>10&nbsp;% Rabatt</b>für jedes weitere Kind</p>
+						</div>
+					</li>
+				</ul>
+				<ul class="terms">
+					<li>Monatlich kündbar</li>
+					<li>Keine Anmeldegebühr</li>
+					<li>Keine versteckten Kosten</li>
+					<li>Erstes Training kostenlos</li>
+				</ul>
+				<a class="btn" href="#kontakt">Probetraining vereinbaren</a>
+			</section>
+
+			<section class="faq" id="fragen" aria-labelledby="faq-title">
+				<h2 class="display" id="faq-title">Häufige Fragen</h2>
+				<div class="faq-list">
+					<details>
+						<summary>Ist das Probetraining kostenlos?</summary>
+						<p>
+							Ja. Das erste Training ist immer kostenlos, für Erwachsene und für Kinder. Melde dich
+							vorher über das Formular, WhatsApp oder Instagram an.
+						</p>
+					</details>
+					<details>
+						<summary>Was brauche ich für das erste Training?</summary>
+						<p>
+							Bequeme Sportkleidung reicht. Wir trainieren barfuß auf der Matte. Für Kickboxen leihen
+							wir dir Handschuhe.
+						</p>
+					</details>
+					<details>
+						<summary>Brauche ich Erfahrung?</summary>
+						<p>
+							Nein. Die Basic-Einheiten im BJJ und im Kickboxen richten sich an Anfänger.
+							Fortgeschrittene trainieren in den All-Levels-Einheiten.
+						</p>
+					</details>
+					<details>
+						<summary>Ab welchem Alter kann mein Kind anfangen?</summary>
+						<p>
+							Ab 5 Jahren. Die Minis sind 5 bis 8 Jahre alt, die Juniors 9 bis 13. Ab 16 Jahren
+							trainieren Jugendliche bei den Erwachsenen.
+						</p>
+					</details>
+					<details>
+						<summary>Ist Kinder-BJJ sicher?</summary>
+						<p>
+							Ja. Kinder-BJJ kommt ohne Schläge und Tritte aus. Die Kinder lernen zuerst, sicher zu
+							fallen und auf den Partner zu achten. Hebel und Würgegriffe sind in den Kindergruppen
+							stark eingeschränkt.
+						</p>
+					</details>
+					<details>
+						<summary>Dürfen Eltern beim Training zuschauen?</summary>
+						<p>Ja. Am Mattenrand gibt es Sitzplätze für Eltern.</p>
+					</details>
+					<details>
+						<summary>Muss ich beim Kickboxen sparren?</summary>
+						<p>Nein. Sparring ist freiwillig. Du entscheidest selbst, ob und wann du mitmachst.</p>
+					</details>
+					<details>
+						<summary>Kann ich BJJ und Kickboxen kombinieren?</summary>
+						<p>Ja. Die Mitgliedschaft für Erwachsene gilt für alle Kurse im Trainingsplan.</p>
+					</details>
+					<details>
+						<summary>Gibt es Umkleiden und Duschen?</summary>
+						<p>Ja. Umkleideräume und Duschen sind vor Ort.</p>
+					</details>
+				</div>
+			</section>
+
+			<section class="contact" id="kontakt" aria-labelledby="contact-title">
+				<div class="contact-head">
+					<h2 class="display" id="contact-title">Probetraining vereinbaren</h2>
+					<p>Schreib uns kurz, welcher Kurs dich interessiert. Wir melden uns mit einem Termin.</p>
+				</div>
+				<div class="contact-grid">
+					<div class="form-sheet">
+						<iframe
+							id="omoplata-trial"
+							loading="lazy"
+							src="https://evolve-grappling.omoplata.de/widgets/trial"
+							title="Probetraining buchen"
+						></iframe>
+					</div>
+					<ul class="channels">
+						<li>
+							<a href="https://wa.me/4915735412788" target="_blank" rel="noopener noreferrer">
+								<span>WhatsApp</span><b>+49 1573 5412788</b>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:info@evolvegrappling.de"><span>E-Mail</span><b>info@evolvegrappling.de</b></a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/evolve_grappling/" target="_blank" rel="noopener noreferrer">
+								<span>Instagram</span><b>@evolve_grappling</b>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://www.google.com/maps/search/?api=1&amp;query=Talblick+5a%2C+42719+Solingen"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<span>Adresse</span><b>Talblick 5a, 42719 Solingen</b>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<footer class="foot">
+			<div class="foot-main">
+				<img class="foot-logo" src="../assets/logo.svg" alt="Evolve Grappling" width="96" height="96" loading="lazy" />
+				<address>
+					Evolve Grappling<br />
+					Talblick 5a, 42719 Solingen<br />
+					<a href="tel:+4915735412788">+49 1573 5412788</a><br />
+					<a href="mailto:info@evolvegrappling.de">info@evolvegrappling.de</a>
+				</address>
+				<nav aria-label="Rechtliches">
+					<a href="https://evolvegrappling.de/impressum">Impressum</a>
+					<a href="https://evolvegrappling.de/datenschutz">Datenschutz</a>
+					<a href="https://evolvegrappling.de/links">Links</a>
+				</nav>
+			</div>
+			<a
+				class="affil"
+				href="https://www.bjjglobetrotters.com/"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Affiliation: BJJ Globetrotters, öffnet in neuem Tab"
+			>
+				<span>Affiliation</span>
+				<img src="../assets/bjj-globetrotters.svg" alt="BJJ Globetrotters" width="200" height="44" loading="lazy" />
+			</a>
+		</footer>
+
+		<div class="sticky-cta" id="sticky-cta">
+			<a class="btn" href="#kontakt">Kostenloses Probetraining</a>
+		</div>
+
+		<script src="../assets/vendor/gsap.min.js" defer></script>
+		<script src="../assets/vendor/ScrollTrigger.min.js" defer></script>
+		<script src="script.js" defer></script>
+	</body>
+</html>

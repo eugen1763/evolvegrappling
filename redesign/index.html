@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<title>Evolve Redesign – Varianten</title>
+		<link rel="icon" href="assets/logo.svg" />
+		<style>
+			:root {
+				--ground: #0c1417;
+				--text: #d8dcc3;
+				--teal: #5a9ba8;
+				--line: #23454d;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				min-height: 100dvh;
+				background: var(--ground);
+				color: var(--text);
+				font:
+					18px/1.5 system-ui,
+					sans-serif;
+				padding: 2rem 1rem 4rem;
+			}
+			main {
+				max-width: 44rem;
+				margin: 0 auto;
+			}
+			img {
+				width: 5rem;
+				height: 5rem;
+			}
+			h1 {
+				font-size: clamp(1.75rem, 6vw, 2.75rem);
+				line-height: 1.1;
+				margin: 1rem 0 0.5rem;
+			}
+			p {
+				margin: 0 0 2rem;
+				color: var(--teal);
+			}
+			ol {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				counter-reset: v;
+			}
+			li {
+				counter-increment: v;
+				border-top: 1px solid var(--line);
+			}
+			a {
+				display: grid;
+				grid-template-columns: 2.5rem 1fr;
+				gap: 0 0.5rem;
+				padding: 1.1rem 0.25rem;
+				color: inherit;
+				text-decoration: none;
+				transition:
+					background-color 0.2s,
+					padding-left 0.2s;
+			}
+			a::before {
+				content: counter(v);
+				grid-row: span 2;
+				font-size: 2rem;
+				font-weight: 800;
+				line-height: 1.1;
+				color: var(--teal);
+			}
+			a:hover,
+			a:focus-visible {
+				background: #13232a;
+				padding-left: 0.75rem;
+				outline: none;
+			}
+			a:focus-visible {
+				box-shadow: inset 0 0 0 2px var(--teal);
+			}
+			a.inline {
+				display: inline;
+				padding: 0;
+				color: var(--text);
+				text-decoration: underline;
+			}
+			a.inline::before {
+				content: none;
+			}
+			strong {
+				font-size: 1.25rem;
+			}
+			span {
+				grid-column: 2;
+				color: #9ec5cd;
+				font-size: 0.95rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<img src="assets/logo.svg" alt="Evolve Grappling" width="80" height="80" />
+			<h1>Redesign – sieben Varianten</h1>
+			<p>Beispielseiten mit BJJ, Kickboxen und Kinder-BJJ. Am besten auf dem Handy ansehen. Danach bitte den <a class="inline" href="questions/">Fragebogen</a> ausfüllen.</p>
+			<ol>
+				<li>
+					<a href="1/"
+						><strong>Plakat</strong
+						><span>Helles Kampfplakat mit 3D-Ebenen, die sich mit dem Handy neigen</span></a
+					>
+				</li>
+				<li>
+					<a href="2/"
+						><strong>Halle bei Nacht</strong
+						><span>Dunkle Halle, 3D-Matte in WebGL, Trainingsplan zuerst</span></a
+					>
+				</li>
+				<li>
+					<a href="3/"
+						><strong>Gürtelweg</strong
+						><span>Ein 3D-Gürtel führt von Weiß bis Schwarz durch die Seite</span></a
+					>
+				</li>
+				<li>
+					<a href="4/"
+						><strong>Magazin</strong
+						><span>Fotos im Großformat mit WebGL-Übergängen und Tiefe</span></a
+					>
+				</li>
+				<li>
+					<a href="5/"
+						><strong>Raster</strong
+						><span>Brutalistisches Raster mit drehbarem 3D-Würfel der Kurse</span></a
+					>
+				</li>
+				<li>
+					<a href="6/"
+						><strong>Plakat mit Live-Plan</strong
+						><span>Variante 1 mit dem Trainingsplan und den Preisen aus Variante 2</span></a
+					>
+				</li>
+				<li>
+					<a href="7/"
+						><strong>Plakat mit Live-Plan, neue Inhalte</strong
+						><span>Variante 6 mit euren Antworten: neuer Trainingsplan, Preise, Team und Adresse</span></a
+					>
+				</li>
+			</ol>
+		</main>
+	</body>
+</html>

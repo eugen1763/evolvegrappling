@@ -1,0 +1,1942 @@
+@font-face {
+	font-family: 'Bodoni Moda';
+	src: url('fonts/bodoni-moda.woff2') format('woff2');
+	font-weight: 400 900;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Bodoni Moda';
+	src: url('fonts/bodoni-moda-italic.woff2') format('woff2');
+	font-weight: 400 900;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Schibsted Grotesk';
+	src: url('fonts/schibsted-grotesk.woff2') format('woff2');
+	font-weight: 400 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	/* Taken from the photos: wall, mat, rashguard, gi. Signal red is the one editorial accent. */
+	--paper: #f2f3f1;
+	--wall: #e2e5e3;
+	--mat: #9aa0a3;
+	--mat-deep: #50575b;
+	--ink: #121618;
+	--teal: #2a6f7b;
+	--gi: #27477d;
+	--signal: #c92a19;
+	--belt-yellow: #ffd23f;
+
+	--display: 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif;
+	--text: 'Schibsted Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	--gut: clamp(1.25rem, 5vw, 4.5rem);
+	--ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+	interpolate-size: allow-keywords;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font: 400 1.0625rem/1.5 var(--text);
+	overflow-x: clip;
+}
+
+img,
+svg,
+canvas {
+	display: block;
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+}
+
+:focus-visible {
+	outline: 3px solid var(--ink);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 7px var(--paper);
+}
+
+.skip-link {
+	position: fixed;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 100;
+	padding: 0.75rem 1rem;
+	background: var(--ink);
+	color: var(--paper);
+	transform: translateY(-200%);
+}
+.skip-link:focus {
+	transform: none;
+}
+
+.defs {
+	position: absolute;
+}
+
+/* ---------- Type ---------- */
+
+.masthead,
+.display,
+.title,
+.card-title,
+.amount,
+.foot-masthead {
+	font-family: var(--display);
+	font-optical-sizing: auto;
+}
+
+/* The face has an optical-size axis. At the display setting the hyphen and the dash become hairlines
+   that vanish, so headlines use the text cut of the axis. The masthead keeps the display cut. */
+.display,
+.title,
+.card-title,
+.amount,
+.cover-lines h1,
+.groups dd,
+.day h3,
+.page-text h3,
+.channels a {
+	font-variation-settings: 'opsz' 9;
+}
+
+.display {
+	font-size: clamp(3.5rem, 17vw, 10.5rem);
+	font-weight: 900;
+	line-height: 0.88;
+	letter-spacing: -0.035em;
+}
+
+.title {
+	font-size: clamp(2.6rem, 11.5vw, 6.5rem);
+	font-weight: 800;
+	line-height: 0.95;
+	letter-spacing: -0.03em;
+	padding-inline: var(--gut);
+	margin-bottom: clamp(1.5rem, 5vw, 3rem);
+}
+
+.standfirst {
+	font-size: clamp(1.2rem, 4.6vw, 1.6rem);
+	line-height: 1.3;
+	font-weight: 500;
+	max-width: 26ch;
+}
+
+/* Headlines open line by line behind a mask. */
+.reveal .line {
+	display: block;
+	overflow: clip;
+	overflow-clip-margin: 0.02em;
+	padding-bottom: 0.12em;
+	margin-bottom: -0.12em;
+}
+.reveal .line > span {
+	display: block;
+	transition: transform 1s var(--ease);
+	transition-delay: calc(var(--i, 0) * 110ms);
+}
+.js .reveal:not(.is-in) .line > span {
+	transform: translateY(112%);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.25rem;
+	padding: 0.85rem 1.5rem;
+	background: var(--ink);
+	color: var(--paper);
+	font-weight: 700;
+	font-size: 1.0625rem;
+	text-decoration: none;
+	border-radius: 999px;
+	transition:
+		transform 0.25s var(--ease),
+		background-color 0.25s;
+}
+.btn:hover {
+	transform: translateY(-2px);
+}
+.btn:active {
+	transform: scale(0.97);
+}
+.btn-signal {
+	background: var(--signal);
+}
+
+/* ---------- Header ---------- */
+
+.site-head {
+	position: absolute;
+	inset: 0 0 auto 0;
+	z-index: 20;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: calc(0.75rem + env(safe-area-inset-top)) var(--gut) 0;
+}
+
+.brand {
+	display: grid;
+	place-items: center;
+	width: 3.25rem;
+	height: 3.25rem;
+	background: var(--ink);
+	border-radius: 50%;
+}
+.brand img {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.head-nav {
+	display: flex;
+	gap: 1.5rem;
+	padding-inline: 1.1rem;
+	border-radius: 999px;
+	background: var(--paper);
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+.head-nav a {
+	display: none;
+	padding: 0.75rem 0;
+	text-decoration: none;
+}
+.head-nav a:nth-child(2) {
+	display: block;
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+	text-decoration-thickness: 2px;
+}
+.head-nav a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+	text-decoration-thickness: 2px;
+}
+
+/* ---------- Cover ---------- */
+
+.cover {
+	position: relative;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	height: 100svh;
+	min-height: 34rem;
+	overflow: clip;
+	background: var(--paper);
+	isolation: isolate;
+}
+
+.masthead {
+	position: absolute;
+	top: calc(4.25rem + env(safe-area-inset-top));
+	left: 0;
+	right: 0;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	overflow: clip;
+	font-size: 27.5vw;
+	font-weight: 900;
+	line-height: 0.82;
+	letter-spacing: -0.045em;
+	color: var(--teal);
+	padding-bottom: 0.06em;
+	user-select: none;
+}
+.masthead span {
+	display: block;
+}
+
+/* Multiply lets the white studio wall fall away, so the athletes cover the masthead like on a magazine cover. */
+.cover-photo {
+	position: relative;
+	z-index: 1;
+	grid-row: 1;
+	min-height: 0;
+	mix-blend-mode: multiply;
+}
+.cover-photo picture,
+.cover-photo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.cover-photo img {
+	object-fit: cover;
+	object-position: 50% 60%;
+	transition: opacity 0.5s;
+}
+.cover-gl {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	touch-action: pan-y;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.cover-photo.is-gl .cover-gl {
+	opacity: 1;
+}
+/* After the fade the canvas writes the multiply into its own alpha. Safari then composites one plain layer
+   and no longer blends a WebGL canvas with the page on every frame. */
+.cover-photo.is-solid {
+	mix-blend-mode: normal;
+}
+.cover-photo.is-solid picture {
+	visibility: hidden;
+}
+
+.cover-lines {
+	position: relative;
+	z-index: 3;
+	grid-row: 2;
+	display: grid;
+	gap: 1rem;
+	padding: 1.1rem var(--gut) calc(1.25rem + env(safe-area-inset-bottom));
+	background: var(--paper);
+}
+.cover-lines h1 {
+	font-family: var(--display);
+	font-size: clamp(1.7rem, 7.4vw, 3.4rem);
+	font-weight: 700;
+	line-height: 1.02;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+/* The caption counts the photos of the WebGL cycle, so it shows only while that cycle runs. */
+.cover-folio {
+	position: absolute;
+	z-index: 3;
+	right: 0.6rem;
+	top: 42%;
+	display: none;
+	gap: 1rem;
+	writing-mode: vertical-rl;
+	padding: 0.7rem 0.3rem;
+	border-radius: 999px;
+	background: var(--paper);
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: var(--ink);
+}
+.cover-photo.is-gl ~ .cover-folio {
+	display: flex;
+}
+.cover-count b {
+	font-weight: 800;
+}
+
+/* Page-load sequence of the cover. */
+@media (prefers-reduced-motion: no-preference) {
+	.js:not(.js-ok) .masthead span,
+	.js:not(.js-ok) .cover-lines > * {
+		opacity: 0;
+	}
+	.js:not(.js-ok) .cover-photo {
+		opacity: 0;
+	}
+	.js-ok .masthead span {
+		animation: rise 1.1s var(--ease) both;
+	}
+	.js-ok .masthead span:nth-child(1) {
+		animation-delay: 60ms;
+	}
+	.js-ok .masthead span:nth-child(2) {
+		animation-delay: 130ms;
+	}
+	.js-ok .masthead span:nth-child(3) {
+		animation-delay: 200ms;
+	}
+	.js-ok .masthead span:nth-child(4) {
+		animation-delay: 270ms;
+	}
+	.js-ok .masthead span:nth-child(5) {
+		animation-delay: 340ms;
+	}
+	.js-ok .masthead span:nth-child(6) {
+		animation-delay: 410ms;
+	}
+	.js-ok .cover-photo {
+		animation: cover-open 1.4s var(--ease) 0.15s backwards;
+	}
+	.js-ok .cover-lines > * {
+		animation: rise-soft 0.9s var(--ease) 0.75s both;
+	}
+	.js-ok .cover-lines > .btn {
+		animation-delay: 0.9s;
+	}
+}
+
+@keyframes rise {
+	from {
+		transform: translateY(105%);
+	}
+}
+@keyframes rise-soft {
+	from {
+		opacity: 0;
+		transform: translateY(1.5rem);
+	}
+}
+@keyframes cover-open {
+	from {
+		clip-path: inset(100% 0 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+/* ---------- Contents strip ---------- */
+
+.inhalt {
+	padding-block: clamp(3.5rem, 12vw, 8rem) clamp(2.5rem, 8vw, 6rem);
+}
+
+.strip {
+	display: flex;
+	gap: 0.9rem;
+	padding: 0.5rem var(--gut) 1.5rem;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-padding-inline: var(--gut);
+	scrollbar-width: none;
+	overscroll-behavior-x: contain;
+}
+.strip::-webkit-scrollbar {
+	display: none;
+}
+.strip li {
+	flex: 0 0 74vw;
+	scroll-snap-align: start;
+}
+
+.card {
+	position: relative;
+	display: block;
+	aspect-ratio: 3 / 4;
+	overflow: clip;
+	background: var(--ink);
+	color: var(--paper);
+	text-decoration: none;
+}
+.card > img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.9s var(--ease);
+}
+.card:hover > img,
+.card:hover .card-art {
+	transform: scale(1.06) rotate(var(--art-rot, 0deg));
+}
+.card-bjj::after {
+	content: '';
+	position: absolute;
+	inset: 45% 0 0 0;
+	background: linear-gradient(to top, rgb(18 22 24 / 0.88), transparent);
+}
+.card-text {
+	position: absolute;
+	inset: auto 0 0 0;
+	z-index: 2;
+	display: grid;
+	gap: 0.35rem;
+	padding: 1.1rem;
+}
+.card-title {
+	font-size: clamp(2rem, 9vw, 3rem);
+	font-weight: 800;
+	line-height: 0.95;
+	letter-spacing: -0.025em;
+}
+.card-line {
+	font-size: 0.95rem;
+	font-weight: 500;
+}
+.card-art {
+	position: absolute;
+	transition: transform 0.9s var(--ease);
+}
+.card-kick {
+	background: var(--signal);
+}
+.card-kick .card-art {
+	--art-rot: -24deg;
+	width: 74%;
+	top: 2%;
+	left: 22%;
+	transform: rotate(var(--art-rot));
+}
+.card-kids {
+	background: var(--gi);
+}
+.card-kids .card-art {
+	width: 120%;
+	max-width: none;
+	top: -6%;
+	left: -10%;
+}
+
+.sticker {
+	position: absolute;
+	top: 0.9rem;
+	left: 0.9rem;
+	z-index: 2;
+	display: grid;
+	place-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	border-radius: 50%;
+	background: var(--belt-yellow);
+	color: var(--ink);
+	font-weight: 800;
+	font-size: 0.95rem;
+	transform: rotate(-12deg);
+}
+
+/* Glove drawing. The colours come in through custom properties, because the symbol lives in a use tree. */
+.g-body {
+	fill: var(--g-body, #121618);
+}
+.g-thumb {
+	fill: var(--g-thumb, #2b3237);
+}
+.g-cuff {
+	fill: var(--g-cuff, #f2f3f1);
+}
+.g-line {
+	fill: none;
+	stroke: var(--g-line, #f2f3f1);
+	stroke-width: 4;
+	stroke-linecap: round;
+}
+.g-lace {
+	fill: none;
+	stroke: var(--g-lace, #121618);
+	stroke-width: 3;
+}
+
+/* ---------- Spreads ---------- */
+
+.spread {
+	position: relative;
+}
+.spread-text {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	gap: 1.25rem;
+	padding: clamp(1.5rem, 6vw, 3rem) var(--gut) clamp(3rem, 10vw, 6rem);
+}
+
+.frame {
+	overflow: clip;
+}
+.frame picture,
+.frame img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.frame img {
+	object-fit: cover;
+}
+.bleed {
+	aspect-ratio: 3 / 4;
+}
+
+.facts {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.6rem 1.25rem;
+	font-weight: 600;
+	font-size: 0.975rem;
+	line-height: 1.3;
+}
+.facts li {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.6rem;
+	align-items: baseline;
+}
+.facts li::before {
+	content: '';
+	width: 0.6rem;
+	height: 0.6rem;
+	background: var(--mark, var(--teal));
+}
+
+.more {
+	max-width: 38rem;
+}
+.more summary,
+.faq-list summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	min-height: 3rem;
+	cursor: pointer;
+	font-weight: 700;
+	list-style: none;
+}
+.more summary::-webkit-details-marker,
+.faq-list summary::-webkit-details-marker {
+	display: none;
+}
+.more summary {
+	justify-content: flex-start;
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+	text-decoration-thickness: 2px;
+}
+.more summary::after,
+.faq-list summary::after {
+	content: '';
+	flex: none;
+	width: 0.9rem;
+	height: 0.9rem;
+	background:
+		linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+		linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+	transition: transform 0.4s var(--ease);
+}
+details[open] > summary::after {
+	transform: rotate(135deg);
+}
+.more p {
+	margin-top: 0.75rem;
+	max-width: 62ch;
+}
+details::details-content {
+	block-size: 0;
+	overflow: clip;
+	transition:
+		block-size 0.45s var(--ease),
+		content-visibility 0.45s allow-discrete;
+}
+details[open]::details-content {
+	block-size: auto;
+}
+
+/* Colour spreads for the two classes that have no photos yet. */
+.spread-colour {
+	display: grid;
+	min-height: 100svh;
+	overflow: clip;
+	isolation: isolate;
+}
+.spread-colour .sticker-big {
+	position: static;
+	width: 4.5rem;
+	height: 4.5rem;
+	font-size: 1.1rem;
+	margin-bottom: -0.25rem;
+}
+.spread-colour .more summary {
+	color: inherit;
+}
+
+.spread-kick {
+	--mark: var(--ink);
+	background: var(--signal);
+	color: var(--paper);
+	grid-template-rows: minmax(44svh, 1fr) auto;
+}
+.spread-kick :focus-visible,
+.spread-kids :focus-visible,
+.kontakt :focus-visible,
+.gallery :focus-visible,
+.site-foot :focus-visible {
+	outline-color: var(--paper);
+	box-shadow: 0 0 0 7px var(--ink);
+}
+.kick-art {
+	position: relative;
+}
+.kick-rings {
+	position: absolute;
+	left: 30%;
+	top: 46%;
+	width: 0;
+	height: 0;
+}
+.kick-rings i {
+	position: absolute;
+	width: 62vw;
+	height: 62vw;
+	max-width: 30rem;
+	max-height: 30rem;
+	translate: -50% -50%;
+	border: 4px solid var(--ink);
+	border-radius: 50%;
+}
+.kick-rings i:nth-child(2) {
+	scale: 1.55;
+	border-width: 3px;
+}
+.kick-rings i:nth-child(3) {
+	scale: 2.2;
+	border-width: 2px;
+}
+.kick-glove {
+	position: absolute;
+	width: min(58vw, 24rem);
+	right: 6%;
+	top: 12%;
+	rotate: -62deg;
+	filter: drop-shadow(-1.2rem 1.2rem 0 rgb(18 22 24 / 0.22));
+}
+
+.spread-kids {
+	--mark: var(--belt-yellow);
+	background: var(--gi);
+	color: var(--paper);
+	grid-template-rows: auto auto;
+}
+.kids-art {
+	display: grid;
+	gap: clamp(0.7rem, 3vw, 1.4rem);
+	padding-block: clamp(3.5rem, 12vw, 7rem) clamp(1.5rem, 5vw, 3rem);
+	rotate: -5deg;
+	margin-inline: -8vw;
+}
+.belt {
+	display: block;
+	position: relative;
+	height: clamp(2.2rem, 9vw, 4.2rem);
+	background: var(--b);
+	box-shadow: 0 0.5rem 0 rgb(18 22 24 / 0.2);
+}
+/* The black bar with white stripes is the rank bar of a BJJ belt. */
+.belt::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: var(--bar, 60%);
+	width: clamp(4.5rem, 18vw, 9rem);
+	background:
+		repeating-linear-gradient(
+				90deg,
+				transparent 0 0.55rem,
+				#f6f6f2 0.55rem 0.8rem,
+				transparent 0.8rem 1.1rem
+			)
+			0.5rem 0 / calc(var(--stripes, 1) * 1.1rem) 100% no-repeat,
+		var(--ink);
+}
+.belt-weiss {
+	--b: #f6f6f2;
+	--bar: 58%;
+	--stripes: 1;
+}
+.belt-grau {
+	--b: #9aa0a3;
+	--bar: 44%;
+	--stripes: 2;
+}
+.belt-gelb {
+	--b: var(--belt-yellow);
+	--bar: 66%;
+	--stripes: 3;
+}
+.belt-orange {
+	--b: #f08a24;
+	--bar: 38%;
+	--stripes: 2;
+}
+.belt-gruen {
+	--b: #2f8f4e;
+	--bar: 54%;
+	--stripes: 4;
+}
+
+.groups {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	max-width: 30rem;
+}
+.groups dt {
+	font-weight: 700;
+}
+.groups dd {
+	font-family: var(--display);
+	font-size: clamp(2.6rem, 13vw, 5rem);
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	color: var(--belt-yellow);
+}
+.groups dd span {
+	display: block;
+	margin-top: 0.2rem;
+	font-family: var(--text);
+	font-size: 0.95rem;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: var(--paper);
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery {
+	background: var(--ink);
+	color: var(--paper);
+}
+.gallery-pin {
+	position: relative;
+	padding-block: clamp(3rem, 10vw, 6rem);
+}
+.gallery-title {
+	font-family: var(--display);
+	font-size: clamp(2.2rem, 9vw, 4.5rem);
+	font-weight: 800;
+	font-style: italic;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	padding-inline: var(--gut);
+}
+.gallery-track {
+	display: flex;
+	align-items: center;
+	gap: clamp(1.25rem, 6vw, 5rem);
+	padding: 2rem var(--gut);
+	overflow-x: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--mat-deep) transparent;
+}
+.shot {
+	flex: none;
+}
+.shot:nth-child(even) {
+	translate: 0 -1.25rem;
+}
+.shot:nth-child(odd) {
+	translate: 0 1.25rem;
+}
+.shot img {
+	width: auto;
+	height: min(48svh, 30rem);
+	max-width: none;
+}
+.shot figcaption {
+	margin-top: 0.7rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #c9cfd1;
+}
+.gallery-gl {
+	display: none;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+.gallery-bar {
+	display: none;
+}
+
+/* Pinned mode is switched on by the script. Without it the track is a plain sideways scroller. */
+.gallery.is-pinned {
+	height: calc(100svh + var(--dist, 0px));
+}
+.gallery.is-pinned .gallery-pin {
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100svh;
+	padding: 0;
+	overflow: clip;
+}
+.gallery.is-pinned .gallery-title {
+	position: absolute;
+	top: calc(1.5rem + env(safe-area-inset-top));
+	left: 0;
+	z-index: 3;
+}
+.gallery.is-pinned .gallery-track {
+	overflow: visible;
+	width: max-content;
+	will-change: transform;
+}
+.gallery.is-gl .gallery-gl {
+	display: block;
+}
+.gallery.is-gl .shot.gl-on img {
+	opacity: 0;
+}
+.gallery.is-pinned .gallery-bar {
+	display: block;
+	position: absolute;
+	left: var(--gut);
+	right: var(--gut);
+	bottom: calc(1.75rem + env(safe-area-inset-bottom));
+	height: 3px;
+	background: rgb(242 243 241 / 0.2);
+}
+.gallery-bar i {
+	display: block;
+	height: 100%;
+	background: var(--paper);
+	transform-origin: left;
+	transform: scaleX(0);
+}
+
+/* ---------- Why ---------- */
+
+.warum {
+	display: grid;
+	gap: clamp(1.5rem, 6vw, 4rem);
+	padding-block: clamp(3.5rem, 12vw, 8rem);
+}
+.warum-photo {
+	position: relative;
+	aspect-ratio: 4 / 5;
+	margin-inline: var(--gut);
+}
+.warum-photo figcaption {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 0.5rem 0.8rem;
+	background: var(--paper);
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+.warum .title {
+	margin-bottom: 1.5rem;
+}
+.notes {
+	display: grid;
+	gap: 1.5rem;
+	padding-inline: var(--gut);
+}
+.notes h3 {
+	font-family: var(--display);
+	font-size: clamp(1.7rem, 7vw, 2.4rem);
+	font-weight: 700;
+	font-style: italic;
+	line-height: 1.1;
+	color: var(--teal);
+}
+.notes p {
+	max-width: 34ch;
+}
+.lead {
+	padding-inline: var(--gut);
+	margin-top: 2rem;
+	max-width: calc(60ch + 2 * var(--gut));
+	color: var(--mat-deep);
+}
+
+/* ---------- Schedule ---------- */
+
+.plan {
+	padding-block: clamp(3.5rem, 12vw, 8rem);
+	background: var(--wall);
+}
+.filters {
+	display: flex;
+	gap: 0.5rem;
+	padding: 0.25rem var(--gut) 1.5rem;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+.filters::-webkit-scrollbar {
+	display: none;
+}
+.chip {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	min-height: 2.75rem;
+	padding: 0.5rem 1rem;
+	border: 2px solid var(--ink);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--ink);
+	font: 700 0.95rem var(--text);
+	cursor: pointer;
+	transition:
+		background-color 0.25s,
+		color 0.25s;
+}
+.chip::before {
+	content: '';
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 50%;
+	background: var(--cat, var(--ink));
+}
+.chip[data-filter='all']::before {
+	display: none;
+}
+.chip[aria-pressed='true'] {
+	background: var(--ink);
+	color: var(--paper);
+}
+.chip-bjj,
+[data-cat='bjj'] {
+	--cat: var(--teal);
+}
+.chip-kick,
+[data-cat='kick'] {
+	--cat: var(--signal);
+}
+.chip-kids,
+[data-cat='kids'] {
+	--cat: var(--belt-yellow);
+}
+.chip-open,
+[data-cat='open'] {
+	--cat: var(--gi);
+}
+
+.week {
+	display: grid;
+	gap: 1.5rem;
+	padding-inline: var(--gut);
+}
+.day {
+	display: grid;
+	gap: 0.6rem;
+	transition: opacity 0.3s;
+}
+.day h3 {
+	display: flex;
+	align-items: baseline;
+	gap: 0.75rem;
+	font-family: var(--display);
+	font-size: 1.7rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+}
+.day.is-today h3::after {
+	content: 'Heute';
+	padding: 0.15rem 0.6rem;
+	border-radius: 999px;
+	background: var(--ink);
+	color: var(--paper);
+	font: 700 0.8rem var(--text);
+	letter-spacing: 0;
+}
+.day.is-empty {
+	opacity: 0.35;
+}
+.day ul {
+	display: grid;
+	gap: 0.4rem;
+}
+.slot {
+	display: grid;
+	grid-template-columns: 6.4rem 1fr;
+	gap: 0.9rem;
+	align-items: baseline;
+	padding: 0.8rem 0.9rem;
+	background: var(--paper);
+	border-left: 0.5rem solid var(--cat);
+}
+.slot[hidden] {
+	display: none;
+}
+.slot-time {
+	font-weight: 700;
+	white-space: nowrap;
+}
+.slot-name {
+	font-weight: 500;
+	line-height: 1.3;
+}
+.slot-name small {
+	display: block;
+	font-size: 0.85rem;
+	color: var(--mat-deep);
+}
+.plan-note {
+	padding: 1.5rem var(--gut) 0;
+	max-width: calc(60ch + 2 * var(--gut));
+	font-size: 0.95rem;
+	color: var(--mat-deep);
+}
+
+::view-transition-group(*) {
+	animation-duration: 0.45s;
+	animation-timing-function: cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+/* ---------- Team ---------- */
+
+.team {
+	padding-block: clamp(3.5rem, 12vw, 8rem);
+}
+.pages {
+	display: flex;
+	gap: 1rem;
+	padding: 0.5rem var(--gut) 2rem;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-padding-inline: var(--gut);
+	scrollbar-width: none;
+}
+.pages::-webkit-scrollbar {
+	display: none;
+}
+.page {
+	flex: 0 0 74vw;
+	scroll-snap-align: start;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	background: #fff;
+	box-shadow: 0.4rem 0.6rem 0 var(--wall);
+	position: relative;
+	transform-origin: left center;
+	backface-visibility: hidden;
+}
+.page::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: var(--ink);
+	opacity: 0;
+	pointer-events: none;
+}
+.page img {
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	object-position: 50% 20%;
+}
+.page-text {
+	padding: 1rem 1.1rem 1.25rem;
+}
+.page-text h3 {
+	font-family: var(--display);
+	font-size: 1.6rem;
+	font-weight: 800;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+.page-text p {
+	margin-top: 0.35rem;
+	font-size: 0.95rem;
+	color: var(--mat-deep);
+}
+.page-note {
+	grid-template-rows: 1fr;
+	align-items: end;
+	padding: 1.25rem;
+	background: var(--teal);
+	color: var(--paper);
+}
+.page-note p {
+	font-family: var(--display);
+	font-style: italic;
+	font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 1.15;
+}
+
+/* ---------- Prices ---------- */
+
+.preise {
+	padding-block: clamp(3.5rem, 12vw, 8rem);
+	background: var(--teal);
+	color: var(--paper);
+}
+.preise :focus-visible {
+	outline-color: var(--paper);
+	box-shadow: 0 0 0 7px var(--ink);
+}
+.abo {
+	display: grid;
+	gap: 1rem;
+	padding-inline: var(--gut);
+}
+.abo-card {
+	display: grid;
+	gap: 0.4rem;
+	padding: 1.4rem 1.4rem 1.6rem;
+	background: var(--paper);
+	color: var(--ink);
+	transform-origin: 50% 0;
+}
+.abo-card h3 {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+.abo-card h3 small {
+	font-weight: 500;
+	font-size: 0.95rem;
+	color: var(--mat-deep);
+}
+.amount {
+	font-size: clamp(3.4rem, 17vw, 6.5rem);
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.035em;
+}
+.amount small {
+	display: block;
+	margin-top: 0.5rem;
+	font-family: var(--text);
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0;
+	white-space: nowrap;
+}
+.abo-kids {
+	background: var(--belt-yellow);
+}
+.abo-kids h3 small {
+	color: var(--ink);
+}
+.abo-points {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.6rem 1.25rem;
+	padding: 1.75rem var(--gut);
+	font-weight: 600;
+	line-height: 1.3;
+}
+.abo-points li {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.6rem;
+	align-items: baseline;
+}
+.abo-points li::before {
+	content: '';
+	width: 0.6rem;
+	height: 0.6rem;
+	background: var(--belt-yellow);
+}
+.preise .btn {
+	margin-inline: var(--gut);
+}
+
+/* ---------- FAQ ---------- */
+
+.faq {
+	padding-block: clamp(3.5rem, 12vw, 8rem);
+}
+.faq-list {
+	display: grid;
+	gap: 0.5rem;
+	padding-inline: var(--gut);
+	max-width: calc(46rem + 2 * var(--gut));
+}
+.faq-list details {
+	padding: 0.5rem 1.1rem;
+	background: var(--wall);
+}
+.faq-list summary {
+	font-size: 1.0625rem;
+	line-height: 1.3;
+	padding-block: 0.5rem;
+}
+.faq-list p {
+	padding-bottom: 0.9rem;
+	max-width: 60ch;
+}
+
+/* ---------- Contact ---------- */
+
+.kontakt {
+	padding-block: clamp(3.5rem, 12vw, 8rem) clamp(2.5rem, 8vw, 5rem);
+	background: var(--ink);
+	color: var(--paper);
+}
+.kontakt .title {
+	margin-bottom: 1rem;
+}
+.kontakt-line {
+	padding-inline: var(--gut);
+	max-width: calc(36ch + 2 * var(--gut));
+	font-size: 1.15rem;
+	line-height: 1.4;
+	color: #c9cfd1;
+}
+.kontakt-grid {
+	display: grid;
+	gap: 2rem;
+	padding: 2rem var(--gut) 0;
+}
+.trial-frame {
+	background: #fff;
+	min-height: 40rem;
+}
+.trial-frame iframe {
+	display: block;
+	width: 100%;
+	height: 44rem;
+	border: 0;
+}
+.channels {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+	align-content: start;
+}
+.channels h3 {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #c9cfd1;
+}
+.channels a {
+	display: inline-block;
+	padding-block: 0.3rem;
+	font-family: var(--display);
+	font-size: clamp(1.5rem, 6.4vw, 2.2rem);
+	font-weight: 700;
+	line-height: 1.15;
+	letter-spacing: -0.015em;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.2em;
+	overflow-wrap: anywhere;
+}
+
+/* ---------- Footer ---------- */
+
+.site-foot {
+	position: relative;
+	overflow: clip;
+	background: var(--ink);
+	color: var(--paper);
+	padding: 2rem var(--gut) calc(6.5rem + env(safe-area-inset-bottom));
+}
+.foot-masthead {
+	font-size: 27.5vw;
+	font-weight: 900;
+	line-height: 0.8;
+	letter-spacing: -0.045em;
+	color: var(--teal);
+	text-align: center;
+	margin-inline: calc(var(--gut) * -1);
+	margin-bottom: 2rem;
+	user-select: none;
+}
+.foot-grid {
+	display: grid;
+	gap: 2rem;
+	font-size: 0.975rem;
+}
+.foot-grid h2 {
+	font-size: 1.1rem;
+	font-weight: 700;
+	margin-bottom: 0.4rem;
+}
+.foot-grid a {
+	display: inline-block;
+	padding-block: 0.55rem;
+	text-underline-offset: 0.25em;
+}
+.foot-grid nav {
+	display: grid;
+	justify-items: start;
+}
+.foot-affil {
+	display: grid !important;
+	grid-template-columns: auto 5rem;
+	gap: 1rem;
+	align-items: center;
+	justify-self: start;
+	text-decoration: none;
+	font-weight: 600;
+}
+.foot-affil img {
+	width: 5rem;
+	height: 5rem;
+	padding: 0.4rem;
+	background: #fff;
+	border-radius: 50%;
+	object-fit: contain;
+}
+
+/* ---------- Floating button ---------- */
+
+.cta-float {
+	position: fixed;
+	z-index: 50;
+	left: 0.75rem;
+	right: 0.75rem;
+	bottom: calc(0.75rem + env(safe-area-inset-bottom));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.4rem;
+	padding: 0.8rem 1.25rem;
+	border-radius: 999px;
+	background: var(--signal);
+	color: var(--paper);
+	border: 2px solid var(--paper);
+	font-weight: 700;
+	text-decoration: none;
+	box-shadow: 0 0.6rem 1.6rem rgb(18 22 24 / 0.35);
+	transition:
+		transform 0.5s var(--ease),
+		opacity 0.3s;
+}
+/* Without the script the button cannot follow the scroll position, so the cover button does the work alone. */
+html:not(.js) .cta-float {
+	display: none;
+}
+.js .cta-float:not(.is-on) {
+	transform: translateY(160%);
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+	transition:
+		transform 0.5s var(--ease),
+		opacity 0.3s,
+		visibility 0s 0.5s;
+}
+
+/* ---------- Scroll-driven motion (only where the browser has it) ---------- */
+
+@supports (animation-timeline: view()) {
+	@media (prefers-reduced-motion: no-preference) {
+		/* Cover drifts apart when the reader leaves it. */
+		.js-ok .cover-photo {
+			animation:
+				cover-open 1.4s var(--ease) 0.15s backwards,
+				cover-leave linear both;
+			animation-timeline: auto, scroll(root);
+			animation-range:
+				normal,
+				0 100svh;
+		}
+		.js-ok .masthead {
+			animation: masthead-leave linear both;
+			animation-timeline: scroll(root);
+			animation-range: 0 100svh;
+		}
+
+		/* Picture frames open and the picture drifts inside. */
+		.frame {
+			animation: frame-open linear both;
+			animation-timeline: view();
+			animation-range: entry 0% cover 38%;
+		}
+		.frame picture {
+			animation: frame-hold linear both;
+			animation-timeline: view();
+			animation-range: entry 0% cover 38%;
+		}
+		.frame img {
+			animation: drift linear both;
+			animation-timeline: view();
+			animation-range: cover 0% cover 100%;
+		}
+
+		/* Cards and team pages turn like pages while they move sideways. */
+		.strip .card {
+			animation: card-turn linear both;
+			animation-timeline: view(inline);
+			animation-range: entry 0% exit 100%;
+		}
+		.page {
+			animation: page-turn linear both;
+			animation-timeline: view(inline);
+			animation-range: entry 0% entry 100%;
+		}
+		.page::after {
+			animation: page-shade linear both;
+			animation-timeline: view(inline);
+			animation-range: entry 0% entry 100%;
+		}
+
+		.kick-glove {
+			animation: punch linear both;
+			animation-timeline: view();
+			animation-range: entry 10% cover 55%;
+		}
+		.kick-rings {
+			animation: impact linear both;
+			animation-timeline: view();
+			animation-range: entry 40% cover 60%;
+		}
+		.spread-colour .display {
+			animation: slide-word linear both;
+			animation-timeline: view();
+			animation-range: entry 0% cover 50%;
+		}
+		.belt {
+			animation: belt-in linear both;
+			animation-timeline: view();
+			animation-range: entry 0% cover 45%;
+		}
+		.belt:nth-child(even) {
+			animation-name: belt-in-right;
+		}
+		.groups dd {
+			animation: pop linear both;
+			animation-timeline: view();
+			animation-range: entry 0% entry 100%;
+		}
+		.abo-card {
+			animation: fold-down linear both;
+			animation-timeline: view();
+			animation-range: entry 0% cover 30%;
+		}
+		.foot-masthead {
+			animation: foot-rise linear both;
+			animation-timeline: view();
+			animation-range: entry 0% entry 100%;
+		}
+		.sticker-big {
+			animation: spin-in linear both;
+			animation-timeline: view();
+			animation-range: entry 0% cover 40%;
+		}
+	}
+}
+
+@keyframes cover-leave {
+	to {
+		transform: translateY(14%) scale(1.06);
+	}
+}
+@keyframes masthead-leave {
+	to {
+		transform: translateY(-60%);
+	}
+}
+/* The frame opens with a scale and the picture inside takes the inverse scale, so the photo stays in place.
+   A clip-path that follows the scroll makes Safari paint the photo again on every frame. */
+@keyframes frame-open {
+	from {
+		transform: scale(0.82, 0.76);
+	}
+	to {
+		transform: scale(1, 1);
+	}
+}
+@keyframes frame-hold {
+	0% {
+		transform: scale(1.2195, 1.3158);
+	}
+	25% {
+		transform: scale(1.1561, 1.2195);
+	}
+	50% {
+		transform: scale(1.0989, 1.1364);
+	}
+	75% {
+		transform: scale(1.0471, 1.0638);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
+@keyframes drift {
+	from {
+		transform: translateY(-6%) scale(1.14);
+	}
+	to {
+		transform: translateY(6%) scale(1.14);
+	}
+}
+@keyframes card-turn {
+	0% {
+		transform: perspective(900px) rotateY(-28deg) scale(0.9);
+	}
+	35%,
+	65% {
+		transform: perspective(900px) rotateY(0deg) scale(1);
+	}
+	100% {
+		transform: perspective(900px) rotateY(28deg) scale(0.9);
+	}
+}
+@keyframes page-turn {
+	from {
+		transform: perspective(1100px) rotateY(72deg);
+	}
+	to {
+		transform: perspective(1100px) rotateY(0deg);
+	}
+}
+@keyframes page-shade {
+	from {
+		opacity: 0.3;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes punch {
+	from {
+		transform: translate(60%, -40%) rotate(22deg) scale(0.7);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes impact {
+	from {
+		transform: scale(0.1);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes slide-word {
+	from {
+		transform: translateX(18%);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes belt-in {
+	from {
+		transform: translateX(-70%);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes belt-in-right {
+	from {
+		transform: translateX(70%);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes pop {
+	from {
+		transform: scale(0.6);
+		opacity: 0;
+	}
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}
+@keyframes fold-down {
+	from {
+		transform: perspective(900px) rotateX(-55deg);
+		opacity: 0.4;
+	}
+	to {
+		transform: perspective(900px) rotateX(0deg);
+		opacity: 1;
+	}
+}
+@keyframes foot-rise {
+	from {
+		transform: translateY(45%);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes spin-in {
+	from {
+		transform: rotate(-200deg) scale(0.3);
+	}
+	to {
+		transform: rotate(-12deg) scale(1);
+	}
+}
+
+/* ---------- Wider screens ---------- */
+
+@media (min-width: 800px) {
+	.head-nav a {
+		display: block;
+		text-decoration: none;
+	}
+	.masthead {
+		top: 3.5rem;
+		font-size: 25vw;
+	}
+	.cover-photo img {
+		object-position: 50% 50%;
+	}
+	.cover-lines {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		gap: 2rem;
+		padding-block: 1.4rem 1.6rem;
+	}
+	.cover-lines h1 {
+		font-size: clamp(2rem, 3.6vw, 3.4rem);
+	}
+	.cover-folio {
+		right: 1rem;
+	}
+
+	.strip {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+		overflow: visible;
+	}
+	.strip li {
+		flex: none;
+	}
+	.card-title {
+		font-size: clamp(2rem, 3.6vw, 3.4rem);
+	}
+	.card-text {
+		padding: 1.5rem;
+	}
+
+	.spread-bjj {
+		display: grid;
+		grid-template-columns: 1.35fr 1fr;
+		align-items: center;
+	}
+	.spread-bjj .bleed {
+		aspect-ratio: auto;
+		height: 100vh;
+		position: sticky;
+		top: 0;
+	}
+	.spread-bjj .display {
+		font-size: clamp(3.5rem, 8.2vw, 9rem);
+	}
+	.standfirst {
+		font-size: clamp(1.3rem, 1.9vw, 1.8rem);
+	}
+
+	.spread-colour {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		align-items: center;
+	}
+	.spread-colour .display {
+		font-size: clamp(4rem, 9.5vw, 11rem);
+	}
+	.spread-kick .spread-text {
+		order: -1;
+		padding-block: 6rem;
+	}
+	.kick-art {
+		height: 100%;
+		min-height: 36rem;
+	}
+	.kick-rings {
+		left: 42%;
+		top: 52%;
+	}
+	.kick-rings i {
+		width: 30vw;
+		height: 30vw;
+	}
+	.kick-glove {
+		width: min(26vw, 26rem);
+		right: 18%;
+		top: 16%;
+	}
+	.kids-art {
+		margin-inline: -6vw 4vw;
+		padding-block: 0;
+	}
+	.spread-kids .display {
+		font-size: clamp(4rem, 7vw, 9rem);
+		white-space: nowrap;
+	}
+	.spread-kids .spread-text {
+		padding-block: 6rem;
+	}
+
+	.shot img {
+		height: min(60svh, 42rem);
+	}
+	.shot:nth-child(even) {
+		translate: 0 -2.5rem;
+	}
+	.shot:nth-child(odd) {
+		translate: 0 2.5rem;
+	}
+
+	.warum {
+		grid-template-columns: 1.1fr 1fr;
+		align-items: center;
+	}
+	.warum-photo {
+		aspect-ratio: 16 / 11;
+		margin-right: 0;
+	}
+
+	.week {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem 1.5rem;
+	}
+
+	.pages {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+		overflow: visible;
+	}
+	.page {
+		flex: none;
+	}
+
+	.abo {
+		grid-template-columns: 1fr 1fr;
+		max-width: 64rem;
+	}
+	.amount {
+		font-size: clamp(3.4rem, 7vw, 6.5rem);
+	}
+	.abo-points {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 2rem;
+	}
+
+	.kontakt-grid {
+		grid-template-columns: 1.3fr 1fr;
+		gap: 3rem;
+	}
+
+	.site-foot {
+		padding-bottom: 3rem;
+	}
+	.foot-grid {
+		grid-template-columns: 1.4fr 1fr 1fr auto;
+	}
+
+	/* The floating button becomes a pill in the top corner. */
+	.cta-float {
+		left: auto;
+		right: var(--gut);
+		bottom: auto;
+		top: 0.85rem;
+		min-height: 2.9rem;
+		padding: 0.6rem 1.25rem;
+		font-size: 0.95rem;
+	}
+	.js .cta-float:not(.is-on) {
+		transform: translateY(-200%);
+	}
+
+	@supports (animation-timeline: view()) {
+		@media (prefers-reduced-motion: no-preference) {
+			.strip .card {
+				animation: none;
+			}
+			.page,
+			.page::after {
+				animation-timeline: view();
+				animation-range: entry 0% cover 35%;
+			}
+			.page:nth-child(2),
+			.page:nth-child(2)::after {
+				animation-range: entry 10% cover 40%;
+			}
+			.page:nth-child(3),
+			.page:nth-child(3)::after {
+				animation-range: entry 20% cover 45%;
+			}
+			.page:nth-child(4),
+			.page:nth-child(4)::after {
+				animation-range: entry 30% cover 50%;
+			}
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.week {
+		grid-template-columns: repeat(7, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+	.day {
+		align-content: start;
+	}
+	.day h3 {
+		font-size: 1.45rem;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+	.slot {
+		grid-template-columns: 1fr;
+		gap: 0.15rem;
+		padding: 0.75rem 0.8rem;
+		border-left: 0;
+		border-top: 0.45rem solid var(--cat);
+	}
+	.notes {
+		gap: 2rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+	.js .reveal:not(.is-in) .line > span {
+		transform: none;
+	}
+}
