@@ -1997,11 +1997,17 @@ mark.todo {
 	right: 12px;
 	bottom: calc(12px + env(safe-area-inset-bottom));
 	z-index: 40;
-	transform: translateY(160%);
-	transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+	/* The offset must clear the bottom gap, the safe area and the shadow, else the button shows on phones with a home indicator. */
+	transform: translateY(calc(100% + 24px + env(safe-area-inset-bottom)));
+	visibility: hidden;
+	transition:
+		transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+		visibility 0s 0.35s;
 }
 .sticky-cta.is-on {
 	transform: none;
+	visibility: visible;
+	transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .sticky-cta .btn {
 	min-height: 46px;
