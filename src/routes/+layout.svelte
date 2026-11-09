@@ -46,17 +46,18 @@
 				priceRange: '€€',
 				address: {
 					'@type': 'PostalAddress',
-					streetAddress: 'Talblick 5a',
+					streetAddress: 'Schorberger Str. 66',
 					addressLocality: 'Solingen',
-					postalCode: '42719',
+					postalCode: '42699',
 					addressCountry: 'DE'
 				},
 				geo: {
 					'@type': 'GeoCoordinates',
-					latitude: 51.185994,
-					longitude: 7.028167
+					latitude: 51.15927,
+					longitude: 7.02896
 				},
-				hasMap: 'https://www.google.com/maps/search/?api=1&query=Talblick+5a%2C+42719+Solingen',
+				hasMap:
+					'https://www.google.com/maps/search/?api=1&query=Schorberger+Str.+66%2C+42699+Solingen',
 				sameAs: [
 					'https://www.instagram.com/evolve_grappling/',
 					'https://smoothcomp.com/en/club/77897'
@@ -128,7 +129,7 @@
 			case '/':
 				return 'BJJ, No-Gi Grappling und Ringen in Solingen – für Anfänger und Fortgeschrittene ab 16 Jahren. Jetzt kostenloses Probetraining vereinbaren.';
 			case '/impressum':
-				return 'Impressum und Kontaktdaten von Evolve Grappling Solingen. Maximilian Galle, Talblick 5a, 42719 Solingen.';
+				return 'Impressum und Kontaktdaten von Evolve Grappling Solingen. Schorberger Str. 66, 42699 Solingen.';
 			case '/datenschutz':
 				return 'Datenschutzerklärung von Evolve Grappling Solingen gemäß DSGVO.';
 			case '/links':
