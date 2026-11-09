@@ -1,153 +1,238 @@
-<!-- eslint-disable svelte/no-navigation-without-resolve -- This page renders only absolute external URLs and mailto links. -->
+<!-- eslint-disable svelte/no-navigation-without-resolve -- This page renders only absolute external URLs, mailto links and static paths. -->
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
-	import Affiliation from '$lib/components/Affiliation.svelte';
 
 	const MAP_SRC =
 		'https://www.openstreetmap.org/export/embed.html?bbox=7.0225%2C51.1568%2C7.0355%2C51.1618&layer=mapnik&marker=51.15927%2C7.02896';
 
-	let mapLoaded = $state(false);
-
 	const links = [
 		{
 			title: 'Unsere Website',
-			description: 'Besuche unsere Hauptwebsite',
-			url: 'https://evolvegrappling.de/',
+			description: 'Kurse, Trainingsplan und Preise',
+			url: '/',
 			icon: 'home',
-			target: '_blank'
+			external: false
+		},
+		{
+			title: 'Kostenloses Probetraining',
+			description: 'Termin direkt online buchen',
+			url: '/#kontakt',
+			icon: 'calendar',
+			external: false
 		},
 		{
 			title: 'Instagram',
 			description: '@evolve_grappling',
 			url: 'https://www.instagram.com/evolve_grappling',
 			icon: 'camera',
-			target: '_blank'
+			external: true
 		},
 		{
 			title: 'Google Bewertung',
 			description: 'Bewerte uns auf Google',
 			url: 'https://share.google/vsIXZwHLH8eOWWSxh',
 			icon: 'star',
-			target: '_blank'
+			external: true
 		},
 		{
 			title: 'Open Mat WhatsApp Gruppe',
 			description: 'Tritt unserer WhatsApp Gruppe bei',
 			url: 'https://chat.whatsapp.com/BXPwrIXlA9v1KmlKH4qXKP',
 			icon: 'users',
-			target: '_blank'
+			external: true
 		},
 		{
-			title: 'Kontaktiere uns auf WhatsApp',
-			description: 'Direkter Kontakt über WhatsApp',
+			title: 'Kontakt über WhatsApp',
+			description: 'Schreib uns direkt',
 			url: 'https://api.whatsapp.com/send?phone=4915735412788',
 			icon: 'message-circle',
-			target: '_blank'
+			external: true
 		},
 		{
 			title: 'SmoothComp',
 			description: 'Unser Club auf SmoothComp',
 			url: 'https://smoothcomp.com/en/club/77897',
 			icon: 'trophy',
-			target: '_blank'
+			external: true
 		},
 		{
-			title: 'E-Mail Kontakt',
+			title: 'E-Mail',
 			description: 'info@evolvegrappling.de',
 			url: 'mailto:info@evolvegrappling.de',
 			icon: 'mail',
-			target: '_self'
+			external: false
 		}
 	];
+
+	let mapLoaded = $state(false);
 </script>
 
-<div class="min-h-dvh bg-charcoal px-4 py-12" id="main-content">
-	<div class="mx-auto max-w-md">
-		<div class="mb-10 text-center">
-			<div class="mx-auto mb-4 flex h-32 w-32 items-center justify-center">
-				<img src="/logo.svg" alt="Evolve Grappling Logo" class="h-full w-full object-contain" />
-			</div>
-			<h1 class="mb-2 text-2xl font-bold tracking-tight text-white">Evolve Grappling</h1>
-			<p class="px-4 text-sm leading-relaxed text-brand-200">
-				Wir bei Evolve Grappling haben uns voll auf Brazilian Jiu-Jitsu (BJJ) im Gi und No-Gi sowie
-				auf Ringen für Grappling spezialisiert.
-			</p>
-		</div>
+<div class="page links">
+	<p class="page-kicker">Evolve Grappling Solingen</p>
+	<h1 class="page-title">Links</h1>
+	<p class="intro">BJJ, Grappling, Kickboxen und BJJ für Kinder in Solingen.</p>
 
-		<div class="space-y-2.5">
-			{#each links as link (link.title)}
+	<ul class="link-list">
+		{#each links as link (link.title)}
+			<li>
 				<a
+					class="link"
 					href={link.url}
-					target={link.target}
-					rel={link.target === '_blank' ? 'noopener noreferrer' : ''}
-					class="group flex w-full items-center gap-4 border border-brand-800 bg-brand-950/50 px-4 py-3.5 text-white transition-all duration-200 hover:border-accent-500/50 hover:bg-brand-900/50 active:scale-[0.98]"
+					target={link.external ? '_blank' : undefined}
+					rel={link.external ? 'noopener noreferrer' : undefined}
 				>
-					<div class="flex-shrink-0">
-						<Icon
-							name={link.icon}
-							class="h-5 w-5 text-brand-400 transition-colors group-hover:text-accent-500"
-						/>
-					</div>
-					<div class="min-w-0 flex-1 text-left">
-						<div class="font-semibold">{link.title}</div>
-						<div class="truncate text-sm text-brand-400">{link.description}</div>
-					</div>
-					<div class="flex-shrink-0 text-brand-600 transition-colors group-hover:text-accent-500">
-						<Icon name="external-link" class="h-4 w-4" />
-					</div>
+					<Icon name={link.icon} class="link-icon" />
+					<span class="link-text">
+						<b>{link.title}</b>
+						<span>{link.description}</span>
+					</span>
+					<Icon name={link.external ? 'external-link' : 'chevron-right'} class="link-arrow" />
 				</a>
-			{/each}
-		</div>
+			</li>
+		{/each}
+	</ul>
 
-		<div class="mt-12 mb-8">
-			<h2 class="mb-4 text-xl font-bold tracking-tight text-white">Standort</h2>
-			<p class="mb-4 text-sm text-brand-200">Schorberger Str. 66, 42699 Solingen</p>
-			<div class="overflow-hidden border border-brand-800">
-				{#if mapLoaded}
-					<iframe
-						src={MAP_SRC}
-						loading="lazy"
-						style="border: 0; width: 100%; height: 450px;"
-						title="Karte: Evolve Grappling, Schorberger Str. 66, Solingen"
-					></iframe>
-				{:else}
-					<div class="flex h-[450px] flex-col items-start justify-center gap-4 bg-brand-950/50 p-6">
-						<p class="text-sm text-brand-200">
-							Die Karte kommt von OpenStreetMap. Erst mit dem Klick lädt dein Browser Daten von
-							dort. Mehr dazu in der <a
-								href="/datenschutz"
-								class="text-accent-500 underline underline-offset-4 hover:text-accent-400"
-								>Datenschutzerklärung</a
-							>.
-						</p>
-						<button
-							type="button"
-							onclick={() => (mapLoaded = true)}
-							class="border border-accent-500 px-4 py-2.5 font-semibold text-accent-500 transition-colors hover:bg-accent-500 hover:text-charcoal"
-						>
-							Karte laden
-						</button>
-					</div>
-				{/if}
-			</div>
-			<div class="mt-3">
-				<a
-					target="_blank"
-					rel="noopener noreferrer"
-					href="https://www.google.com/maps/dir/?api=1&amp;destination=Schorberger+Str.+66%2C+42699+Solingen"
-					class="inline-flex w-full items-center justify-center gap-2 bg-accent-500 px-4 py-3.5 font-semibold text-charcoal transition-all duration-200 hover:bg-accent-400 active:scale-[0.98]"
-				>
-					<Icon name="map-pin" class="h-5 w-5" />
-					Route anzeigen
-				</a>
-			</div>
+	<section class="where" aria-labelledby="where-title">
+		<h2 id="where-title">Anfahrt</h2>
+		<p class="address">Schorberger Str. 66, 42699 Solingen</p>
+		<div class="map" class:is-loaded={mapLoaded}>
+			{#if mapLoaded}
+				<iframe src={MAP_SRC} title="Karte: Evolve Grappling, Schorberger Str. 66, Solingen"
+				></iframe>
+			{:else}
+				<p>
+					Die Karte kommt von OpenStreetMap. Erst mit dem Klick lädt dein Browser Daten von dort.
+					Mehr dazu in der <a href="/datenschutz/">Datenschutzerklärung</a>.
+				</p>
+				<button type="button" class="btn btn-ghost" onclick={() => (mapLoaded = true)}>
+					Karte laden
+				</button>
+			{/if}
 		</div>
-
-		<Affiliation centered />
-
-		<div class="mt-10 text-center text-sm text-brand-400">
-			<p>Evolve Grappling Solingen</p>
-			<p class="mt-1">Brazilian Jiu-Jitsu &middot; BJJ &middot; Grappling</p>
-		</div>
-	</div>
+		<a
+			class="btn route"
+			href="https://www.google.com/maps/dir/?api=1&destination=Schorberger+Str.+66%2C+42699+Solingen"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Route in Google Maps öffnen
+		</a>
+	</section>
 </div>
+
+<style>
+	.links {
+		max-width: 560px;
+	}
+	.intro {
+		margin: -12px 0 24px;
+		font-weight: 600;
+	}
+	.link-list {
+		display: grid;
+		gap: 12px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.link {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		min-height: 64px;
+		padding: 10px 14px;
+		background: var(--paper);
+		border: 3px solid var(--ink);
+		box-shadow: 5px 5px 0 var(--ink);
+		text-decoration: none;
+		transition:
+			transform 0.15s ease,
+			box-shadow 0.15s ease,
+			background-color 0.15s ease;
+	}
+	.link:hover {
+		background: var(--sand);
+		transform: translate(2px, 2px);
+		box-shadow: 3px 3px 0 var(--ink);
+	}
+	.link:active {
+		transform: translate(5px, 5px);
+		box-shadow: 0 0 0 var(--ink);
+	}
+	.link-list li:nth-child(2) .link {
+		background: var(--signal);
+	}
+	.link :global(.link-icon) {
+		flex: none;
+		width: 24px;
+		height: 24px;
+	}
+	.link :global(.link-arrow) {
+		flex: none;
+		width: 18px;
+		height: 18px;
+		margin-left: auto;
+	}
+	.link-text {
+		display: grid;
+		min-width: 0;
+	}
+	.link-text b {
+		font: 800 1.45rem/1 var(--display);
+		text-transform: uppercase;
+		letter-spacing: 0.01em;
+	}
+	.link-text span {
+		overflow: hidden;
+		font-size: 0.9375rem;
+		color: var(--mute);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.where {
+		margin-top: 48px;
+	}
+	.where h2 {
+		font: 900 clamp(2.6rem, 12vw, 3.6rem) / 0.9 var(--display);
+		text-transform: uppercase;
+	}
+	.address {
+		margin: 6px 0 16px;
+		font-weight: 600;
+	}
+	.map {
+		display: grid;
+		place-content: center;
+		justify-items: start;
+		gap: 16px;
+		min-height: 300px;
+		padding: 20px;
+		background:
+			repeating-linear-gradient(135deg, transparent 0 9px, rgba(216, 220, 195, 0.08) 9px 11px),
+			var(--ink-2);
+		color: #c3cbc8;
+		border: 3px solid var(--ink);
+		box-shadow: 6px 6px 0 var(--teal);
+	}
+	.map p {
+		max-width: 30em;
+		font-size: 0.9375rem;
+	}
+	.map a {
+		color: var(--sand);
+	}
+	.map.is-loaded {
+		display: block;
+		padding: 0;
+	}
+	.map iframe {
+		display: block;
+		width: 100%;
+		height: 360px;
+		border: 0;
+	}
+	.route {
+		width: 100%;
+		margin-top: 22px;
+	}
+</style>

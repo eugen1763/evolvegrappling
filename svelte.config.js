@@ -18,7 +18,14 @@ const config = {
 			assets: 'build',
 			precompress: false,
 			strict: true
-		})
+		}),
+		prerender: {
+			// The start page is static/index.html, not a SvelteKit route, so links to / are expected.
+			handleHttpError: ({ path, message }) => {
+				if (path === '/') return;
+				throw new Error(message);
+			}
+		}
 	}
 };
 

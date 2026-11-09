@@ -1,147 +1,62 @@
-<script lang="ts">
-	import { scrollReveal } from '$lib/utils/scroll_animations';
-	import BurgerMenu from '$lib/components/BurgerMenu.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-</script>
+<div class="page">
+	<p class="page-kicker">Rechtliches</p>
+	<h1 class="page-title">Impressum</h1>
+	<div class="legal">
+		<section>
+			<h2>Angaben gem&auml;&szlig; &sect; 5 DDG</h2>
 
-<div class="relative overflow-x-hidden">
-	<BurgerMenu />
+			<h3>Evolve Grappling</h3>
+			<p>
+				Evolve Grappling Maximilian Galle und Marius Pichler GbR<br />
+				Schorberger Str. 66<br />
+				42699 Solingen<br />
+				Deutschland
+			</p>
 
-	<main id="main-content" class="relative z-20 min-h-dvh bg-charcoal pt-20">
-		<div class="px-6 py-16 md:px-12 lg:px-20 xl:px-28">
-			<div class="mx-auto max-w-4xl">
-				<div class="mb-8 flex items-center gap-3">
-					<div class="h-px w-8 bg-brand-500"></div>
-					<span class="text-xs font-semibold tracking-[0.25em] text-brand-400 uppercase"
-						>Rechtliches</span
-					>
-				</div>
-				<h1
-					use:scrollReveal
-					class="reveal reveal-up mb-12 text-4xl font-bold tracking-tight text-white md:text-5xl"
-				>
-					Impressum
-				</h1>
+			<h3>Kontakt</h3>
+			<p>
+				Telefon: +49 (0) 1573 5412788<br />
+				E-Mail: info@evolvegrappling.de
+			</p>
+		</section>
 
-				<div
-					use:scrollReveal
-					class="reveal reveal-up mb-8 border border-brand-800 bg-brand-950/50 p-8 delay-1"
-				>
-					<h2 class="mb-6 text-2xl font-semibold text-white">
-						Angaben gem&auml;&szlig; &sect; 5 DDG
-					</h2>
+		<section>
+			<h2>Redaktionell verantwortlich</h2>
 
-					<div class="space-y-4 text-brand-200">
-						<div>
-							<h3 class="mb-2 text-xl font-semibold text-white">Evolve Grappling</h3>
-							<p>
-								Evolve Grappling Maximilian Galle und Marius Pichler GbR<br />
-								Schorberger Str. 66<br />
-								42699 Solingen<br />
-								Deutschland
-							</p>
-						</div>
+			<p>
+				Evolve Grappling Maximilian Galle und Marius Pichler GbR<br />
+				Schorberger Str. 66<br />
+				42699 Solingen<br />
+				Deutschland
+			</p>
+		</section>
 
-						<div>
-							<h3 class="mb-2 text-xl font-semibold text-white">Kontakt</h3>
-							<p>
-								Telefon: +49 (0) 1573 5412788<br />
-								E-Mail: info@evolvegrappling.de
-							</p>
-						</div>
-					</div>
-				</div>
+		<section>
+			<h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
 
-				<div
-					use:scrollReveal
-					class="reveal reveal-up mb-8 border border-brand-800 bg-brand-950/50 p-8 delay-2"
-				>
-					<h2 class="mb-6 text-2xl font-semibold text-white">Redaktionell verantwortlich</h2>
-					<div class="text-brand-200">
-						<p>
-							Evolve Grappling Maximilian Galle und Marius Pichler GbR<br />
-							Schorberger Str. 66<br />
-							42699 Solingen<br />
-							Deutschland
-						</p>
-					</div>
-				</div>
+			<p>
+				Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+				Verbraucherstreitschlichtungsstelle teilzunehmen.
+			</p>
+		</section>
 
-				<div
-					use:scrollReveal
-					class="reveal reveal-up mb-8 border border-brand-800 bg-brand-950/50 p-8 delay-3"
-				>
-					<h2 class="mb-6 text-2xl font-semibold text-white">EU-Streitschlichtung</h2>
-					<div class="text-brand-200">
-						<p>
-							Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS)
-							bereit:
-							<a
-								href="https://ec.europa.eu/consumers/odr/"
-								target="_blank"
-								class="text-accent-500 underline underline-offset-4 transition-colors hover:text-accent-400"
-							>
-								https://ec.europa.eu/consumers/odr/
-							</a>
-						</p>
-						<p class="mt-4">Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
-					</div>
-				</div>
+		<section>
+			<h2>Haftung f&uuml;r Inhalte</h2>
 
-				<div
-					use:scrollReveal
-					class="reveal reveal-up mb-8 border border-brand-800 bg-brand-950/50 p-8 delay-4"
-				>
-					<h2 class="mb-6 text-2xl font-semibold text-white">
-						Verbraucherstreitbeilegung/Universalschlichtungsstelle
-					</h2>
-					<div class="text-brand-200">
-						<p>
-							Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-							Verbraucherstreitschlichtungsstelle teilzunehmen.
-						</p>
-					</div>
-				</div>
-
-				<div
-					use:scrollReveal
-					class="reveal reveal-up mb-8 border border-brand-800 bg-brand-950/50 p-8 delay-5"
-				>
-					<h2 class="mb-6 text-2xl font-semibold text-white">Haftung f&uuml;r Inhalte</h2>
-					<div class="space-y-4 text-brand-200">
-						<p>
-							Als Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs. 1 DDG f&uuml;r eigene
-							Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
-							&sect;&sect; 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht unter der
-							Verpflichtung, &uuml;bermittelte oder gespeicherte fremde Informationen zu
-							&uuml;berwachen oder nach Umst&auml;nden zu forschen, die auf eine rechtswidrige
-							T&auml;tigkeit hinweisen.
-						</p>
-						<p>
-							Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
-							allgemeinen Gesetzen bleiben hiervon unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung
-							ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
-							m&ouml;glich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese
-							Inhalte umgehend entfernen.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-
-	<Footer
-		links={[
-			{ href: '/', label: 'Startseite' },
-			{ href: '/datenschutz', label: 'Datenschutz' }
-		]}
-	/>
+			<p>
+				Als Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs. 1 DDG f&uuml;r eigene Inhalte
+				auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10
+				DDG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, &uuml;bermittelte
+				oder gespeicherte fremde Informationen zu &uuml;berwachen oder nach Umst&auml;nden zu
+				forschen, die auf eine rechtswidrige T&auml;tigkeit hinweisen.
+			</p>
+			<p>
+				Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
+				allgemeinen Gesetzen bleiben hiervon unber&uuml;hrt. Eine diesbez&uuml;gliche Haftung ist
+				jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung m&ouml;glich. Bei
+				Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
+				entfernen.
+			</p>
+		</section>
+	</div>
 </div>
-
-<style>
-	:global(html),
-	:global(body) {
-		overflow-x: hidden;
-		width: 100%;
-	}
-</style>
