@@ -809,14 +809,14 @@ a {
 	-webkit-backface-visibility: hidden;
 }
 /* Backface-visibility does not hide children on their own layers, for example the photo while the poster tilts.
-   The hidden face goes invisible at the end of the flip, the shown face at the start. */
+   The faces swap when the poster is edge-on: the easing of .card-inner reaches 90deg after about 0.1s.
+   Opacity, not visibility, so that the back heading can take focus at the click. */
 .js .card.is-flipped .front,
 .js .card:not(.is-flipped) .back {
-	visibility: hidden;
+	opacity: 0;
 }
-.motion .card.is-flipped .front,
-.motion .card:not(.is-flipped) .back {
-	transition: visibility 0s 0.75s;
+.motion .face {
+	transition: opacity 0s 0.1s;
 }
 .js .back {
 	border-top-width: 3px;
