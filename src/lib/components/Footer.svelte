@@ -18,12 +18,12 @@
 			<div>
 				<h3 class="mb-2 text-xl font-bold tracking-tight text-white">Evolve Grappling</h3>
 				<a
-					href="https://www.google.com/maps/search/?api=1&query=Talblick+5a%2C+42719+Solingen"
+					href="https://www.google.com/maps/search/?api=1&query=Schorberger+Str.+66%2C+42699+Solingen"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="text-sm text-brand-400 underline-offset-4 hover:text-white hover:underline"
 				>
-					Talblick 5a &middot; 42719 Solingen
+					Schorberger Str. 66 &middot; 42699 Solingen
 				</a>
 			</div>
 			<nav aria-label="Trainingsangebote" class="flex flex-col gap-2 text-sm">

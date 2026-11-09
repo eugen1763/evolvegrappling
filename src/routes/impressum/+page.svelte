@@ -28,7 +28,7 @@
 					class="reveal reveal-up mb-8 border border-brand-800 bg-brand-950/50 p-8 delay-1"
 				>
 					<h2 class="mb-6 text-2xl font-semibold text-white">
-						Angaben gem&auml;&szlig; &sect; 5 TMG
+						Angaben gem&auml;&szlig; &sect; 5 DDG
 					</h2>
 
 					<div class="space-y-4 text-brand-200">
@@ -36,8 +36,8 @@
 							<h3 class="mb-2 text-xl font-semibold text-white">Evolve Grappling</h3>
 							<p>
 								Evolve Grappling Maximilian Galle und Marius Pichler GbR<br />
-								Talblick 5a<br />
-								42719 Solingen<br />
+								Schorberger Str. 66<br />
+								42699 Solingen<br />
 								Deutschland
 							</p>
 						</div>
@@ -60,8 +60,8 @@
 					<div class="text-brand-200">
 						<p>
 							Evolve Grappling Maximilian Galle und Marius Pichler GbR<br />
-							Talblick 5a<br />
-							42719 Solingen<br />
+							Schorberger Str. 66<br />
+							42699 Solingen<br />
 							Deutschland
 						</p>
 					</div>
@@ -110,9 +110,9 @@
 					<h2 class="mb-6 text-2xl font-semibold text-white">Haftung f&uuml;r Inhalte</h2>
 					<div class="space-y-4 text-brand-200">
 						<p>
-							Als Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs.1 TMG f&uuml;r eigene
+							Als Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs. 1 DDG f&uuml;r eigene
 							Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
-							&sect;&sect; 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der
+							&sect;&sect; 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht unter der
 							Verpflichtung, &uuml;bermittelte oder gespeicherte fremde Informationen zu
 							&uuml;berwachen oder nach Umst&auml;nden zu forschen, die auf eine rechtswidrige
 							T&auml;tigkeit hinweisen.

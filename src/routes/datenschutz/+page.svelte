@@ -226,8 +226,8 @@
 						<div class="rounded-xl bg-brand-800/50 p-4">
 							<p>
 								<strong>Evolve Grappling Maximilian Galle und Marius Pichler GBR</strong><br />
-								Talblick 5a<br />
-								42719 Solingen<br />
+								Schorberger Str. 66<br />
+								42699 Solingen<br />
 								Deutschland<br /><br />
 								Tel.: +4915735412788<br />
 								E-Mail: info@evolvegrappling.de<br />
@@ -428,27 +428,32 @@
 					class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-1600"
 				>
 					<h2 class="mb-6 text-2xl font-semibold text-white">
-						7. Datenschutzbestimmungen zu Einsatz und Verwendung von YouTube
+						7. Cloudflare &mdash; Auslieferung und Schutz der Internetseite
 					</h2>
 					<div class="space-y-4 text-brand-100">
 						<p>
-							Der fur die Verarbeitung Verantwortliche hat auf dieser Internetseite Komponenten von
-							YouTube integriert. YouTube ist ein Internet-Videoportal, dass Video-Publishern das
-							kostenlose Einstellen von Videoclips und anderen Nutzern die ebenfalls kostenfreie
-							Betrachtung, Bewertung und Kommentierung dieser ermoglicht.
+							Unsere Internetseite nutzt das Content Delivery Network (CDN) und die
+							Sicherheitsfunktionen der Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107,
+							USA. Jeder Aufruf unserer Internetseite l&auml;uft &uuml;ber die Server von
+							Cloudflare. Dabei verarbeitet Cloudflare die unter Ziffer 3 genannten Zugriffsdaten,
+							insbesondere Ihre IP-Adresse. Cloudflare nutzt diese Daten, um die Internetseite
+							schnell auszuliefern und vor Angriffen zu sch&uuml;tzen.
 						</p>
 						<p>
-							Betreibergesellschaft von YouTube ist die Google Ireland Limited, Gordon House, Barrow
-							Street, Dublin, D04 E5W5, Ireland.
+							Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist eine
+							sichere und schnelle Bereitstellung der Internetseite. Wir haben mit Cloudflare einen
+							Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO geschlossen. Cloudflare ist nach
+							dem EU-US Data Privacy Framework zertifiziert. Die &Uuml;bermittlung in die USA
+							st&uuml;tzt sich daher auf den Angemessenheitsbeschluss der EU-Kommission nach Art. 45
+							DSGVO.
 						</p>
 						<p>
-							Die von YouTube veroffentlichten Datenschutzbestimmungen, die unter <a
-								href="https://www.google.de/intl/de/policies/privacy/"
+							Weitere Informationen finden Sie in der Datenschutzerkl&auml;rung von Cloudflare unter <a
+								href="https://www.cloudflare.com/de-de/privacypolicy/"
 								target="_blank"
 								class="text-brand-400 underline underline-offset-4 transition-colors hover:text-brand-300"
-								>https://www.google.de/intl/de/policies/privacy/</a
-							> abrufbar sind, geben Aufschluss uber die Erhebung, Verarbeitung und Nutzung personenbezogener
-							Daten durch YouTube und Google.
+								>cloudflare.com/de-de/privacypolicy</a
+							>.
 						</p>
 					</div>
 				</div>
@@ -600,12 +605,45 @@
 							der Probetraining-Anfrage verwendet und nicht an weitere Dritte weitergegeben.
 						</p>
 						<p>
+							Omoplata sch&uuml;tzt das Formular mit Cloudflare. Beim Laden des Formulars setzt
+							Cloudflare das technisch notwendige Cookie <code>cf_clearance</code>, das
+							automatisierte Anfragen abwehrt. Rechtsgrundlage ist &sect; 25 Abs. 2 Nr. 2 TDDDG und
+							Art. 6 Abs. 1 lit. f DSGVO.
+						</p>
+						<p>
 							Betreiber von Omoplata: Omoplata GmbH. Weitere Informationen zur Datenverarbeitung
 							durch Omoplata finden Sie in der Datenschutzerkl&auml;rung des Anbieters unter <a
 								href="https://omoplata.de/datenschutz"
 								target="_blank"
 								class="text-accent-500 underline underline-offset-4 transition-colors hover:text-accent-400"
 								>omoplata.de/datenschutz</a
+							>.
+						</p>
+					</div>
+				</div>
+
+				<div
+					use:scrollReveal
+					class="scroll-animate fade-in-up mb-8 border-brand-800 bg-brand-950/50 p-8 delay-3200"
+				>
+					<h2 class="mb-6 text-2xl font-semibold text-white">15. Karte von OpenStreetMap</h2>
+					<div class="space-y-4 text-brand-100">
+						<p>
+							Auf der Seite &bdquo;Links&ldquo; k&ouml;nnen Sie eine Karte von OpenStreetMap laden.
+							Die Karte l&auml;dt erst, wenn Sie auf &bdquo;Karte laden&ldquo; klicken. Erst dann
+							&uuml;bertr&auml;gt Ihr Browser Ihre IP-Adresse und technische Daten an die
+							OpenStreetMap Foundation, St John&rsquo;s Innovation Centre, Cowley Road, Cambridge,
+							CB4 0WS, Vereinigtes K&ouml;nigreich.
+						</p>
+						<p>
+							Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und &sect; 25
+							Abs. 1 TDDDG, die Sie mit dem Klick erteilen. F&uuml;r das Vereinigte K&ouml;nigreich
+							besteht ein Angemessenheitsbeschluss der EU-Kommission nach Art. 45 DSGVO. Weitere
+							Informationen finden Sie unter <a
+								href="https://osmfoundation.org/wiki/Privacy_Policy"
+								target="_blank"
+								class="text-accent-500 underline underline-offset-4 transition-colors hover:text-accent-400"
+								>osmfoundation.org/wiki/Privacy_Policy</a
 							>.
 						</p>
 					</div>

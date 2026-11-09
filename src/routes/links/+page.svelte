@@ -3,6 +3,11 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import Affiliation from '$lib/components/Affiliation.svelte';
 
+	const MAP_SRC =
+		'https://www.openstreetmap.org/export/embed.html?bbox=7.0225%2C51.1568%2C7.0355%2C51.1618&layer=mapnik&marker=51.15927%2C7.02896';
+
+	let mapLoaded = $state(false);
+
 	const links = [
 		{
 			title: 'Unsere Website',
@@ -96,20 +101,40 @@
 
 		<div class="mt-12 mb-8">
 			<h2 class="mb-4 text-xl font-bold tracking-tight text-white">Standort</h2>
+			<p class="mb-4 text-sm text-brand-200">Schorberger Str. 66, 42699 Solingen</p>
 			<div class="overflow-hidden border border-brand-800">
-				<iframe
-					src="https://maps.google.com/maps?q=Talblick+5a%2C+42719+Solingen%2C+Germany&amp;t=&amp;z=15&amp;ie=UTF8&amp;output=embed"
-					allow="fullscreen"
-					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"
-					style="border: 0; width: 100%; height: 450px;"
-					title="Google Maps"
-				></iframe>
+				{#if mapLoaded}
+					<iframe
+						src={MAP_SRC}
+						loading="lazy"
+						style="border: 0; width: 100%; height: 450px;"
+						title="Karte: Evolve Grappling, Schorberger Str. 66, Solingen"
+					></iframe>
+				{:else}
+					<div class="flex h-[450px] flex-col items-start justify-center gap-4 bg-brand-950/50 p-6">
+						<p class="text-sm text-brand-200">
+							Die Karte kommt von OpenStreetMap. Erst mit dem Klick lädt dein Browser Daten von
+							dort. Mehr dazu in der <a
+								href="/datenschutz"
+								class="text-accent-500 underline underline-offset-4 hover:text-accent-400"
+								>Datenschutzerklärung</a
+							>.
+						</p>
+						<button
+							type="button"
+							onclick={() => (mapLoaded = true)}
+							class="border border-accent-500 px-4 py-2.5 font-semibold text-accent-500 transition-colors hover:bg-accent-500 hover:text-charcoal"
+						>
+							Karte laden
+						</button>
+					</div>
+				{/if}
 			</div>
 			<div class="mt-3">
 				<a
 					target="_blank"
-					href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47b8d34a3f71689d:0xb2905987a4c62e1e?sa=X&amp;ved=1t:8290&amp;ictx=111"
+					rel="noopener noreferrer"
+					href="https://www.google.com/maps/dir/?api=1&amp;destination=Schorberger+Str.+66%2C+42699+Solingen"
 					class="inline-flex w-full items-center justify-center gap-2 bg-accent-500 px-4 py-3.5 font-semibold text-charcoal transition-all duration-200 hover:bg-accent-400 active:scale-[0.98]"
 				>
 					<Icon name="map-pin" class="h-5 w-5" />
